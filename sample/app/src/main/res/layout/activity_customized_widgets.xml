@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_customized_widgets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#242d34"
+    android:orientation="horizontal"
+    tools:context="com.dji.ui.sample.CustomizedWidgetsActivity">
+
+    <dji.ui.widget.FPVWidget
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#80000000"
+        android:orientation="horizontal">
+
+        <!-- Show customized pre-flight status widget -->
+        <com.dji.ui.sample.custom.CustomizedPreFlightWidget
+            android:id="@+id/status"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/transparent"
+            android:layout_marginLeft="35dp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Show customized battery widget -->
+        <com.dji.ui.sample.custom.CustomizedBatteryWidget
+            android:layout_width="60dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="35dp"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

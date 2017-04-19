@@ -1,0 +1,23 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textview_battery_value"
+        android:layout_width="40dp"
+        android:layout_height="22dp"
+        android:text="0%"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textColor="@color/light_gray"
+        android:textSize="14dp"
+        android:layout_gravity="left"/>
+
+    <ImageView
+        android:id="@+id/imageview_battery_icon"
+        android:layout_width="16dp"
+        android:layout_height="22dp"
+        android:layout_gravity="right"
+        android:src="@mipmap/battery_error" />
+
+</merge>
