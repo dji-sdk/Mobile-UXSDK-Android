@@ -1,0 +1,264 @@
+<script>window.pathPrefix="../";</script><!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
+  <title>DJI Mobile SDK Documentation
+  </title><link rel="stylesheet" href="../stylesheets/doc-vendor.css"><link rel="stylesheet" href="../stylesheets/doc-app.css">
+</head>
+<body>
+  <nav id="site-header" class="site-header navbar">
+    <div class="container">
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
+      <div id="header-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">SDK<span class="caret"></span></a>
+            <ul class="hovedown-menu">
+              <li><a href="/mobile-sdk">Mobile SDK</a></li>
+              <li><a href="/onboard-sdk">Onboard SDK</a></li>
+              <li><a href="/guidance-sdk">Guidance SDK</a></li>
+            </ul>
+          </li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/showcase">Showcase</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a></li>
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle">GitHub<span class="caret"></span></a>
+            <ul class="hovedown-menu">
+              <li><a href="https://github.com/dji-sdk/Mobile-SDK-iOS" target="_blank">iOS SDK</a></li>
+              <li><a href="https://github.com/dji-sdk/Mobile-SDK-Android" target="_blank">Android SDK</a></li>
+              <li><a href="https://github.com/dji-sdk/Onboard-SDK" target="_blank">Onboard SDK</a></li>
+              <li><a href="https://github.com/dji-sdk/Guidance-SDK" target="_blank">Guidance SDK</a></li>
+            </ul>
+          </li>
+          <li><a href="/challenge2016" target="_blank">Challenge</a></li>
+        </ul>
+        <ul v-cloak="" v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register" class="head-cta">Register</a></li>
+        </ul>
+        <ul v-cloak="" v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
+            <ul class="hovedown-menu hovedown-menu-right">
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div data-offset-top="60" data-spy="affix" class="sub-nav">
+    <div class="container">
+      <h1 class="logo">Mobile SDK</h1>
+      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+          <ul class="hovedown-menu">
+            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
+            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
+          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
+      </nav>
+    </div>
+  </div>
+  <div id="documentation-page" class="documentation-page">
+    <div class="container">
+      <div class="site-sidebar">
+        <div class="searcher">
+          <div id="panel" class="panel panel_tree">
+            <div class="header">
+              <div class="search-con">
+                <label id="search-label" for="search">
+                </label>
+                <input id="search" type="text" placeholder="Search" autosave="searchdoc" results="10" autocomplete="off">
+                <div class="search-icon"></div><a class="clean-search glyphicon glyphicon-remove-circle"></a>
+              </div>
+            </div>
+            <div class="tree">
+              <ul></ul>
+            </div>
+            <div class="result">
+              <ul></ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav scrollable js-tree-menu">
+          <dl>
+            <dt>Widget
+            </dt>
+                  <dd><a href="AutoExposureLockWidget.html">AutoExposureLockWidget</a>
+                  </dd>
+                  <dd><a href="PreFlightStatusWidget.html">PreFlightStatusWidget</a>
+                  </dd>
+                  <dd><a href="DULConnectionWidget.html">ConnectionWidget</a>
+                  </dd>
+                  <dd><a href="DULFlightModeWidget.html">FlightModeWidget</a>
+                  </dd>
+                  <dd><a href="DULBatteryWidget.html">BatteryWidget</a>
+                  </dd>
+                  <dd><a href="RemoteControllerSignalWidget.html">RemoteControlSignalWidget</a>
+                  </dd>
+                  <dd><a href="GPSSignalWidget.html">GPSSignalWidget</a>
+                  </dd>
+                  <dd><a href="DULWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  </dd>
+                  <dd><a href="VideoSignalWidget.html">VideoSignalWidget</a>
+                  </dd>
+                  <dd><a href="VisionWidget.html">VisionWidget</a>
+                  </dd>
+                  <dd><a href="DULDashboardWidget.html">DashboardWidget</a>
+                  </dd>
+                  <dd><a href="DULCompassWidget.html">CompassWidget</a>
+                  </dd>
+                  <dd><a href="DistanceFromHomeWidget.html">DistanceHomeWidget</a>
+                  </dd>
+                  <dd><a href="HorizontalVelocityWidget.html">HorizontalVelocityWidget</a>
+                  </dd>
+                  <dd><a href="DistanceFromRCWidget.html">DistanceRCWidget</a>
+                  </dd>
+                  <dd><a href="VerticalVelocityWidget.html">VerticalVelocityWidget</a>
+                  </dd>
+                  <dd><a href="AltitudeWidget.html">AltitudeWidget</a>
+                  </dd>
+                  <dd><a href="CameraControlsWidget.html">CameraControlsWidget</a>
+                  </dd>
+                  <dd><a href="PictureVideoSwitchWidget.html">PictureVideoSwitch</a>
+                  </dd>
+                  <dd><a href="CameraCaptureWidget.html">CameraCaptureWidget</a>
+                  </dd>
+                  <dd><a href="ExposureSettingsMenu.html">ExposureSettingsMenu</a>
+                  </dd>
+                  <dd><a href="RemainingFlightTimeWidget.html">RemainingFlightTimeWidget</a>
+                  </dd>
+                  <dd><a href="DULFPVWidget.html">FPVWidget</a>
+                  </dd>
+                  <dd><a href="FPVOverlayWidget.html">FPVOverlayWidget</a>
+                  </dd>
+                  <dd><a href="TakeOffLandWidget.html">TakeOffWidget</a>
+                  </dd>
+                  <dd><a href="ReturnHomeWidget.html">ReturnHomeWidget</a>
+                  </dd>
+                  <dd><a href="FocusModeWidget.html">FocusModeWidget</a>
+                  </dd>
+                  <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigShutterWidget.html">CameraConfigShutterWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigApertureWidget.html">CameraConfigApertureWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigISOWidget.html">CameraConfigISOWidget</a>
+                  </dd>
+                  <dd><a href="CameraConfigWBWidget.html">CameraConfigWBWidget</a>
+                  </dd>
+                  <dd><a href="" class="active">CameraConfigStorageWidget</a>
+                  </dd>
+                  <dd><a href="CameraEVConfigWidget.html">CameraConfigEVWidget</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Panel
+            </dt>
+                  <dd><a href="CameraSettingAdvancedPanel.html">CameraSettingAdvancedPanel</a>
+                  </dd>
+                  <dd><a href="CameraSettingExposurePanel.html">CameraSettingExposurePanel</a>
+                  </dd>
+                  <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
+                  </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="site-main">
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>CameraConfigStorageWidget</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CameraConfigStorageWidget</span> <span class="keyword">extends</span> <span class="title">DULFrameLayoutWidget</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>DULFrameLayoutWidget</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">CameraConfigStorageWidget</font></td></tr></table></html>
+<h5 id="display">Display:</h5>
+<p><img src="../assets/CAPACITY.gif" alt="uilib_image"><br style="clear:both"></p>
+<p><font color="#666">First text from the left shows format/resolution of photo/video that camera wil capture. Second text shows how many shots can be taken, or how many minutes can be recorded.</font></p>
+<h5 id="usage">Usage:</h5>
+<p><font color="#666">Preferred Aspect Ratio: 13:3.</font></p>
+
+        </div>
+      </div>
+    </div>
+    <div id="search-modal" class="search-modal modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
+            <h2 class="title"> Search Mobile SDK Document
+            </h2>
+            <input type="text" v-model="searchInput" @keydown.enter="search">
+          </div>
+          <div class="modal-body">
+            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            </p>
+            <ul v-show="!!searchCount" class="search-result">
+              <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">
+                  <h3 class="title">{{{(item.highlights && item.highlights.title) || item.title}}}</h3>
+                  <p class="content">{{{(item.highlights && item.highlights.content[0]) || item.title}}}</p></a></li>
+            </ul>
+            <div v-show="showLoadMore" class="text-center"><a href="javascript:;" @click="loadMoreSearch" class="btn-learn-more">Load More</a></div>
+            <div v-show="searchLoading" class="text-center">Loading...
+            </div>
+            <div v-show="!searchCount &amp;&amp; !searchLoading" class="text-center">Not Found
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <div class="foot-nav row">
+        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/guidance-sdk">Guidance SDK</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a><a href="/showcase">Showcase</a><a href="/news">News</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://forum.dev.dji.com/en" target="_blank">Forum</a><a href="https://github.com/dji-sdk" target="_blank">GitHub</a><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-3"><span class="title">Business Cooperation</span><a href="mailto:dev.bd@dji.com"> dev.bd@dji.com</a></nav>
+      </div>
+      <div class="foot-copyright row">
+        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2016 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy</a><a href="/policies/terms">Terms</a></div>
+        <div class="col-xs-2">
+          <div class="lang-selector">
+            <select dir="rtl" v-model="lang">
+              <option value="en">English</option>
+              <option value="cn">中文</option>
+            </select><i class="fa fa-globe"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    window.Config = window.config = {
+      sdk: "mobile-sdk",
+      locale: "en",
+      environment: "development",
+      api_host: ""
+    };
+    
+  </script>
+  <!-- build:js /javascripts/doc-vendor.js-->
+  <script src="../javascripts/lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="../javascripts/lib/bootstrap.js" type="text/javascript"></script>
+  <script src="../javascripts/lib/vue.min.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <!-- build:js /javascripts/doc-app.js-->
+  <script src="../javascripts/util/cookie.js" type="text/javascript"></script>
+  <script src="../javascripts/util/url-manager.js" type="text/javascript"></script>
+  <script src="../javascripts/util/ajax-manager.js" type="text/javascript"></script>
+  <script src="../javascripts/base/footer.js" type="text/javascript"></script>
+  <script src="../javascripts/base/header.js" type="text/javascript"></script>
+  <script src="../javascripts/util/searcher.js" type="text/javascript"></script>
+  <script src="../javascripts/search_index.js" type="text/javascript"></script>
+  <script src="../javascripts/searchdoc.js" type="text/javascript"></script>
+  <script src="../javascripts/api.js" type="text/javascript"></script>
+  <!-- endbuild-->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-43055594-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
