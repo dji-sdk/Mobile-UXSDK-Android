@@ -136,7 +136,7 @@ You can run the sample application immediately by importing the project in Andro
 
 **6.** Click on **+** sign and add module, select the module named in step 4, select OK to dismiss add module dialog.
 
-![] (images/androidAddModule.png)
+![](images/androidAddModule.png)
 
 **7.** Click on + sign again and add a library. Search for recyclerview, select android.support:recyclerview-v7 and click OK to dismiss add library dialog.
 
