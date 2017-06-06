@@ -16,6 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <dji.ui.widget.compass.CompassCalibratingWorkFlow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <!-- Widgets in top status bar -->
     <LinearLayout
         android:id="@+id/signal"
@@ -70,45 +74,45 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signal"
         android:layout_centerHorizontal="true"
-        android:layout_margin="12dp"
+        android:layout_marginTop="20dp"
         android:background="@color/dark_gray"
         android:orientation="horizontal">
 
         <dji.ui.widget.AutoExposureLockWidget
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.FocusExposureSwitchWidget
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.FocusModeWidget
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.config.CameraConfigISOWidget
-            android:layout_width="50dp"
-            android:layout_height="25dp"/>
+            android:layout_width="60dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.config.CameraConfigShutterWidget
-            android:layout_width="50dp"
-            android:layout_height="25dp"/>
+            android:layout_width="60dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.config.CameraConfigApertureWidget
-            android:layout_width="50dp"
-            android:layout_height="25dp"/>
+            android:layout_width="60dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.config.CameraConfigEVWidget
-            android:layout_width="50dp"
-            android:layout_height="25dp"/>
+            android:layout_width="60dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.config.CameraConfigWBWidget
-            android:layout_width="50dp"
-            android:layout_height="25dp"/>
+            android:layout_width="70dp"
+            android:layout_height="30dp"/>
 
         <dji.ui.widget.CameraConfigStorageWidget
-            android:layout_width="108dp"
-            android:layout_height="25dp"/>
+            android:layout_width="130dp"
+            android:layout_height="30dp"/>
 
     </LinearLayout>
     <dji.ui.widget.RemainingFlightTimeWidget

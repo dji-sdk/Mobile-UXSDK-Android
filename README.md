@@ -9,7 +9,7 @@ The UILibrary is a suite of product agnostic UI objects that fast tracks the dev
 You can find the followings for Android:
 
 1. UI Library Sample App: Showcases Widgets and Panels. Also shows two examples of customizing widgets through subclassing.
-2. `android-uilib-release.aar`: Includes Version 1.0.0 of UILibrary and Version 4.0.1 of Android Mobile SDK.(The combined version string is 4.0.1.1.0.0)
+2. `android-uilib-release.aar`: Includes Version 4.1.1 of UILibrary and Version 4.1.1 of Android Mobile SDK.
 
 ### Running the Sample App
 
