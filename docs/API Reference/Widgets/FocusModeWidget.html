@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android SDK API Reference</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UI LIBRARY API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -90,7 +90,11 @@
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">ReturnHomeWidget</a>
                   </dd>
-                  <dd><a href="" class="active">FocusModeWidget</a>
+                  <dd><a data-href="" class="sub-toggle">FocusModeWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="ManualFocusWidget.html">ManualFocusWidget</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
@@ -137,7 +141,7 @@
 <h5 id="usage">Usage:</h5>
 <p><font color="#666">Preferred Aspect Ratio: 1:1</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="focusmodewidget_onfocusmodechange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#focusmodewidget_onfocusmodechange_inline">onFocusModeChange</a></div></div><div class="inline-doc" id="focusmodewidget_onfocusmodechange_inline" <blockquote="">
+<div class="api-row" id="manualfocuswidget"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/ManualFocusWidget.html">ManualFocusWidget</a></div></div><div class="api-row" id="focusmodewidget_onfocusmodechange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#focusmodewidget_onfocusmodechange_inline">onFocusModeChange</a></div></div><div class="inline-doc" id="focusmodewidget_onfocusmodechange_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onFocusModeChange</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onFocusModeChange</span><span class="params">(FocusMode focusMode)</span></span></div></pre></td></tr></table></figure>

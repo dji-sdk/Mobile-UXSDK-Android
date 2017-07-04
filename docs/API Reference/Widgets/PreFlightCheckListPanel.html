@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android SDK API Reference</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UI LIBRARY API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -90,7 +90,11 @@
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">ReturnHomeWidget</a>
                   </dd>
-                  <dd><a href="FocusModeWidget.html">FocusModeWidget</a>
+                  <dd><a data-href="FocusModeWidget.html" class="sub-toggle">FocusModeWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="ManualFocusWidget.html">ManualFocusWidget</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
@@ -129,10 +133,13 @@
 <p><font color="#666">To allow user to toggle hide and show this panel, use in conjunction with <code><a href="../Widgets/PreFlightStatusWidget.html#preflightstatuswidget">PreFlightStatusWidget</a></code></font></p>
 <h5 id="display">Display:</h5>
 <br style="clear:both">
-<p><font color="#666">Panel that shows the preflight checklist that includes a list of items (like IMU, GPS etc) and their state that roll up into an overall state.</font></p>
-<h5 id="interaction">Interaction:</h5>
+<p><font color="#666">Panel that shows the preflight checklist that includes a list of items (like IMU, GPS etc) and their state that roll up into an overall state. <p> This panel is configurable to hide some of the items. Use the attribute &quot;excludeItem&quot; with flags corresponding to each item to hide.  Here are all the flags: </p><p> <ul><code>overall, flightMode, compass, IMUStatus, ESCStatus, visionSensors,  radioChannelQuality, remoteControllerMode, aircraftBattery, remoteControllerBattery,  aircraftBatteryTemperature, remainingStorageCapacity, gimbalStatus</code></ul> </p><p> Note that multiple flags can be used simultaneously by logically OR'ing them. For example, if user wants to hide aircraft battery temperature item ad ESC Status  item in the panel, it can be done by following two steps. </p><p> Define custom xmlns in its layout file:
+<ul><code>xmlns:custom=&quot;http://schemas.android.com/apk/res-auto&quot;</code></ul></p>
+<p> Then, add following attribute to the PreFlightCheckListPanel:
+   <ul><code>custom:excludeItem="aircraftBatteryTemperature|ESCStatus"</code></ul>
+</p><h5 id="interaction">Interaction:</h5>
 <p><font color="#666">All the settings are presented in ListView hierachy.</font></p>
-
+</font></p>
         </div>
       </div>
     </div>

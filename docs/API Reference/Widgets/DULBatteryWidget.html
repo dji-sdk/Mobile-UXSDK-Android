@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android SDK API Reference</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UI LIBRARY API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -90,7 +90,11 @@
                   </dd>
                   <dd><a href="ReturnHomeWidget.html">ReturnHomeWidget</a>
                   </dd>
-                  <dd><a href="FocusModeWidget.html">FocusModeWidget</a>
+                  <dd><a data-href="FocusModeWidget.html" class="sub-toggle">FocusModeWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="ManualFocusWidget.html">ManualFocusWidget</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
@@ -123,9 +127,14 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>BatteryWidget</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BatteryWidget</span> <span class="keyword">extends</span> <span class="title">DULFrameLayoutWidget</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>DULFrameLayoutWidget</code></font></td></tr></table></html>
-<h5 id="display">Display:</h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BatteryWidget</span> <span class="keyword">extends</span> <span class="title">DULDynamicFrameLayoutWidget</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>DULDynamicFrameLayoutWidget</code></font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666"><p> This widget is configurable to hide some of the subviews. Use the attribute &quot;excludeView&quot; with flags corresponding to each subview to hide.  Here are all the flags: </p><p> <ul><code>batteryIcon, percentage, singleVoltage, doubleVoltage</code></ul> </p><p> Note that multiple flags can be used simultaneously by logically OR'ing them. For example, if user wants to hide voltage subviews in the widget, it can be done by  following two steps. </p><p> Define custom xmlns in its layout file:
+<ul><code>xmlns:custom=&quot;http://schemas.android.com/apk/res-auto&quot;</code></ul></p>
+<p> Then, add following attribute to the BatteryWidget:
+   <ul><code>custom:excludeView="singleVoltage|doubleVoltage"</code></ul>
+</p><h5 id="display">Display:</h5>
 <p><img src="../assets/BATTERY.gif" alt="uilib_image"><br style="clear:both"></p>
 <p><font color="#666">Battery icon has two color states. White color indicates everything is ok. Icon will change into red color if aircraft needs to return home, land immediately, or battery connection is bad. Text shows percentage of charge remaining in battery. Text also has two color states. Green indicates the percentage is ok. Red indicates the percentage is either below or just enough for returning home or landing immediately.</font></p>
 <h5 id="usage">Usage:</h5>
@@ -136,7 +145,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onBatteryPercentageChange</span><span class="params">(@IntRange(from = <span class="number">0</span>, to = <span class="number">100</span>)</span> <span class="keyword">int</span> percentage)</span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
+<h5 id="description-v2">Description:</h5>
 <p><font color="#666">Triggers when battery percentage changes</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@IntRange(from = 0, to = 100) int <font color="#000">percentage</font></font></td><td><font color="#666"><i>from 0 - 100; 0 means empty, 100 means full.</i></font></td></tr></table></html></div>
@@ -145,7 +154,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onBatteryConnectionStateChange</span><span class="params">(@Nullable BatteryConnectionState status)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666">Triggers when DJIBatteryConnectionState changes</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable BatteryConnectionState <font color="#000">status</font></font></td><td><font color="#666"><i>Normal, means the battery status is good, other values mean the battery is in error state.</i></font></td></tr></table></html></div>
@@ -154,11 +163,11 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onRemainingBatteryStateChange</span><span class="params">(@Nullable BatteryThresholdBehavior warningLevel)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Triggers when warning level of battery changes</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@Nullable BatteryThresholdBehavior <font color="#000">warningLevel</font></font></td><td><font color="#666"><i>Normal, means the battery energy is good. Low, means the battery energy is OK to go home. VeryLow, means the battery energy is only for landing immediately.</i></font></td></tr></table></html></div>
-
+</font></p>
         </div>
       </div>
     </div>

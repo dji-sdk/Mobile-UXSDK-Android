@@ -1,1 +1,1 @@
-include ':app', ':android-uilib-release'
+include ':app', ':dji-sdk', ':dji-uilibrary'

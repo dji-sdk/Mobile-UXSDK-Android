@@ -4,46 +4,9 @@
 
 The UILibrary is a suite of product agnostic UI objects that fast tracks the development of Android applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
 
-## Get Started Immediately
+## Get Started With DJI UI Library
 
-You can find the followings for Android:
-
-1. UI Library Sample App: Showcases Widgets and Panels. Also shows two examples of customizing widgets through subclassing.
-2. `android-uilib-release.aar`: Includes Version 4.1.1 of UILibrary and Version 4.1.1 of Android Mobile SDK.
-
-### Running the Sample App
-
-You can run the sample application immediately by importing the project in Android Studio and run it. 
-
-> NOTE: Don't forget to add your **DJI App Key** in the Android Manifest file. Click [here](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#generate-an-app-key) for more information on obtaining App Key.
-
-### Integrating UI Library into Your Apps
-
-**1.** Open your project in [Android Studio](https://developer.android.com/studio/index.html).
-
-**2.** Create a new AAR module by going through the menu (as shown below) : File -> New -> New Module.
-
-![](images/androidNewModule.png)
-
-**3.** Choose "Import .JAR/.AAR Package" item and click on Next button.
-
-![](images/androidImportAar.png)
-
-**4.** Choose path of AAR file that is downloaded and name the subproject.
-
-**5.** Go to your application module settings and click on the dependencies tab.
-
-![](images/androidModuleSettings.png)
-
-**6.** Click on **+** sign and add module, select the module named in step 4, select OK to dismiss add module dialog.
-
-![] (images/androidAddModule.png)
-
-**7.** Click on + sign again and add a library. Search for recyclerview, select android.support:recyclerview-v7 and click OK to dismiss add library dialog.
-
-![](images/androidRecycler.png)
-
-**8.** Click OK to dismiss module settings dialog.
+Please check this [Getting Started with DJI UI Library](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UILibraryDemo.html) tutorial to learn how to use DJI Android UI Library and DJI Android SDK to create a fully functioning mini-DJI Go app easily, with standard DJI Go UIs and functionalities.
 
 ## Learn More about DJI UI Library
 

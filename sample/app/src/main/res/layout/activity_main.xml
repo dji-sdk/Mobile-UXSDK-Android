@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingEnd="60dp"
+    android:paddingStart="60dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#242d34"
-    android:layout_centerVertical="true"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
+    <TableRow
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
 
     <Button
         android:id="@+id/complete_ui_widgets"
-        android:layout_width="305dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_margin="10dp"
+        android:padding="14dp"
+        android:textColor="@color/background_blue"
         android:text="Complete Demo of Default UI Widgets"/>
-
     <Button
         android:id="@+id/bt_customized_ui_widgets"
-        android:layout_width="305dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_margin="10dp"
+        android:padding="14dp"
+        android:textColor="@color/background_blue"
         android:text="Demo on Customized UI Widgets"/>
 
-</FrameLayout>
+    <TableRow
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+</TableLayout>
