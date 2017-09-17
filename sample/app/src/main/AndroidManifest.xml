@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.dji.ui.sample">
+    package="com.dji.ui.sample">
 
     <!-- DJI SDK need these permissions -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -34,30 +33,24 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:replace="android:icon">
+        android:theme="@style/AppTheme">
 
         <!-- DJI SDK -->
         <uses-library android:name="com.android.future.usb.accessory" />
 
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="insert_your_app_key_here" />
+            android:value="Please enter your App Key here." />
 
         <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorLandscape"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
-        <activity
-            android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
-            android:theme="@android:style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
             </intent-filter>
@@ -69,10 +62,12 @@
         <activity
             android:name=".CompleteWidgetActivity"
             android:label="Default Widgets"
+            android:launchMode="singleTop"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".CustomizedWidgetsActivity"
+            android:launchMode="singleTop"
             android:label="Customized Widgets"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />

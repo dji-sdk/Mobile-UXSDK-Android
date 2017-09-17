@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UI LIBRARY API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android UI Library API Reference</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -51,8 +51,6 @@
                   <dd><a href="RemoteControllerSignalWidget.html">RemoteControlSignalWidget</a>
                   </dd>
                   <dd><a href="GPSSignalWidget.html">GPSSignalWidget</a>
-                  </dd>
-                  <dd><a href="DULWiFiSignalWidget.html">WiFiSignalWidget</a>
                   </dd>
                   <dd><a href="VideoSignalWidget.html">VideoSignalWidget</a>
                   </dd>
@@ -112,6 +110,8 @@
                   </dd>
                   <dd><a href="CompassCalibratingWorkFlow.html">CompassCalibratingWorkFlow</a>
                   </dd>
+                  <dd><a href="DULWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  </dd>
           </dl>
           <dl>
             <dt>Panel
@@ -134,6 +134,36 @@
 <p><font color="#666">The video feed from camera.</font></p>
 <h5 id="usage">Usage:</h5>
 <p><font color="#666">To allow user to interact with the video feed, use this widget in conjunction with <code></code>FPVOverlayWidget</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="dulfpvwidget_setvideosource"><div class="api-col left">Video Source</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#dulfpvwidget_setvideosource_inline">setVideoSource</a></div></div><div class="inline-doc" id="dulfpvwidget_setvideosource_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setVideoSource</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVideoSource</span><span class="params">(VideoSource videoSource)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">The FPVWidget will always show the HD_Gimbal video feed if &quot;true&quot;. By default, this flag is set  to &quot;true&quot;, which means the FPVWidget will set the live video channel to HD_GIMBAL automatically  when connecting the product. So far this flag only works for the product type M600, M600Pro, A3, or N3.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DULFPVWidget.html#dulfpvwidget_videosource">VideoSource</a> <font color="#000">videoSource</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../Widgets/DULFPVWidget.html#dulfpvwidget_videosource">VideoSource</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="dulfpvwidget_getvideosource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#dulfpvwidget_getvideosource_inline">getVideoSource</a></div></div><div class="inline-doc" id="dulfpvwidget_getvideosource_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getVideoSource</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">VideoSource <span class="title">getVideoSource</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Retrieves the type of the video feed selection.</font></p>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DULFPVWidget.html#dulfpvwidget_videosource">VideoSource</a></font></td><td><font color="#666"><i>An enum value of <code><a href="../Widgets/DULFPVWidget.html#dulfpvwidget_videosource">VideoSource</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="dulfpvwidget_videosource"><div class="api-col left">Video Source Enum</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#dulfpvwidget_videosource_inline">VideoSource</a></div></div><div class="inline-doc" id="dulfpvwidget_videosource_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>VideoSource</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> VideoSource</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Options for the user to select the video feed to associate with the FPVWidget.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#dulfpvwidget_videosource_auto_inline"></a>AUTO</font></td><td><font color="#666">Auto switch from PRIMARY video feed to SECONDARY video feed to show the DJICamera live  video when connecting with M600, M600Pro, A3, or N3 product. It is PRIMARY video feed by  default when connecting with other products.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#dulfpvwidget_videosource_primary_inline"></a>PRIMARY</font></td><td><font color="#666">The first video feed of getVideoFeeds array list in VideoFeeder singleton object.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#dulfpvwidget_videosource_secondary_inline"></a>SECONDARY</font></td><td><font color="#666">The second video feed of getVideoFeeds array list in VideoFeeder singleton object.</font></td></tr></table></html>
+<h5 id="class-members-v2">Class Members:</h5>
+</div>
 
         </div>
       </div>

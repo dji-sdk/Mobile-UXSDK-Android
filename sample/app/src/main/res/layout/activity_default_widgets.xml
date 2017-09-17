@@ -63,9 +63,9 @@
             custom:excludeView="singleVoltage"/>
 
         <dji.ui.widget.ConnectionWidget
-            android:layout_marginTop="5dp"
-            android:layout_width="22dp"
-            android:layout_height="22dp"/>
+            android:layout_marginTop="3dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"/>
     </LinearLayout>
 
 

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DJI Sample App</string>
+    <string name="select_all">Select All</string>
+    <string name="select_none">Select None</string>
+    <string name="search">Search</string>
+    <string name="run">Run</string>
+    <string name="txt_video_feed_selection">Change Video Source: </string>
+    <string name="txt_video_dynamic_size">Test FPV widget view in different size: </string>
+    <string name="set_auto_video_feed">Auto</string>
+    <string name="set_primary_video_feed">Primary</string>
+    <string name="set_secondary_video_feed">Secondary</string>
+    <string name="set_fpv_size">Resize</string>
+
 </resources>

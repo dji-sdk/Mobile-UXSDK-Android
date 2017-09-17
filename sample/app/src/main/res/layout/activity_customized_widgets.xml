@@ -10,8 +10,23 @@
     tools:context="com.dji.ui.sample.CustomizedWidgetsActivity">
 
     <dji.ui.widget.FPVWidget
+        android:id="@+id/fpv_custom_widget"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        custom:videoSource="primary"/>
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/debug_2">
+        <dji.ui.widget.FPVWidget
+            android:id="@+id/secondary_fpv_widtet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            custom:videoSource="secondary"/>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,9 +117,68 @@
 
         <!-- Show customized battery widget -->
         <com.dji.ui.sample.custom.CustomizedBatteryWidget
-            android:layout_width="60dp"
+            android:layout_width="96dp"
             android:layout_height="22dp"
             />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/video_source_test"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txt_video_feed_selection"/>
+        <Button
+            android:id="@+id/primary_video_feed"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/set_primary_video_feed"
+            android:onClick="onPrimaryClick"/>
+
+        <Button
+            android:id="@+id/secondary_video_feed"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/set_secondary_video_feed"
+            android:onClick="onSecondaryClick"/>
+
+        <Button
+            android:id="@+id/auto_video_feed"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/set_auto_video_feed"
+            android:onClick="onAutoClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/video_source_test">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txt_video_dynamic_size"/>
+        <Button
+            android:id="@+id/change_size"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/set_fpv_size"
+            android:onClick="onResizeClick"/>
+    </LinearLayout>
+
 </RelativeLayout>

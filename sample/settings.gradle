@@ -1,1 +1,1 @@
-include ':app', ':dji-sdk', ':dji-uilibrary'
+include ':app'

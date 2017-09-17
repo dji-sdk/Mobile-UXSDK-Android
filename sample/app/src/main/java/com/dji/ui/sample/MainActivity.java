@@ -23,7 +23,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Main activity that displays three choices to user */
 public class MainActivity extends Activity implements View.OnClickListener {
-    private static boolean isStarted = false;
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
     private DJISDKManager.SDKManagerCallback registrationCallback = new DJISDKManager.SDKManagerCallback() {
 
@@ -67,7 +66,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        isStarted = true;
         setContentView(R.layout.activity_main);
         findViewById(R.id.complete_ui_widgets).setOnClickListener(this);
         findViewById(R.id.bt_customized_ui_widgets).setOnClickListener(this);
@@ -120,13 +118,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void startSDKRegistration() {
-        if (!isRegistrationInProgress.get()) {
-            isRegistrationInProgress.set(true);
+        if (isRegistrationInProgress.compareAndSet(false, true)) {
             AsyncTask.execute(new Runnable() {
                 @Override
                 public void run() {
                     DJISDKManager.getInstance()
-                                 .registerApp(new WeakReference<>(MainActivity.this).get(), registrationCallback);
+                                 .registerApp(MainActivity.this, registrationCallback);
                 }
             });
         }
@@ -144,9 +141,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Intent intent = new Intent(this, nextActivityClass);
         startActivity(intent);
-    }
-
-    public static boolean isStarted() {
-        return isStarted;
     }
 }
