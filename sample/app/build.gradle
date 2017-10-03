@@ -8,7 +8,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
-        versionName "4.3.0"
+        versionName "4.3.2"
         multiDexEnabled true
     }
     buildTypes {
@@ -26,5 +26,5 @@ android {
 }
 
 dependencies {
-    compile 'com.dji:dji-uilibrary:4.3.0'
+    compile 'com.dji:dji-uilibrary:4.3.2'
 }
