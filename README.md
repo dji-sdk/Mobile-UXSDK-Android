@@ -5,18 +5,24 @@
 The UILibrary is a suite of product agnostic UI objects that fast tracks the development of Android applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
 
 ## Integration
+
 Declare dependency via Maven:
-```xml
+
+~~~xml
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-uilibrary</artifactId>
     <version>4.3.2</version>
 </dependency>
-```
+~~~
+
 or Gradle:
-```groovy
+
+~~~groovy
 compile 'com.dji:dji-uilibrary:4.3.2'
-```
+~~~
+
+For further detail on how to integrate the DJI UILibrary into your Android Studio project, please check the [Getting Started with UI Library](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UILibraryDemo.html#import-maven-dependency) tutorial.
 
 ## Get Started With DJI UI Library
 
