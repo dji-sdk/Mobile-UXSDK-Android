@@ -7,8 +7,6 @@ android {
         applicationId "com.dji.ui.sample"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 1
-        versionName "4.3.2"
         multiDexEnabled true
     }
     buildTypes {
@@ -23,8 +21,20 @@ android {
     lintOptions{
         abortOnError false
     }
+    packagingOptions{
+        doNotStrip "*/*/libdjivideo.so"
+        doNotStrip "*/*/libSDKRelativeJNI.so"
+        doNotStrip "*/*/libFlyForbid.so"
+        doNotStrip "*/*/libduml_vision_bokeh.so"
+        doNotStrip "*/*/libyuv2.so"
+        doNotStrip "*/*/libGroudStation.so"
+        doNotStrip "*/*/libFRCorkscrew.so"
+        doNotStrip "*/*/libUpgradeVerify.so"
+        doNotStrip "*/*/libFR.so"
+    }
 }
 
 dependencies {
-    compile 'com.dji:dji-uilibrary:4.3.2'
+    compile 'com.dji:dji-uilibrary:4.4.0'
+    provided 'com.dji:dji-sdk-provided:4.4.0'
 }

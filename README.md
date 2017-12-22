@@ -12,14 +12,21 @@ Declare dependency via Maven:
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-uilibrary</artifactId>
-    <version>4.3.2</version>
+    <version>4.4.0</version>
+</dependency>
+
+<dependency>
+    <groupId>com.dji</groupId>
+    <artifactId>dji-sdk-provided</artifactId>
+    <version>4.4.0</version>
 </dependency>
 ~~~
 
 or Gradle:
 
 ~~~groovy
-compile 'com.dji:dji-uilibrary:4.3.2'
+compile 'com.dji:dji-uilibrary:4.4.0'
+provided 'com.dji:dji-sdk-provided:4.4.0'
 ~~~
 
 For further detail on how to integrate the DJI UILibrary into your Android Studio project, please check the [Getting Started with UI Library](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UILibraryDemo.html#import-maven-dependency) tutorial.

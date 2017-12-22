@@ -29,6 +29,7 @@
         android:required="true" />
 
     <application
+        android:name=".MApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -38,6 +39,11 @@
         <!-- DJI SDK -->
         <uses-library android:name="com.android.future.usb.accessory" />
 
+        <!--
+            ADD API_KEY HERE and make sure you
+            are connected to the Internet before
+            the app is launched
+        -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
             android:value="Please enter your App Key here." />

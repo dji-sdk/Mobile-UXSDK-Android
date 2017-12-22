@@ -95,13 +95,18 @@
     <orderEntry type="jdk" jdkName="Android API 24 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="TEST" name="multidex-instrumentation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="dji-uilibrary-4.3.2" level="project" />
-    <orderEntry type="library" exported="" name="android-database-sqlcipher-3.5.7" level="project" />
+    <orderEntry type="library" exported="" name="wire-runtime-2.2.0" level="project" />
+    <orderEntry type="library" exported="" name="dji-uilibrary-4.4.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="dji-sdk-4.4.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-24.2.0" level="project" />
-    <orderEntry type="library" exported="" name="dji-sdk-4.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-24.2.0" level="project" />
-    <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.8.2" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-24.2.0" level="project" />
+    <orderEntry type="library" exported="" name="bcpkix-jdk15on-1.57" level="project" />
+    <orderEntry type="library" exported="" name="bcprov-jdk15on-1.57" level="project" />
+    <orderEntry type="library" exported="" name="dji-sdk-provided-4.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.2.0" level="project" />
+    <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
   </component>
 </module>

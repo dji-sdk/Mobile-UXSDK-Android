@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.dji.ui.sample.R;
-import dji.common.battery.BatteryConnectionState;
+import dji.common.battery.ConnectionState;
 
 /**
  * Override default battery widget with custom UI resources and logic
@@ -76,8 +76,8 @@ public class CustomizedBatteryWidget extends dji.ui.widget.BatteryWidget {
 
     /** Called when battery state changes from error to normal or vice versa */
     @Override
-    public void onBatteryConnectionStateChange(BatteryConnectionState status) {
-        if (status != BatteryConnectionState.NORMAL) {
+    public void onBatteryConnectionStateChange(ConnectionState status) {
+        if (status != ConnectionState.NORMAL) {
             batteryIconErrorRes = R.mipmap.battery_error;
         } else {
             batteryIconErrorRes = 0;

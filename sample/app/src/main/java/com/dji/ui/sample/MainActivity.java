@@ -11,11 +11,16 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
+import dji.common.useraccount.UserAccountState;
+import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.useraccount.UserAccountManager;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +38,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 DJISDKManager.getInstance().startConnectionToProduct();
 
                 Toast.makeText(getApplicationContext(), "SDK registration succeeded!", Toast.LENGTH_LONG).show();
+
+                loginAccount();
+
             } else {
 
                 Toast.makeText(getApplicationContext(),
@@ -69,7 +77,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         findViewById(R.id.complete_ui_widgets).setOnClickListener(this);
         findViewById(R.id.bt_customized_ui_widgets).setOnClickListener(this);
+        TextView versionText = (TextView) findViewById(R.id.version);
+        versionText.setText(getResources().getString(R.string.sdk_version, DJISDKManager.getInstance().getSDKVersion()));
         checkAndRequestPermissions();
+    }
+
+    private void loginAccount(){
+
+        UserAccountManager.getInstance().logIntoDJIUserAccount(this,
+                new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
+                    @Override
+                    public void onSuccess(final UserAccountState userAccountState) {
+                    }
+                    @Override
+                    public void onFailure(DJIError error) {
+                    }
+                });
     }
 
     /**
@@ -105,7 +128,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (requestCode == REQUEST_PERMISSION_CODE) {
             for (int i = grantResults.length - 1; i >= 0; i--) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
-                    missingPermission.remove(i);
+                    missingPermission.remove(permissions[i]);
                 }
             }
         }

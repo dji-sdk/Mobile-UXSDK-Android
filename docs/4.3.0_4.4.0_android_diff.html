@@ -1,0 +1,50 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK UI Libraries 4.3.0 to 4.4.0 Differences</h1>
+
+<br>
+
+<h2>API changes</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">4.3.0 Parent and Name</font></td><td width=15%><font color="#000">4.3.0 Code</font></td><td width=15%><font color="#000">4.4.0 Parent and Name</font></td><td width=15%><font color="#000">4.4.0 Code</font></td><td width=3%><font color="#000">Parent</font></td><td width=3%><font color="#000">Name</font></td><td width=3%><font color="#000">Type</font></td><td width=3%><font color="#000">Param</font></td><td width=3%><font color="#000">Return</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.BatteryWidget.</span><span class="interface-name">onBatteryConnectionStateChange</span></td><td width=15%><span class="source-code">void onBatteryConnectionStateChange(@Nullable BatteryConnectionState status) </span></td><td width=15%><span class="interface-parent">dji.ui.widget.BatteryWidget.</span><span class="interface-name">onBatteryConnectionStateChange</span></td><td width=15%><span class="source-code">void onBatteryConnectionStateChange(@Nullable ConnectionState status) </span></td><td width=3%></td><td width=3%></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td></tr></table><br>
+
+<h2>APIs added to 4.4.0</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.</span><span class="interface-name">HistogramWidget</span></td><td width=15%><span class="source-code">class HistogramWidget extends DULFrameLayoutWidget implements View.OnTouchListener, View.OnClickListener </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.</span><span class="interface-name">RadarWidget</span></td><td width=15%><span class="source-code">class RadarWidget extends DULFrameLayoutWidget </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.PreFlightStatusWidget.</span><span class="interface-name">StatusType</span></td><td width=15%><span class="source-code">enum StatusType </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.PreFlightStatusWidget.StatusType.</span><span class="interface-name">ERROR</span></td><td width=15%><span class="source-code">        ERROR(3)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.PreFlightStatusWidget.StatusType.</span><span class="interface-name">GOOD</span></td><td width=15%><span class="source-code">        GOOD(1)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.PreFlightStatusWidget.StatusType.</span><span class="interface-name">OFFLINE</span></td><td width=15%><span class="source-code">        OFFLINE(0)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.PreFlightStatusWidget.StatusType.</span><span class="interface-name">WARNING</span></td><td width=15%><span class="source-code">        WARNING(2)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.TakeOffWidget.</span><span class="interface-name">onLandingConfirmedResult</span></td><td width=15%><span class="source-code">void onLandingConfirmedResult(DJIError error) </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ui.widget.TakeOffWidget.</span><span class="interface-name">performLandingConfirmationAction</span></td><td width=15%><span class="source-code">void performLandingConfirmationAction() </span></td></tr></table><p style="font-size:50%; color:white">09d34a8 0c68a42 </p></body>
+</html>
+

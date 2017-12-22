@@ -54,8 +54,8 @@
             android:layout_height="22dp"/>
 
         <dji.ui.widget.WiFiSignalWidget
-            android:layout_width="22dp"
-            android:layout_height="20dp"/>
+            android:layout_width="32dp"
+            android:layout_height="25dp"/>
 
         <dji.ui.widget.BatteryWidget
             android:layout_width="96dp"
@@ -119,10 +119,10 @@
     <dji.ui.widget.ManualFocusWidget
         android:layout_below="@id/camera"
         android:layout_alignLeft="@id/camera"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:layout_width="42dp"
-        android:layout_height="218dp"
+        android:layout_width="50dp"
+        android:layout_height="210dp"
         tools:ignore="RtlHardcoded"/>
 
     <dji.ui.widget.RemainingFlightTimeWidget
@@ -151,6 +151,7 @@
 
     <!--Take off and return home buttons on left -->
     <LinearLayout
+        android:id="@+id/TakeOffReturnPanel"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -177,6 +178,28 @@
         android:layout_height="213dp"
         tools:ignore="RtlHardcoded"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_toRightOf="@id/TakeOffReturnPanel"
+        android:layout_toLeftOf="@id/CameraCapturePanel"
+        android:layout_below="@id/camera"
+        tools:ignore="RtlHardcoded">
+
+        <dji.ui.widget.RadarWidget
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <dji.ui.widget.HistogramWidget
+        android:layout_toRightOf="@id/TakeOffReturnPanel"
+        android:layout_centerVertical="true"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        tools:ignore="RtlHardcoded"/>
 
     <dji.ui.panel.CameraSettingExposurePanel
         android:layout_width="180dp"
@@ -203,7 +226,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/signal"
-        custom:excludeItem="aircraftBatteryTemperature|ESCStatus"
+        custom:excludeItem="ESCStatus"
         android:visibility="gone"/>
 
 </RelativeLayout>
