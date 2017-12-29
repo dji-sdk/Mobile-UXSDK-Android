@@ -35,6 +35,6 @@ android {
 }
 
 dependencies {
-    compile 'com.dji:dji-uilibrary:4.4.0'
-    provided 'com.dji:dji-sdk-provided:4.4.0'
+    compile 'com.dji:dji-uilibrary:4.4.1'
+    provided 'com.dji:dji-sdk-provided:4.4.1'
 }
