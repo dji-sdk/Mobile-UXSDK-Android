@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:background="#242d34"
     android:orientation="horizontal"
-    tools:context="com.dji.ui.sample.CustomizedWidgetsActivity">
+    tools:context="com.dji.ux.sample.CustomizedWidgetsActivity">
 
-    <dji.ui.widget.FPVWidget
+    <dji.ux.widget.FPVWidget
         android:id="@+id/fpv_custom_widget"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="@color/debug_2">
-        <dji.ui.widget.FPVWidget
+        <dji.ux.widget.FPVWidget
             android:id="@+id/secondary_fpv_widtet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <!-- Show customized pre-flight status widget -->
-        <com.dji.ui.sample.custom.CustomizedPreFlightWidget
+        <com.dji.ux.sample.custom.CustomizedPreFlightWidget
             android:id="@+id/status"
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -48,7 +48,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"/>
 
@@ -57,7 +57,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="batteryIcon"/>
@@ -67,7 +67,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="percentage"/>
@@ -76,7 +76,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="batteryIcon|percentage"/>
@@ -85,7 +85,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="singleVoltage|doubleVoltage"/>
@@ -95,7 +95,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="singleVoltage|doubleVoltage|batteryIcon"/>
@@ -105,7 +105,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <dji.ui.widget.BatteryWidget
+        <dji.ux.widget.BatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             custom:excludeView="singleVoltage|doubleVoltage|percentage"/>
@@ -116,7 +116,7 @@
             android:layout_weight="1" />
 
         <!-- Show customized battery widget -->
-        <com.dji.ui.sample.custom.CustomizedBatteryWidget
+        <com.dji.ux.sample.custom.CustomizedBatteryWidget
             android:layout_width="96dp"
             android:layout_height="22dp"
             />

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <dji.ux.widget.MapWidget
+        android:id="@+id/map_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_gray"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/home_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="Home Direction"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/lock_bounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="Auto Frame"
+            android:checked="true"/>
+
+        <!--CheckBox
+            android:id="@+id/mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="Mission"/-->
+
+        <CheckBox
+            android:id="@+id/flight_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="Show Flight Path"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/home_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="Show Home Point"
+            android:checked="true"/>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/map_type_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentRight="true">
+
+        <RadioButton
+            android:id="@+id/map_type_standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"
+            android:checked="true"
+            android:text="Standard"/>
+
+        <RadioButton
+            android:id="@+id/map_type_satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"
+            android:text="Satellite"/>
+
+        <RadioButton
+            android:id="@+id/map_type_hybrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"
+            android:text="Hybrid"/>
+
+    </RadioGroup>
+    <Button
+        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/map_center_selector"
+        android:text="Fly Zone"
+        android:id="@+id/btnFlyZone"
+        android:background="@drawable/selector_map_type_bg">
+    </Button>
+    <RadioGroup
+        android:id="@+id/map_center_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentLeft="true">
+
+        <RadioButton
+
+            android:id="@+id/map_center_aircraft"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"
+            android:checked="true"
+            android:drawableStart="@drawable/ic_compass_aircraft"/>
+
+        <RadioButton
+            android:id="@+id/map_center_home"
+            android:layout_width="40dp"
+            android:drawableStart="@drawable/ic_compass_home"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"/>
+
+        <RadioButton
+            android:id="@+id/map_center_none"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:padding="8dp"
+            android:background="@drawable/selector_map_type_bg"
+            android:textColor="@drawable/selector_map_type_text"
+            android:drawableStart="@android:drawable/ic_notification_clear_all"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/clear_flight_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/light_gray"
+        android:padding="8dp"
+        android:layout_margin="12dp"
+        android:textColor="@color/blue"
+        android:text="Clear Flight Path"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/light_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:layout_margin="8dp">
+
+        <RadioGroup
+            android:id="@+id/replace_icon_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <RadioButton
+                android:id="@+id/replace_icon_aircraft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:textColor="@drawable/selector_map_type_text"
+                android:checked="true"
+                android:text="Aircraft"/>
+
+            <RadioButton
+                android:id="@+id/replace_icon_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:textColor="@drawable/selector_map_type_text"
+                android:text="Home"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/replace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/replace_icon_selector"
+            android:layout_centerHorizontal="true"
+            android:padding="8dp"
+            android:text="Replace Icon"
+            android:textColor="@color/blue"/>
+
+        <ImageView
+            android:id="@+id/icon_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/replace"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_drone"/>
+
+        <ImageView
+            android:id="@+id/icon_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/replace"
+            android:layout_toRightOf="@id/icon_1"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_butterfly"/>
+
+        <ImageView
+            android:id="@+id/icon_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/replace"
+            android:layout_toRightOf="@id/icon_2"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_bird"/>
+
+        <ImageView
+            android:id="@+id/icon_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_1"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"/>
+
+        <ImageView
+            android:id="@+id/icon_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_2"
+            android:layout_toRightOf="@id/icon_4"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_cat"/>
+
+        <ImageView
+            android:id="@+id/icon_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_3"
+            android:layout_toRightOf="@id/icon_5"
+            android:background="@drawable/selector_icon_bg"
+            android:padding="8dp"
+            android:src="@drawable/ic_dog"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

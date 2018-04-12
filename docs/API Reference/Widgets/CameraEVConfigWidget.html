@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UI LIBRARY API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android UX SDK API Reference</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -42,11 +42,11 @@
                   </dd>
                   <dd><a href="PreFlightStatusWidget.html">PreFlightStatusWidget</a>
                   </dd>
-                  <dd><a href="DULConnectionWidget.html">ConnectionWidget</a>
+                  <dd><a href="DUXConnectionWidget.html">ConnectionWidget</a>
                   </dd>
-                  <dd><a href="DULFlightModeWidget.html">FlightModeWidget</a>
+                  <dd><a href="DUXFlightModeWidget.html">FlightModeWidget</a>
                   </dd>
-                  <dd><a href="DULBatteryWidget.html">BatteryWidget</a>
+                  <dd><a href="DUXBatteryWidget.html">BatteryWidget</a>
                   </dd>
                   <dd><a href="RemoteControllerSignalWidget.html">RemoteControlSignalWidget</a>
                   </dd>
@@ -56,9 +56,9 @@
                   </dd>
                   <dd><a href="VisionWidget.html">VisionWidget</a>
                   </dd>
-                  <dd><a href="DULDashboardWidget.html">DashboardWidget</a>
+                  <dd><a href="DUXDashboardWidget.html">DashboardWidget</a>
                   </dd>
-                  <dd><a href="DULCompassWidget.html">CompassWidget</a>
+                  <dd><a href="DUXCompassWidget.html">CompassWidget</a>
                   </dd>
                   <dd><a href="DistanceFromHomeWidget.html">DistanceHomeWidget</a>
                   </dd>
@@ -80,6 +80,8 @@
                   </dd>
                   <dd><a href="RemainingFlightTimeWidget.html">RemainingFlightTimeWidget</a>
                   </dd>
+                  <dd><a href="DULColorWaveformWidget.html">ColorWaveformWidget</a>
+                  </dd>
                   <dd><a href="DULFPVWidget.html">FPVWidget</a>
                   </dd>
                   <dd><a href="FPVOverlayWidget.html">FPVOverlayWidget</a>
@@ -100,21 +102,39 @@
                   </dd>
                   <dd><a href="CameraConfigApertureWidget.html">CameraConfigApertureWidget</a>
                   </dd>
-                  <dd><a href="CameraConfigISOWidget.html">CameraConfigISOWidget</a>
+                  <dd><a href="CameraConfigISOWidget.html">CameraConfigISOAndEIWidget</a>
                   </dd>
                   <dd><a href="CameraConfigWBWidget.html">CameraConfigWBWidget</a>
                   </dd>
                   <dd><a href="CameraConfigStorageWidget.html">CameraConfigStorageWidget</a>
                   </dd>
+                  <dd><a href="CameraConfigSSDWidget.html">CameraConfigSSDWidget</a>
+                  </dd>
                   <dd><a href="" class="active">CameraConfigEVWidget</a>
                   </dd>
                   <dd><a href="CompassCalibratingWorkFlow.html">CompassCalibratingWorkFlow</a>
                   </dd>
-                  <dd><a href="DULWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJILatLng.html">DJILatLng</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
                   </dd>
-                  <dd><a href="DULRadarWidget.html">RadarWidget</a>
+                  <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
                   </dd>
-                  <dd><a href="DULHistogramWidget.html">HistogramWidget</a>
+                  <dd><a href="DUXRadarWidget.html">RadarWidget</a>
+                  </dd>
+                  <dd><a href="DUXHistogramWidget.html">HistogramWidget</a>
                   </dd>
           </dl>
           <dl>
@@ -124,6 +144,8 @@
                   </dd>
                   <dd><a href="CameraSettingExposurePanel.html">CameraSettingExposurePanel</a>
                   </dd>
+                  <dd><a href="RTKStatusPanel.html">RTKStatusPanel</a>
+                  </dd>
                   <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
                   </dd>
           </dl>
@@ -132,7 +154,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>CameraConfigEVWidget</h1></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CameraConfigEVWidget</span> <span class="keyword">extends</span> <span class="title">CameraInfoBaseWidget</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ui.widget.config</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>CameraInfoBaseWidget</code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget.config</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>CameraInfoBaseWidget</code></font></td></tr></table></html>
 <h5 id="display">Display:</h5>
 <p><img src="../assets/EV.gif" alt="uilib_image"><br style="clear:both"></p>
 <p><font color="#666">Camera's current EV setting.</font></p>

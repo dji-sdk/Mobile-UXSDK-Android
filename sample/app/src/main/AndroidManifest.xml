@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dji.ui.sample">
+    package="com.dji.ux.sample">
 
     <!-- DJI SDK need these permissions -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -39,14 +39,38 @@
         <!-- DJI SDK -->
         <uses-library android:name="com.android.future.usb.accessory" />
 
-        <!--
-            ADD API_KEY HERE and make sure you
-            are connected to the Internet before
-            the app is launched
-        -->
         <meta-data
             android:name="com.dji.sdk.API_KEY"
             android:value="Please enter your App Key here." />
+
+        <!-- Here Maps -->
+        <meta-data android:name="com.here.android.maps.appid"
+                   android:value=""/>
+        <meta-data android:name="com.here.android.maps.apptoken"
+                   android:value=""/>
+        <meta-data android:name="com.here.android.maps.license.key"
+                   android:value=""/>
+
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:label="HereMapService"
+            android:process="global.Here.Map.Service.v3"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.here.android.mpa.service.MapService.v3" >
+                </action>
+            </intent-filter>
+        </service>
+
+        <!-- Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value=""/>
+
+        <!-- AMaps -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value=""/>
 
         <activity
             android:name=".MainActivity"
@@ -75,6 +99,12 @@
             android:name=".CustomizedWidgetsActivity"
             android:launchMode="singleTop"
             android:label="Customized Widgets"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".MapWidgetActivity"
+            android:launchMode="singleTop"
+            android:label="Map Widget"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 

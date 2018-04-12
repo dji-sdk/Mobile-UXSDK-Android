@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/here_map"
+          android:title="Here Maps"/>
+    <item android:id="@+id/google_map"
+          android:title="Google Maps" />
+    <item android:id="@+id/amap"
+          android:title="AMaps" />
+</menu>
