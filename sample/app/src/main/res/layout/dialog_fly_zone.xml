@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <CheckBox
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="All"/>
+
+        <CheckBox
+            android:id="@+id/auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/all"
+            android:textColor="@color/dark_gray"
+            android:text="Authorization"/>
+
+        <Button
+            android:id="@+id/auth_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/auth"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#ffff00"/>
+
+        <CheckBox
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auth"
+            android:textColor="@color/dark_gray"
+            android:text="Warning"/>
+
+        <Button
+            android:id="@+id/warning_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/warning"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#00ff00"/>
+
+        <CheckBox
+            android:id="@+id/enhanced_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/warning"
+            android:textColor="@color/dark_gray"
+            android:text="Enhanced Warning"/>
+
+        <Button
+            android:id="@+id/enhanced_warning_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/enhanced_warning"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#00ff00"/>
+
+        <CheckBox
+            android:id="@+id/restricted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enhanced_warning"
+            android:textColor="@color/dark_gray"
+            android:text="Restricted"/>
+
+        <Button
+            android:id="@+id/restricted_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/restricted"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#ff0000"/>
+
+        <TextView
+            android:id="@+id/max_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restricted"
+            android:textColor="@color/dark_gray"
+            android:text="Maximum Height"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/max_height_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/max_height"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/self_unlocked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/max_height"
+            android:textColor="@color/dark_gray"
+            android:text="Self Unlocked"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/self_unlocked_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/self_unlocked"
+            android:layout_alignParentRight="true"
+            android:text="@string/new_color"
+            android:background="#9C27B0"/>
+
+    </RelativeLayout>
+
+</merge>

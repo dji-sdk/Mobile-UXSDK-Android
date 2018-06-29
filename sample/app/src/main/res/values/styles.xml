@@ -1,11 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="AppTheme" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/background_blue</item>
         <item name="android:textColor">@color/light_gray</item>
         <item name="android:textColorPrimary">@color/medium_blue</item>
         <item name="android:textColorSecondary">@color/light_gray</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="MapTheme" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/blue</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 

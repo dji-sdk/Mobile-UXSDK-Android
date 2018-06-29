@@ -22,25 +22,29 @@ import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import dji.common.error.DJIError;
-import dji.common.error.DJISDKError;
-import dji.common.useraccount.UserAccountState;
-import dji.common.util.CommonCallbacks;
-import dji.log.DJILog;
-import dji.sdk.base.BaseProduct;
-import dji.sdk.sdkmanager.DJISDKManager;
-import dji.sdk.useraccount.UserAccountManager;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import dji.common.error.DJIError;
+import dji.common.error.DJISDKError;
+import dji.common.useraccount.UserAccountState;
+import dji.common.util.CommonCallbacks;
+import dji.log.DJILog;
+import dji.sdk.base.BaseComponent;
+import dji.sdk.base.BaseProduct;
+import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.useraccount.UserAccountManager;
+
 /** Main activity that displays three choices to user */
 public class MainActivity extends Activity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
     private static final String TAG = "MainActivity";
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
+    private static boolean isAppStarted = false;
     private DJISDKManager.SDKManagerCallback registrationCallback = new DJISDKManager.SDKManagerCallback() {
 
         @Override
@@ -60,11 +64,33 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
                                Toast.LENGTH_LONG).show();
             }
         }
+        @Override
+        public void onProductDisconnect() {
+            Toast.makeText(getApplicationContext(),
+                           "product disconnect!",
+                           Toast.LENGTH_LONG).show();
+        }
+        @Override
+        public void onProductConnect(BaseProduct product) {
+            Toast.makeText(getApplicationContext(),
+                           "product connect!",
+                           Toast.LENGTH_LONG).show();
+        }
 
         @Override
-        public void onProductChange(BaseProduct djiBaseProduct, BaseProduct djiBaseProduct1) {
+        public void onComponentChange(BaseProduct.ComponentKey key,
+                                      BaseComponent oldComponent,
+                                      BaseComponent newComponent) {
+            Toast.makeText(getApplicationContext(),
+                           key.toString() + " changed",
+                           Toast.LENGTH_LONG).show();
+
         }
     };
+
+    public static boolean isStarted() {
+        return isAppStarted;
+    }
     private static final String[] REQUIRED_PERMISSION_LIST = new String[] {
         Manifest.permission.VIBRATE,
         Manifest.permission.INTERNET,
@@ -88,6 +114,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        isAppStarted = true;
         findViewById(R.id.complete_ui_widgets).setOnClickListener(this);
         findViewById(R.id.bt_customized_ui_widgets).setOnClickListener(this);
         findViewById(R.id.bt_map_widget).setOnClickListener(this);

@@ -81,6 +81,10 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
+            android:theme="@android:style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
             </intent-filter>
@@ -92,21 +96,27 @@
         <activity
             android:name=".CompleteWidgetActivity"
             android:label="Default Widgets"
-            android:launchMode="singleTop"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".CustomizedWidgetsActivity"
-            android:launchMode="singleTop"
             android:label="Customized Widgets"
             android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         <activity
             android:name=".MapWidgetActivity"
-            android:launchMode="singleTop"
             android:label="Map Widget"
             android:screenOrientation="sensorLandscape"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+            android:theme="@style/MapTheme" />
+        <receiver
+            android:name=".OnDJIUSBAttachedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.dji.accessory.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+
+        </receiver>
 
     </application>
 

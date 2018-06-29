@@ -5,35 +5,68 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RadioGroup;
-import com.dji.mapkit.maps.DJIMap;
-import dji.common.flightcontroller.flyzone.FlyZoneCategory;
+import android.widget.SeekBar;
+import android.widget.Spinner;
 
+import android.widget.TextView;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.model.HeatmapTileProvider;
+import com.amap.api.maps.model.TileOverlay;
+import com.amap.api.maps.model.TileOverlayOptions;
+import com.dji.mapkit.core.maps.DJIMap;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.here.android.mpa.common.GeoCoordinate;
+import com.here.android.mpa.mapping.Map;
+import com.here.android.mpa.mapping.MapOverlay;
+
+import java.util.Arrays;
+
+import dji.common.flightcontroller.flyzone.FlyZoneCategory;
 import dji.ux.widget.MapWidget;
+import java.util.Random;
 
 public class MapWidgetActivity extends Activity implements CompoundButton.OnCheckedChangeListener,
-    RadioGroup.OnCheckedChangeListener, View.OnClickListener {
+    RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener,
+    SeekBar.OnSeekBarChangeListener {
     private static final String TAG = "MapWidgetActivity";
     private MapWidget mapWidget;
     private ImageView selectedIcon;
     int[] iconIds = {R.id.icon_1, R.id.icon_2, R.id.icon_3, R.id.icon_4, R.id.icon_5, R.id.icon_6};
-    private boolean isReplacingAircraftIcon = true; // true if replacing aircraft icon, false if replacing home icon
 
     public static final String MAP_PROVIDER = "MapProvider";
-    private final String[] flyZoneType = {"All", "Authorization", "Warning", "Enhanced Warning", "Restricted"};
-    private boolean[] flyZoneEnabled = {true, true, true, true, true};
     private Button flyZoneButton;
+    private Spinner mapSpinner, iconSpinner, lineSpinner;
+    private SeekBar lineWidthPicker;
+    private int lineWidthValue;
+    private TextView lineColor;
+    private MapOverlay mapOverlay;
+    private GroundOverlay groundOverlay;
+    private TileOverlay tileOverlay;
+    private int mapProvider;
+    private Map hereMap;
+    private GoogleMap googleMap;
+    private AMap aMap;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +80,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             }
         };
         Intent intent = getIntent();
-        int mapProvider = intent.getIntExtra(MAP_PROVIDER, 0);
+        mapProvider = intent.getIntExtra(MAP_PROVIDER, 0);
         switch (mapProvider) {
             case 0:
                 mapWidget.initHereMap(onMapReadyListener);
@@ -61,17 +94,19 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         }
         mapWidget.onCreate(savedInstanceState);
 
+        findViewById(R.id.btn_map_provider_test).setOnClickListener(this);
         ((CheckBox)findViewById(R.id.home_direction)).setOnCheckedChangeListener(this);
         ((CheckBox)findViewById(R.id.lock_bounds)).setOnCheckedChangeListener(this);
         ((CheckBox)findViewById(R.id.flight_path)).setOnCheckedChangeListener(this);
         ((CheckBox)findViewById(R.id.home_point)).setOnCheckedChangeListener(this);
-
-        ((RadioGroup)findViewById(R.id.map_type_selector)).setOnCheckedChangeListener(this);
-
-        findViewById(R.id.clear_flight_path).setOnClickListener(this);
-
-        ((RadioGroup)findViewById(R.id.replace_icon_selector)).setOnCheckedChangeListener(this);
+        ((CheckBox)findViewById(R.id.gimbal_yaw)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.flyzone_unlock)).setOnCheckedChangeListener(this);
         ((RadioGroup)findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
+        findViewById(R.id.clear_flight_path).setOnClickListener(this);
+        iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
+        iconSpinner.setOnItemSelectedListener(this);
+        mapSpinner = (Spinner) findViewById(R.id.map_spinner);
+        mapSpinner.setOnItemSelectedListener(this);
 
         findViewById(R.id.replace).setOnClickListener(this);
         selectedIcon = (ImageView) findViewById(R.id.icon_1);
@@ -79,7 +114,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             findViewById(id).setOnClickListener(this);
         }
         findViewById(R.id.icon_1).setSelected(true);
-        flyZoneButton = (Button) findViewById(R.id.btnFlyZone);
+        flyZoneButton = (Button) findViewById(R.id.btn_fly_zone);
         mapWidget.showAllFlyZones();
         flyZoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,34 +122,35 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 showSelectFlyZoneDialog();
             }
         });
+
+        lineSpinner = (Spinner) findViewById(R.id.line_spinner);
+        lineSpinner.setOnItemSelectedListener(this);
+        lineWidthPicker = (SeekBar) findViewById(R.id.line_width_picker);
+        lineWidthPicker.setOnSeekBarChangeListener(this);
+        lineColor = (TextView) findViewById(R.id.line_color);
+        lineColor.setOnClickListener(this);
     }
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         switch (compoundButton.getId()) {
             case R.id.home_direction:
-                if (isChecked) {
-                    mapWidget.showDirectionToHome();
-                } else {
-                    mapWidget.hideDirectionToHome();
-                }
+                mapWidget.setDirectionToHomeVisible(isChecked);
                 break;
             case R.id.lock_bounds:
                 mapWidget.setAutoFrameMap(isChecked);
                 break;
             case R.id.flight_path:
-                if (isChecked) {
-                    mapWidget.showFlightPath();
-                } else {
-                    mapWidget.hideFlightPath();
-                }
+                mapWidget.setFlightPathVisible(isChecked);
                 break;
             case R.id.home_point:
-                if (isChecked) {
-                    mapWidget.showHome();
-                } else {
-                    mapWidget.hideHome();
-                }
+                mapWidget.setHomeVisible(isChecked);
+                break;
+            case R.id.gimbal_yaw:
+                mapWidget.setGimbalAttitudeVisible(isChecked);
+                break;
+            case R.id.flyzone_unlock:
+                mapWidget.setTapToUnlockEnabled(isChecked);
                 break;
         }
     }
@@ -123,15 +159,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     public void onCheckedChanged(RadioGroup radioGroup, int id) {
 
         switch (id) {
-            case R.id.map_type_standard:
-                mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
-                break;
-            case R.id.map_type_satellite:
-                mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
-                break;
-            case R.id.map_type_hybrid:
-                mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
-                break;
             case R.id.map_center_aircraft:
                 mapWidget.setMapCenterLock(MapWidget.MapCenterLock.AIRCRAFT);
                 break;
@@ -141,12 +168,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case R.id.map_center_none:
                 mapWidget.setMapCenterLock(MapWidget.MapCenterLock.NONE);
                 break;
-            case R.id.replace_icon_aircraft:
-                isReplacingAircraftIcon = true;
-                break;
-            case R.id.replace_icon_home:
-                isReplacingAircraftIcon = false;
-                break;
+
         }
     }
 
@@ -158,11 +180,18 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 break;
             case R.id.replace:
                 VectorDrawable drawable = (VectorDrawable) selectedIcon.getDrawable();
-                if (isReplacingAircraftIcon) {
+                if ("Aircraft".equals(iconSpinner.getSelectedItem())) {
                     mapWidget.setAircraftBitmap(getBitmap(drawable));
-                } else {
+                } else if ("Home".equals(iconSpinner.getSelectedItem())) {
                     mapWidget.setHomeBitmap(getBitmap(drawable));
+                } else if ("Gimbal Yaw".equals(iconSpinner.getSelectedItem())) {
+                    mapWidget.setGimbalAttitudeBitmap(getBitmap(drawable));
+                } else if ("Locked Zone".equals(iconSpinner.getSelectedItem())) {
+                    mapWidget.setSelfLockedBitmap(getBitmap(drawable), 0.5f, 0.5f);
+                } else if ("Unlocked Zone".equals(iconSpinner.getSelectedItem())) {
+                    mapWidget.setSelfUnlockedBitmap(getBitmap(drawable), 0.5f, 0.5f);
                 }
+
                 break;
             case R.id.icon_1:
             case R.id.icon_2:
@@ -174,6 +203,12 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 imageView.setSelected(true);
                 selectedIcon.setSelected(false);
                 selectedIcon = imageView;
+                break;
+            case R.id.btn_map_provider_test:
+                addOverlay();
+                break;
+            case R.id.line_color:
+                setRandomLineColor();
                 break;
         }
     }
@@ -217,68 +252,164 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         mapWidget.onLowMemory();
     }
 
-
     private void showSelectFlyZoneDialog() {
+        final FlyZoneDialogView flyZoneDialogView = new FlyZoneDialogView(this);
+        flyZoneDialogView.init(mapWidget);
 
-        DialogInterface.OnMultiChoiceClickListener flyZoneChangeListener = new DialogInterface.OnMultiChoiceClickListener() {
-
+        DialogInterface.OnClickListener positiveClickListener = new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                ListView list = ((AlertDialog) dialog).getListView();
-                switch (which) {
-                    case 0:
-                        for (int i = 0; i < list.getCount(); i++) {
-                            list.setItemChecked(i, true);
-                            flyZoneEnabled[i] = isChecked;
-                        }
-                        if (isChecked) {
-                            mapWidget.showAllFlyZones();
-                        } else {
-                            mapWidget.hideAllFlyZones();
-                        }
-                        break;
-                    case 1:
-                        mapWidget.setFlyZoneVisibility(FlyZoneCategory.AUTHORIZATION, isChecked);
-                        break;
-                    case 2:
-                        mapWidget.setFlyZoneVisibility(FlyZoneCategory.WARNING, isChecked);
-                        break;
-                    case 3:
-                        mapWidget.setFlyZoneVisibility(FlyZoneCategory.ENHANCED_WARNING, isChecked);
-                        break;
-                    case 4:
-                        mapWidget.setFlyZoneVisibility(FlyZoneCategory.RESTRICTED, isChecked);
-                        break;
-                }
-                if (which != 0) {
-                    flyZoneEnabled[which] = isChecked;
-                    boolean isAllChecked = true;
-                    for (int i = 1; i < flyZoneEnabled.length; i++) {
-                        if (!flyZoneEnabled[i]) {
-                            isAllChecked = false;
-                        }
-                    }
-                    if (isAllChecked) {
-                        list.setItemChecked(0, true);
-                        flyZoneEnabled[0] = true;
-                    } else {
-                        list.setItemChecked(0, false);
-                        flyZoneEnabled[0] = false;
-                    }
-
-                }
-
+            public void onClick(DialogInterface dialog, int which) {
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.AUTHORIZATION, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.AUTHORIZATION));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.WARNING, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.WARNING));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.ENHANCED_WARNING, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.ENHANCED_WARNING));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.RESTRICTED, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.RESTRICTED));
                 dialog.dismiss();
             }
-
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Fly Zones");
-        builder.setMultiChoiceItems(flyZoneType, flyZoneEnabled, flyZoneChangeListener);
+        builder.setView(flyZoneDialogView);
+        builder.setPositiveButton("OK", positiveClickListener);
         AlertDialog dialog = builder.create();
         dialog.show();
 
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        switch (parent.getId()) {
+            case R.id.map_spinner:
+                switch ((int) id) {
+                    case 0:
+                        mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
+                        break;
+                    case 1:
+                        mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
+                        break;
+                    case 2:
+                        mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
+                        break;
+                }
+                break;
+            case R.id.line_spinner:
+                int width = 5;
+                switch ((int) id) {
+                    case 0:
+                        width = (int) mapWidget.getDirectionToHomeWidth();
+                        lineColor.setVisibility(View.VISIBLE);
+                        lineColor.setTextColor(mapWidget.getDirectionToHomeColor());
+                        break;
+                    case 1:
+                        width = (int) mapWidget.getFlightPathWidth();
+                        lineColor.setVisibility(View.VISIBLE);
+                        lineColor.setTextColor(mapWidget.getFlightPathColor());
+                        break;
+                    case 2:
+                        width = (int) mapWidget.getFlyZoneBorderWidth();
+                        lineColor.setVisibility(View.GONE);
+                        break;
+                }
+                lineWidthPicker.setProgress(width);
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    private void addOverlay() {
+        float testLat = 37.4419f;
+        float testLng = -122.1430f;
+        switch (mapProvider) {
+            case 0:
+                if (mapOverlay == null) {
+                    hereMap = (Map) mapWidget.getMap().getMap();
+                    ImageView overlayView = new ImageView(MapWidgetActivity.this);
+                    overlayView.setImageDrawable(getResources().getDrawable(R.drawable.ic_drone));
+                    GeoCoordinate testLocation = new GeoCoordinate(testLat, testLng);
+                    mapOverlay = new MapOverlay(overlayView, testLocation);
+                    hereMap.addMapOverlay(mapOverlay);
+                } else {
+                    hereMap.removeMapOverlay(mapOverlay);
+                    mapOverlay = null;
+                }
+                break;
+            case 1:
+                if (groundOverlay == null) {
+                    googleMap = (GoogleMap) mapWidget.getMap().getMap();
+                    LatLng latLng1 = new LatLng(testLat, testLng);
+                    LatLng latLng2 = new LatLng(testLat + 0.25, testLng + 0.25);
+                    LatLng latLng3 = new LatLng(testLat - 0.25, testLng - 0.25);
+                    LatLngBounds bounds = new LatLngBounds(latLng1, latLng2).including(latLng3);
+                    BitmapDescriptor aircraftImage = BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_compass_aircraft));
+                    GroundOverlayOptions groundOverlayOptions = new GroundOverlayOptions();
+                    groundOverlayOptions.image(aircraftImage).positionFromBounds(bounds).transparency(0.5f).visible(true);
+                    groundOverlay = googleMap.addGroundOverlay(groundOverlayOptions);
+                } else {
+                    groundOverlay.remove();
+                    groundOverlay = null;
+                }
+                break;
+            case 2:
+                if (tileOverlay == null) {
+                    aMap = (AMap) mapWidget.getMap().getMap();
+                    com.amap.api.maps.model.LatLng[] latlngs = new com.amap.api.maps.model.LatLng[500];
+                    for (int i = 0; i < 500; i++) {
+                        double x_ = 0;
+                        double y_ = 0;
+                        x_ = Math.random() * 0.5 - 0.25;
+                        y_ = Math.random() * 0.5 - 0.25;
+                        latlngs[i] = new com.amap.api.maps.model.LatLng(testLat + x_, testLng + y_);
+                    }
+                    HeatmapTileProvider.Builder builder = new HeatmapTileProvider.Builder();
+                    builder.data(Arrays.asList(latlngs));
+                    HeatmapTileProvider heatmapTileProvider = builder.build();
+                    TileOverlayOptions tileOverlayOptions = new TileOverlayOptions();
+                    tileOverlayOptions.tileProvider(heatmapTileProvider).visible(true);
+                    tileOverlay = aMap.addTileOverlay(tileOverlayOptions);
+                } else {
+                    tileOverlay.remove();
+                    tileOverlay = null;
+                }
+                break;
+        }
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
+        this.lineWidthValue = progressValue;
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        if ("Home Direction".equals(lineSpinner.getSelectedItem())) {
+            mapWidget.setDirectionToHomeWidth(lineWidthValue);
+        } else if ("Flight Path".equals(lineSpinner.getSelectedItem())) {
+            mapWidget.setFlightPathWidth(lineWidthValue);
+        } else if ("Fly Zone Border".equals(lineSpinner.getSelectedItem())) {
+            mapWidget.setFlyZoneBorderWidth(lineWidthValue);
+        }
+    }
+
+    private void setRandomLineColor() {
+        Random rnd = new Random();
+        @ColorInt int randomColor = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
+        lineColor.setTextColor(randomColor);
+        if ("Home Direction".equals(lineSpinner.getSelectedItem())) {
+            mapWidget.setDirectionToHomeColor(randomColor);
+        } else if ("Flight Path".equals(lineSpinner.getSelectedItem())) {
+            mapWidget.setFlightPathColor(randomColor);
+        }
     }
 
 }

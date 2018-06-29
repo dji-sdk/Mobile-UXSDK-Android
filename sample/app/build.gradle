@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     mavenLocal()
+    google()
 
     //for HERE maps
     flatDir {
@@ -40,13 +41,21 @@ android {
         doNotStrip "*/*/libFRCorkscrew.so"
         doNotStrip "*/*/libUpgradeVerify.so"
         doNotStrip "*/*/libFR.so"
+
+        pickFirst 'lib/*/libstlport_shared.so'
+        pickFirst 'lib/*/libRoadLineRebuildAPI.so'
+        pickFirst 'lib/*/libGNaviUtils.so'
+        pickFirst 'lib/*/libGNaviMapex.so'
+        pickFirst 'lib/*/libGNaviData.so'
+        pickFirst 'lib/*/libGNaviMap.so'
+        pickFirst 'lib/*/libGNaviSearch.so'
         exclude 'META-INF/rxjava.properties'
     }
 }
 
 dependencies {
-    compile 'com.dji:dji-uxsdk:4.5.1'
-    provided ('com.dji:dji-sdk-provided:4.5.1')
+    compile 'com.dji:dji-uxsdk:4.6'
+    provided ('com.dji:dji-sdk-provided:4.6')
 
     compile 'com.amap.api:map2d:5.2.0'
     compile 'com.amap.api:3dmap:5.5.0'
@@ -55,4 +64,5 @@ dependencies {
 
     //HERE maps
     compile(name:'HERE-sdk', ext:'aar')
+
 }

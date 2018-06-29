@@ -10,6 +10,7 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:id="@+id/toggles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -23,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:text="Home Direction"
+            android:text="@string/home_direction"
             android:checked="true"/>
 
         <CheckBox
@@ -31,22 +32,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:text="Auto Frame"
+            android:text="@string/auto_frame"
             android:checked="true"/>
 
-        <!--CheckBox
-            android:id="@+id/mission"
+        <CheckBox
+            android:id="@+id/flyzone_unlock"
+            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:text="Mission"/-->
+            android:text="@string/unlock_flyzones"/>
 
         <CheckBox
             android:id="@+id/flight_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:text="Show Flight Path"
+            android:text="@string/show_flight_path"
             android:checked="true"/>
 
         <CheckBox
@@ -54,52 +56,76 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:text="Show Home Point"
+            android:text="@string/show_home_point"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/gimbal_yaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:text="@string/show_gimbal_yaw"
             android:checked="true"/>
 
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/map_type_selector"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_above="@+id/icons"
+        android:background="@color/light_gray"
+        android:padding="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/line_spinner"
+            android:background="@drawable/bg_spinner"
+            android:paddingRight="30dp"
+            android:layout_width="wrap_content"
+            android:entries="@array/lineTypeArray"
+            android:layout_height="wrap_content"/>
+
+        <SeekBar
+            android:id="@+id/line_width_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="5"/>
+
+        <TextView
+            android:id="@+id/line_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/new_color"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/map_spinner"
+        android:background="@drawable/bg_spinner"
         android:layout_marginTop="12dp"
         android:layout_marginRight="12dp"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"
+        android:paddingRight="30dp"
+        android:layout_width="wrap_content"
+        android:entries="@array/mapTypeArray"
+        android:layout_height="wrap_content"/>
 
-        <RadioButton
-            android:id="@+id/map_type_standard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@null"
-            android:padding="8dp"
-            android:background="@drawable/selector_map_type_bg"
-            android:textColor="@drawable/selector_map_type_text"
-            android:checked="true"
-            android:text="Standard"/>
+    <Button
+        android:id="@+id/btn_map_provider_test"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:padding="10dp"
+        android:layout_toLeftOf="@+id/map_spinner"
+        android:background="@drawable/selector_map_type_bg"
+        android:text="Map Overlay"/>
 
-        <RadioButton
-            android:id="@+id/map_type_satellite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@null"
-            android:padding="8dp"
-            android:background="@drawable/selector_map_type_bg"
-            android:textColor="@drawable/selector_map_type_text"
-            android:text="Satellite"/>
-
-        <RadioButton
-            android:id="@+id/map_type_hybrid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@null"
-            android:padding="8dp"
-            android:background="@drawable/selector_map_type_bg"
-            android:textColor="@drawable/selector_map_type_text"
-            android:text="Hybrid"/>
-
-    </RadioGroup>
     <Button
         android:layout_height="40dp"
         android:layout_width="wrap_content"
@@ -107,10 +133,10 @@
         android:padding="10dp"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/map_center_selector"
-        android:text="Fly Zone"
-        android:id="@+id/btnFlyZone"
-        android:background="@drawable/selector_map_type_bg">
-    </Button>
+        android:text="@string/fly_zone"
+        android:id="@+id/btn_fly_zone"
+        android:background="@drawable/selector_map_type_bg"/>
+
     <RadioGroup
         android:id="@+id/map_center_selector"
         android:layout_width="wrap_content"
@@ -121,7 +147,6 @@
         android:layout_alignParentLeft="true">
 
         <RadioButton
-
             android:id="@+id/map_center_aircraft"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -164,9 +189,10 @@
         android:padding="8dp"
         android:layout_margin="12dp"
         android:textColor="@color/blue"
-        android:text="Clear Flight Path"/>
+        android:text="@string/clear_flight_path"/>
 
     <RelativeLayout
+        android:id="@+id/icons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -177,44 +203,24 @@
         android:padding="8dp"
         android:layout_margin="8dp">
 
-        <RadioGroup
-            android:id="@+id/replace_icon_selector"
+
+        <Spinner
+            android:id="@+id/icon_spinner"
+            android:background="@drawable/bg_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true">
-
-            <RadioButton
-                android:id="@+id/replace_icon_aircraft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:padding="8dp"
-                android:background="@drawable/selector_map_type_bg"
-                android:textColor="@drawable/selector_map_type_text"
-                android:checked="true"
-                android:text="Aircraft"/>
-
-            <RadioButton
-                android:id="@+id/replace_icon_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@null"
-                android:padding="8dp"
-                android:background="@drawable/selector_map_type_bg"
-                android:textColor="@drawable/selector_map_type_text"
-                android:text="Home"/>
-
-        </RadioGroup>
+            android:entries="@array/iconArray"
+            android:spinnerMode="dropdown"
+            android:paddingRight="30dp"/>
 
         <TextView
             android:id="@+id/replace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/replace_icon_selector"
+            android:layout_below="@id/icon_spinner"
             android:layout_centerHorizontal="true"
             android:padding="8dp"
-            android:text="Replace Icon"
+            android:text="@string/replace_icon"
             android:textColor="@color/blue"/>
 
         <ImageView

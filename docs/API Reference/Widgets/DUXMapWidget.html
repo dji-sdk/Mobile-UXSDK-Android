@@ -161,12 +161,21 @@
 <h5 id="usage">Usage:</h5>
 <p><font color="#666">Preferred Aspect Ratio: 1:1</font></p>
 <h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="duxmapwidget_getflightpathwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getflightpathwidth_inline">getFlightPathWidth</a></div></div><div class="inline-doc" id="duxmapwidget_getflightpathwidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getFlightPathWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getFlightPathWidth</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">Gets the line width, in pixels, of the flight path. Valid range is 0-100.</font></p>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The width in pixels of the flight path.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_initheremap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_initheremap_inline">initHereMap</a></div></div><div class="inline-doc" id="duxmapwidget_initheremap_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>initHereMap</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">initHereMap</span><span class="params">(<span class="keyword">final</span> OnMapReadyListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description">Description:</h5>
+<h5 id="description-v2">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with Here Maps. <br><br>Note: Here Maps currently only works on arm v7 devices,  and you must sign up for their premium package.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
@@ -175,7 +184,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">initGoogleMap</span><span class="params">(<span class="keyword">final</span> OnMapReadyListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v3">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with Google Maps. <br><br> Note: Google Maps only works on devices with Google  Play Services (not Crystal Sky). <br> Important: The following lifecycle methods in your activity must call  the corresponding methods in MapWidget in order for the map to render correctly: {@link #onCreate(Bundle)},  {@link #onResume()}, {@link #onPause()}, {@link #onDestroy()}, {@link #onSaveInstanceState(Bundle)}, and {@link #onLowMemory()}.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
@@ -184,7 +193,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">initAMap</span><span class="params">(<span class="keyword">final</span> OnMapReadyListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with AMaps.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
@@ -193,19 +202,10 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMap <span class="title">getMap</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Get the DJIMap object.</font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap">DJIMap</a></font></td><td><font color="#666"><i>A DJIMap object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxmapwidget_setflyzonevisibility"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflyzonevisibility_inline">setFlyZoneVisibility</a></div></div><div class="inline-doc" id="duxmapwidget_setflyzonevisibility_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setFlyZoneVisibility</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlyZoneVisibility</span><span class="params">(FlyZoneCategory flyZoneCategory, <span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Set selected fly zone visibility on the map.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">flyZoneCategory</font></font></td><td><font color="#666"><i>Represents the category of flyzone to show/hide.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i><code>true</code> to show fly zones.</i></font></td></tr></table></html></div>
+<p><font color="#666">Get the DJIMap object.</font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap">DJIMap</a></font></td><td><font color="#666"><i>A DJIMap object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_hideallflyzones"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_hideallflyzones_inline">hideAllFlyZones</a></div></div><div class="inline-doc" id="duxmapwidget_hideallflyzones_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>hideAllFlyZones</h6></div>
 
@@ -222,133 +222,435 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Clears the flight path up to the current location.</font></p>
 </div>
-<div class="api-row" id="duxmapwidget_hideflightpath"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_hideflightpath_inline">hideFlightPath</a></div></div><div class="inline-doc" id="duxmapwidget_hideflightpath_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>hideFlightPath</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hideFlightPath</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">Hides the flight path if it is visible.</font></p>
-</div>
 <div class="api-row" id="duxmapwidget_setflightpathcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflightpathcolor_inline">setFlightPathColor</a></div></div><div class="inline-doc" id="duxmapwidget_setflightpathcolor_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setFlightPathColor</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlightPathColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the color of the flight path.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The color of the flight path.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_setmapcenterlock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setmapcenterlock_inline">setMapCenterLock</a></div></div><div class="inline-doc" id="duxmapwidget_setmapcenterlock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setMapCenterLock</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMapCenterLock</span><span class="params">(MapCenterLock mapCenterLock)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Sets the lock on the aircraft or the home location to be in center.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DUXMapWidget.html#duxmapwidget_mapcenterlock">MapCenterLock</a> <font color="#000">mapCenterLock</font></font></td><td><font color="#666"><i>Parameter to select the mode of centering.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_setautoframemap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setautoframemap_inline">setAutoFrameMap</a></div></div><div class="inline-doc" id="duxmapwidget_setautoframemap_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setAutoFrameMap</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAutoFrameMap</span><span class="params">(<span class="keyword">boolean</span> isEnabled)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Keeps the home location and the aircraft location visible and adjust the map bounds when set true.</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isEnabled</font></font></td><td><font color="#666"><i>Parameter to enable or disable the map bounds lock.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxmapwidget_showhome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_showhome_inline">showHome</a></div></div><div class="inline-doc" id="duxmapwidget_showhome_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>showHome</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">showHome</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666">Shows the home marker if present on the map.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_hidehome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_hidehome_inline">hideHome</a></div></div><div class="inline-doc" id="duxmapwidget_hidehome_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>hideHome</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hideHome</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666">Hides the home marker if present on the map.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_showgimbalattitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_showgimbalattitude_inline">showGimbalAttitude</a></div></div><div class="inline-doc" id="duxmapwidget_showgimbalattitude_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>showGimbalAttitude</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">showGimbalAttitude</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666">Show the gimbal attitude values.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_hidegimbalattitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_hidegimbalattitude_inline">hideGimbalAttitude</a></div></div><div class="inline-doc" id="duxmapwidget_hidegimbalattitude_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>hideGimbalAttitude</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hideGimbalAttitude</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">Hide the gimbal attitude values.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_hidedirectiontohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_hidedirectiontohome_inline">hideDirectionToHome</a></div></div><div class="inline-doc" id="duxmapwidget_hidedirectiontohome_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>hideDirectionToHome</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hideDirectionToHome</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
-<p><font color="#666">Hides the path from aircraft to home point if visible.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_setaircraftbitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setaircraftbitmap_inline">setAircraftBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setaircraftbitmap_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>setAircraftBitmap</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAircraftBitmap</span><span class="params">(Bitmap bitmap)</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
-<p><font color="#666">Changes the icon of the aircraft marker.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set to.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_sethomebitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_sethomebitmap_inline">setHomeBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_sethomebitmap_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setHomeBitmap</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHomeBitmap</span><span class="params">(Bitmap bitmap)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Changes the icon of the home marker.</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set to.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_sethomebitmapwithposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_sethomebitmapwithposition_inline">setHomeBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_sethomebitmapwithposition_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setHomeBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHomeBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">float</span> x, <span class="keyword">float</span> y)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666">Changes the icon of the home marker.</font></p>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set to.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">x</font></font></td><td><font color="#666"><i>Specifies the x axis value of anchor to be at a particular point in the marker image.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">y</font></font></td><td><font color="#666"><i>Specifies the y axis value of anchor to be at a particular point in the marker image.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_gethomebitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_gethomebitmap_inline">getHomeBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_gethomebitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getHomeBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Bitmap <span class="title">getHomeBitmap</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">Gets the icon of the home marker.</font></p>
+<h5 id="return-v3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap</font></td><td><font color="#666"><i>The icon of the home marker.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflyzonecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflyzonecolor_inline">setFlyZoneColor</a></div></div><div class="inline-doc" id="duxmapwidget_setflyzonecolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlyZoneColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlyZoneColor</span><span class="params">(FlyZoneCategory category, @ColorInt <span class="keyword">int</span> color)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Sets the color of the given fly zone category.</font></p>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">category</font></font></td><td><font color="#666"><i>The fly zone category.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The new border color.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getflyzonecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getflyzonecolor_inline">getFlyZoneColor</a></div></div><div class="inline-doc" id="duxmapwidget_getflyzonecolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getFlyZoneColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span> <span class="function"><span class="keyword">int</span> <span class="title">getFlyZoneColor</span><span class="params">(FlyZoneCategory category)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666">Get the color of the given fly zone category.</font></p>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">category</font></font></td><td><font color="#666"><i>The fly zone category.</i></font></td></tr></table></html>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int</font></td><td><font color="#666"><i>A color int.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflyzonealpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflyzonealpha_inline">setFlyZoneAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_setflyzonealpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlyZoneAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlyZoneAlpha</span><span class="params">(FlyZoneCategory category, <span class="keyword">int</span> alpha)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666">Set the alpha of the given fly zone category.</font></p>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">category</font></font></td><td><font color="#666"><i>The fly zone category.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">alpha</font></font></td><td><font color="#666"><i>An alpha value from 0-255.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getflyzonealpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getflyzonealpha_inline">getFlyZoneAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_getflyzonealpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getFlyZoneAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getFlyZoneAlpha</span><span class="params">(FlyZoneCategory category)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666">Get the alpha of the given fly zone category.</font></p>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">category</font></font></td><td><font color="#666"><i>The fly zone category.</i></font></td></tr></table></html>
+<h5 id="return-v5">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An alpha value from 0-255.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflyzoneborderwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflyzoneborderwidth_inline">setFlyZoneBorderWidth</a></div></div><div class="inline-doc" id="duxmapwidget_setflyzoneborderwidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlyZoneBorderWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlyZoneBorderWidth</span><span class="params">(<span class="keyword">float</span> width)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">Set the border width of all fly zones.</font></p>
+<h5 id="input-parameters-v13">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">width</font></font></td><td><font color="#666"><i>The width in pixels of the fly zone borders.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getflyzoneborderwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getflyzoneborderwidth_inline">getFlyZoneBorderWidth</a></div></div><div class="inline-doc" id="duxmapwidget_getflyzoneborderwidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getFlyZoneBorderWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getFlyZoneBorderWidth</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Get the border width of all fly zones.</font></p>
+<h5 id="return-v6">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The width in pixels of the fly zone borders.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getselfunlockedcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getselfunlockedcolor_inline">getSelfUnlockedColor</a></div></div><div class="inline-doc" id="duxmapwidget_getselfunlockedcolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getSelfUnlockedColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span> <span class="function"><span class="keyword">int</span> <span class="title">getSelfUnlockedColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Get the color of the self unlocked fly zones.</font></p>
+<h5 id="return-v7">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int</font></td><td><font color="#666"><i>A color int.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setselfunlockedcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setselfunlockedcolor_inline">setSelfUnlockedColor</a></div></div><div class="inline-doc" id="duxmapwidget_setselfunlockedcolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setSelfUnlockedColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSelfUnlockedColor</span><span class="params">(@ColorInt <span class="keyword">int</span> selfUnlockedColor)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">Set the color of the self unlocked fly zones.</font></p>
+<h5 id="input-parameters-v14">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">selfUnlockedColor</font></font></td><td><font color="#666"><i>The new color.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getselfunlockedalpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getselfunlockedalpha_inline">getSelfUnlockedAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_getselfunlockedalpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getSelfUnlockedAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSelfUnlockedAlpha</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Get the alpha of the self unlocked fly zones.</font></p>
+<h5 id="return-v8">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The alpha of the self unlocked fly zones.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setselfunlockedalpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setselfunlockedalpha_inline">setSelfUnlockedAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_setselfunlockedalpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setSelfUnlockedAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSelfUnlockedAlpha</span><span class="params">(<span class="keyword">int</span> selfUnlockedAlpha)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
+<p><font color="#666">Set the alpha of the self unlocked fly zones.</font></p>
+<h5 id="input-parameters-v15">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">selfUnlockedAlpha</font></font></td><td><font color="#666"><i>The new alpha.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getmaximumheightcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getmaximumheightcolor_inline">getMaximumHeightColor</a></div></div><div class="inline-doc" id="duxmapwidget_getmaximumheightcolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getMaximumHeightColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span> <span class="function"><span class="keyword">int</span> <span class="title">getMaximumHeightColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
+<p><font color="#666">Get the color of the maximum height fly zones.</font></p>
+<h5 id="return-v9">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int</font></td><td><font color="#666"><i>The color of the maximum height fly zones.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setmaximumheightcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setmaximumheightcolor_inline">setMaximumHeightColor</a></div></div><div class="inline-doc" id="duxmapwidget_setmaximumheightcolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setMaximumHeightColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaximumHeightColor</span><span class="params">(@ColorInt <span class="keyword">int</span> limitedHeightColor)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v25">Description:</h5>
+<p><font color="#666">Set the color of the maximum height fly zones.</font></p>
+<h5 id="input-parameters-v16">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">limitedHeightColor</font></font></td><td><font color="#666"><i>The new color.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getmaximumheightalpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getmaximumheightalpha_inline">getMaximumHeightAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_getmaximumheightalpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getMaximumHeightAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMaximumHeightAlpha</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666">Get the alpha of the maximum height fly zones.</font></p>
+<h5 id="return-v10">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The alpha.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setmaximumheightalpha"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setmaximumheightalpha_inline">setMaximumHeightAlpha</a></div></div><div class="inline-doc" id="duxmapwidget_setmaximumheightalpha_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setMaximumHeightAlpha</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaximumHeightAlpha</span><span class="params">(<span class="keyword">int</span> maximumHeightAlpha)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666">Set the alpha of the maximum height fly zones.</font></p>
+<h5 id="input-parameters-v17">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">maximumHeightAlpha</font></font></td><td><font color="#666"><i>The new alpha.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflyzonevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflyzonevisible_inline">setFlyZoneVisible</a></div></div><div class="inline-doc" id="duxmapwidget_setflyzonevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlyZoneVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlyZoneVisible</span><span class="params">(FlyZoneCategory flyZoneCategory, <span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v28">Description:</h5>
+<p><font color="#666">Set selected fly zone visibility on the map.</font></p>
+<h5 id="input-parameters-v18">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">flyZoneCategory</font></font></td><td><font color="#666"><i>Represents the category of fly zone to show/hide.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i><code>true</code> to show fly zones.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_isflyzonevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_isflyzonevisible_inline">isFlyZoneVisible</a></div></div><div class="inline-doc" id="duxmapwidget_isflyzonevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isFlyZoneVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFlyZoneVisible</span><span class="params">(FlyZoneCategory flyZoneCategory)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666">Get selected fly zone visibility on the map.</font></p>
+<h5 id="input-parameters-v19">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">FlyZoneCategory <font color="#000">flyZoneCategory</font></font></td><td><font color="#666"><i>The category of the fly zone.</i></font></td></tr></table></html>
+<h5 id="return-v11">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>Whether the given fly zone category is visible on the map.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_settaptounlockenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_settaptounlockenabled_inline">setTapToUnlockEnabled</a></div></div><div class="inline-doc" id="duxmapwidget_settaptounlockenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setTapToUnlockEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setTapToUnlockEnabled</span><span class="params">(<span class="keyword">boolean</span> isFlyZonesUnlockingEnabled)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
+<p><font color="#666">This will enable the unlocking of fly zones by clicking on them.</font></p>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isFlyZonesUnlockingEnabled</font></font></td><td><font color="#666"><i>A boolean value that determines whether to enable Fly Zones Unlocking.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_istaptounlockenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_istaptounlockenabled_inline">isTapToUnlockEnabled</a></div></div><div class="inline-doc" id="duxmapwidget_istaptounlockenabled_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isTapToUnlockEnabled</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isTapToUnlockEnabled</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v31">Description:</h5>
+<p><font color="#666">Gets whether tap to unlock is enabled.</font></p>
+<h5 id="return-v12">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if tap to unlock is enabled.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setselfunlockedbitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setselfunlockedbitmap_inline">setSelfUnlockedBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setselfunlockedbitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setSelfUnlockedBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSelfUnlockedBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">float</span> x, <span class="keyword">float</span> y)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v32">Description:</h5>
+<p><font color="#666">Changes the icon of the unlocked Self-Unlockable zones.</font></p>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">x</font></font></td><td><font color="#666"><i>Specifies the x axis value of anchor to be at a particular point in the marker image.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">y</font></font></td><td><font color="#666"><i>Specifies the y axis value of anchor to be at a particular point in the marker image.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setselflockedbitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setselflockedbitmap_inline">setSelfLockedBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setselflockedbitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setSelfLockedBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setSelfLockedBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">float</span> x, <span class="keyword">float</span> y)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v33">Description:</h5>
+<p><font color="#666">Changes the icon of the locked Self-Unlockable zones</font></p>
+<h5 id="input-parameters-v22">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">x</font></font></td><td><font color="#666"><i>Specifies the x axis value of anchor to be at a particular point in the marker image.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">y</font></font></td><td><font color="#666"><i>Specifies the y axis value of anchor to be at a particular point in the marker image.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setdirectiontohomevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setdirectiontohomevisible_inline">setDirectionToHomeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_setdirectiontohomevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setDirectionToHomeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDirectionToHomeVisible</span><span class="params">(<span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v34">Description:</h5>
+<p><font color="#666">Sets the visibility of the path from aircraft to home point.</font></p>
+<h5 id="input-parameters-v23">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i>A boolean value that determines whether to show the path from aircraft to home point.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_isdirectiontohomevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_isdirectiontohomevisible_inline">isDirectionToHomeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_isdirectiontohomevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isDirectionToHomeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isDirectionToHomeVisible</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v35">Description:</h5>
+<p><font color="#666">Gets the visibility of the path from aircraft to home point.</font></p>
+<h5 id="return-v13">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>True if direction to home is visible.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setdirectiontohomecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setdirectiontohomecolor_inline">setDirectionToHomeColor</a></div></div><div class="inline-doc" id="duxmapwidget_setdirectiontohomecolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setDirectionToHomeColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDirectionToHomeColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v36">Description:</h5>
+<p><font color="#666">Sets the color of the path from aircraft to home point.</font></p>
+<h5 id="input-parameters-v24">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The new color of the path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getdirectiontohomecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getdirectiontohomecolor_inline">getDirectionToHomeColor</a></div></div><div class="inline-doc" id="duxmapwidget_getdirectiontohomecolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getDirectionToHomeColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span> <span class="function"><span class="keyword">int</span> <span class="title">getDirectionToHomeColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v37">Description:</h5>
+<p><font color="#666">Gets the color of the path from aircraft to home point.</font></p>
+<h5 id="return-v14">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int</font></td><td><font color="#666"><i>The color of the path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setdirectiontohomewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setdirectiontohomewidth_inline">setDirectionToHomeWidth</a></div></div><div class="inline-doc" id="duxmapwidget_setdirectiontohomewidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setDirectionToHomeWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setDirectionToHomeWidth</span><span class="params">(<span class="keyword">float</span> width)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v38">Description:</h5>
+<p><font color="#666">Sets the width of the path from aircraft to home point.</font></p>
+<h5 id="input-parameters-v25">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">width</font></font></td><td><font color="#666"><i>The width of the path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getdirectiontohomewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getdirectiontohomewidth_inline">getDirectionToHomeWidth</a></div></div><div class="inline-doc" id="duxmapwidget_getdirectiontohomewidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getDirectionToHomeWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">float</span> <span class="title">getDirectionToHomeWidth</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v39">Description:</h5>
+<p><font color="#666">Gets the width of the path from aircraft to home point.</font></p>
+<h5 id="return-v15">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The width of the path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflightpathvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflightpathvisible_inline">setFlightPathVisible</a></div></div><div class="inline-doc" id="duxmapwidget_setflightpathvisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlightPathVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlightPathVisible</span><span class="params">(<span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v40">Description:</h5>
+<p><font color="#666">Sets the flight path visibility.</font></p>
+<h5 id="input-parameters-v26">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i>A boolean value that determines whether to show the flight path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_isflightpathvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_isflightpathvisible_inline">isFlightPathVisible</a></div></div><div class="inline-doc" id="duxmapwidget_isflightpathvisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isFlightPathVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isFlightPathVisible</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v41">Description:</h5>
+<p><font color="#666">Gets the flight path visibility.</font></p>
+<h5 id="return-v16">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>True if the flight path is visible.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getflightpathcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getflightpathcolor_inline">getFlightPathColor</a></div></div><div class="inline-doc" id="duxmapwidget_getflightpathcolor_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getFlightPathColor</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span> <span class="function"><span class="keyword">int</span> <span class="title">getFlightPathColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v42">Description:</h5>
+<p><font color="#666">Gets the color of the flight path.</font></p>
+<h5 id="return-v17">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int</font></td><td><font color="#666"><i>The color of the flight path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setflightpathwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setflightpathwidth_inline">setFlightPathWidth</a></div></div><div class="inline-doc" id="duxmapwidget_setflightpathwidth_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setFlightPathWidth</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFlightPathWidth</span><span class="params">(<span class="keyword">float</span> width)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v43">Description:</h5>
+<p><font color="#666">Sets a line width, in pixels, for the flight path. Valid range is 0-100.</font></p>
+<h5 id="input-parameters-v27">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">width</font></font></td><td><font color="#666"><i>The width in pixels of the flight path.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setgimbalattitudevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setgimbalattitudevisible_inline">setGimbalAttitudeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_setgimbalattitudevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setGimbalAttitudeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGimbalAttitudeVisible</span><span class="params">(<span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v44">Description:</h5>
+<p><font color="#666">Sets the visibility of the gimbal attitude marker.</font></p>
+<h5 id="input-parameters-v28">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i>A boolean value that determines whether to show the gimbal attitude marker.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_isgimbalattitudevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_isgimbalattitudevisible_inline">isGimbalAttitudeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_isgimbalattitudevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isGimbalAttitudeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isGimbalAttitudeVisible</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v45">Description:</h5>
+<p><font color="#666">Gets the visibility of the gimbal attitude marker.</font></p>
+<h5 id="return-v18">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>True if the gimbal attitude marker is visible.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setaircraftbitmapwithposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setaircraftbitmapwithposition_inline">setAircraftBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setaircraftbitmapwithposition_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setAircraftBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAircraftBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">float</span> x, <span class="keyword">float</span> y)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v46">Description:</h5>
+<p><font color="#666">Set the icon of the aircraft marker.</font></p>
+<h5 id="input-parameters-v29">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">x</font></font></td><td><font color="#666"><i>Specifies the x axis value of anchor to be at a particular point in the marker image.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">y</font></font></td><td><font color="#666"><i>Specifies the y axis value of anchor to be at a particular point in the marker image.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setaircraftbitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setaircraftbitmap_inline">setAircraftBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setaircraftbitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setAircraftBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAircraftBitmap</span><span class="params">(Bitmap bitmap)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v47">Description:</h5>
+<p><font color="#666">Changes the icon of the aircraft marker.</font></p>
+<h5 id="input-parameters-v30">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set to.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getaircraftbitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getaircraftbitmap_inline">getAircraftBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_getaircraftbitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getAircraftBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Bitmap <span class="title">getAircraftBitmap</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v48">Description:</h5>
+<p><font color="#666">Gets the icon of the aircraft marker.</font></p>
+<h5 id="return-v19">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap</font></td><td><font color="#666"><i>The icon of the aircraft marker.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_setgimbalattitudebitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_setgimbalattitudebitmap_inline">setGimbalAttitudeBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_setgimbalattitudebitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setGimbalAttitudeBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setGimbalAttitudeBitmap</span><span class="params">(Bitmap bitmap)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v49">Description:</h5>
+<p><font color="#666">Changes the icon of the gimbal attitude marker.</font></p>
+<h5 id="input-parameters-v31">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The image to be set to.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_getgimbalattitudebitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getgimbalattitudebitmap_inline">getGimbalAttitudeBitmap</a></div></div><div class="inline-doc" id="duxmapwidget_getgimbalattitudebitmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getGimbalAttitudeBitmap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Bitmap <span class="title">getGimbalAttitudeBitmap</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v50">Description:</h5>
+<p><font color="#666">Gets the icon of the gimbal attitude marker.</font></p>
+<h5 id="return-v20">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap</font></td><td><font color="#666"><i>The icon of the gimbal attitude marker.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_sethomevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_sethomevisible_inline">setHomeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_sethomevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setHomeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHomeVisible</span><span class="params">(<span class="keyword">boolean</span> isVisible)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v51">Description:</h5>
+<p><font color="#666">Sets the visibility of the home marker if present on the map.</font></p>
+<h5 id="input-parameters-v32">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isVisible</font></font></td><td><font color="#666"><i>A boolean value to determine if the home marker is visible.</i></font></td></tr></table></html></div>
+<div class="api-row" id="duxmapwidget_ishomevisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_ishomevisible_inline">isHomeVisible</a></div></div><div class="inline-doc" id="duxmapwidget_ishomevisible_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isHomeVisible</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isHomeVisible</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
+<h5 id="description-v52">Description:</h5>
+<p><font color="#666">Gets the visibility of the home marker.</font></p>
+<h5 id="return-v21">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>The icon of the gimbal attitude marker.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_mapcenterlock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_mapcenterlock_inline">MapCenterLock</a></div></div><div class="inline-doc" id="duxmapwidget_mapcenterlock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>MapCenterLock</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> MapCenterLock</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v53">Description:</h5>
 <p><font color="#666">Map Centering Options.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#duxmapwidget_mapcenterlock_none_inline"></a>NONE</font></td><td><font color="#666">This will disable the centering of map on any markers.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#duxmapwidget_mapcenterlock_aircraft_inline"></a>AIRCRAFT</font></td><td><font color="#666">This will keep the aircraft icon always in center of the screen and keep following it during flight.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#duxmapwidget_mapcenterlock_home_inline"></a>HOME</font></td><td><font color="#666">This will keep the home icon always in center of the screen. The aircraft icon will disappear from view bounds if the aircraft travels that distance</font></td></tr></table></html>
 <h5 id="class-members-v2">Class Members:</h5>
-</div>
-<div class="api-row" id="duxmapwidget_showdirectiontohome"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_showdirectiontohome_inline">showDirectionToHome</a></div></div><div class="inline-doc" id="duxmapwidget_showdirectiontohome_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>showDirectionToHome</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">showDirectionToHome</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
-<p><font color="#666">Shows the path from aircraft to home point if not already visible.</font></p>
 </div>
 <div class="api-row" id="duxmapwidget_showallflyzones"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_showallflyzones_inline">showAllFlyZones</a></div></div><div class="inline-doc" id="duxmapwidget_showallflyzones_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>showAllFlyZones</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">showAllFlyZones</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v54">Description:</h5>
 <p><font color="#666">Make all Fly zones visible on the map.</font></p>
-</div>
-<div class="api-row" id="duxmapwidget_showflightpath"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_showflightpath_inline">showFlightPath</a></div></div><div class="inline-doc" id="duxmapwidget_showflightpath_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">method </font>showFlightPath</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">showFlightPath</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
-<p><font color="#666">Makes flight path visible if it's not visible.</font></p>
 </div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="duxmapwidget_onmapreadylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_onmapreadylistener_inline">OnMapReadyListener</a></div></div><div class="inline-doc" id="duxmapwidget_onmapreadylistener_inline" <blockquote="">
@@ -356,7 +658,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnMapReadyListener</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v55">Description:</h5>
 <p><font color="#666">When added to the MapWidget, the OnMapReadyListener can be used to  determine when the map is ready to modify. No modifications should  be done to the MapWidget before the map is initialized using one  of the initialization methods.</font></p>
 <h5 id="interface-methods">Interface Methods:</h5>
 <div class="api-row" id="duxmapwidget_onmapreadycallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_onmapreadycallback_inline">onMapReady</a></div></div><div class="inline-doc" id="duxmapwidget_onmapreadycallback_inline" <blockquote="">
@@ -364,12 +666,12 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onMapReady</span><span class="params">(@NonNull DJIMap map)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v56">Description:</h5>
 <p><font color="#666">A callback indicating that the map is finished initializing.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v33">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../Widgets/DJIMap.html#djimap">DJIMap</a> <font color="#000">map</font></font></td><td><font color="#666"><i>The object of <code><a href="../Widgets/DJIMap.html#djimap">DJIMap</a></code>.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djimap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a href="../Widgets/DJIMap.html">DJIMap</a></div></div>
+<div class="api-row" id="djimap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap.html">DJIMap</a></div></div>
 
         </div>
       </div>

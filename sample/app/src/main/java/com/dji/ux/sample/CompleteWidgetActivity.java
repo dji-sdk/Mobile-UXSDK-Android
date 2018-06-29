@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.RelativeLayout;
-import com.dji.mapkit.maps.DJIMap;
-import com.dji.mapkit.models.DJILatLng;
+import com.dji.mapkit.core.maps.DJIMap;
+import com.dji.mapkit.core.models.DJILatLng;
 import dji.ux.widget.MapWidget;
 
 /** Activity that shows all the UI elements together */
@@ -72,7 +72,7 @@ public class CompleteWidgetActivity extends Activity {
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = true;
         } else if (view == mapWidget && isMapMini) {
-            resizeFPVWidget(width, height, margin, 2);
+            resizeFPVWidget(width, height, margin, 3);
             ResizeAnimation mapViewAnimation = new ResizeAnimation(mapWidget, width, height, deviceWidth, deviceHeight, 0);
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = false;
