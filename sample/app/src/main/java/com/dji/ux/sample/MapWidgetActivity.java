@@ -24,6 +24,8 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.model.HeatmapTileProvider;
 import com.amap.api.maps.model.TileOverlay;
@@ -44,11 +46,12 @@ import java.util.Arrays;
 
 import dji.common.flightcontroller.flyzone.FlyZoneCategory;
 import dji.ux.widget.MapWidget;
+
 import java.util.Random;
 
 public class MapWidgetActivity extends Activity implements CompoundButton.OnCheckedChangeListener,
-    RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener,
-    SeekBar.OnSeekBarChangeListener {
+        RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener,
+        SeekBar.OnSeekBarChangeListener {
     private static final String TAG = "MapWidgetActivity";
     private MapWidget mapWidget;
     private ImageView selectedIcon;
@@ -95,13 +98,13 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         mapWidget.onCreate(savedInstanceState);
 
         findViewById(R.id.btn_map_provider_test).setOnClickListener(this);
-        ((CheckBox)findViewById(R.id.home_direction)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.lock_bounds)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.flight_path)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.home_point)).setOnCheckedChangeListener(this);
-        ((CheckBox)findViewById(R.id.gimbal_yaw)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.home_direction)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.lock_bounds)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.flight_path)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.home_point)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.gimbal_yaw)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.flyzone_unlock)).setOnCheckedChangeListener(this);
-        ((RadioGroup)findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
+        ((RadioGroup) findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
         findViewById(R.id.clear_flight_path).setOnClickListener(this);
         iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
         iconSpinner.setOnItemSelectedListener(this);
@@ -215,7 +218,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
 
     private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
-                                            vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         vectorDrawable.draw(canvas);
@@ -281,16 +284,20 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
 
         switch (parent.getId()) {
             case R.id.map_spinner:
-                switch ((int) id) {
-                    case 0:
-                        mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
-                        break;
-                    case 1:
-                        mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
-                        break;
-                    case 2:
-                        mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
-                        break;
+                if (mapWidget.getMap() == null) {
+                    Toast.makeText(getApplicationContext(), "Could not init maps provider!", Toast.LENGTH_SHORT).show();
+                } else {
+                    switch ((int) id) {
+                        case 0:
+                            mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
+                            break;
+                        case 1:
+                            mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
+                            break;
+                        case 2:
+                            mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
+                            break;
+                    }
                 }
                 break;
             case R.id.line_spinner:
