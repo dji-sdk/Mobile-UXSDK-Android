@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dji.ux.sample">
 
     <!-- DJI SDK need these permissions -->
@@ -32,8 +33,9 @@
         android:name=".MApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/ux_sample_name"
         android:supportsRtl="true"
+        tools:replace="android:label"
         android:theme="@style/AppTheme">
 
         <!-- DJI SDK -->
@@ -45,11 +47,11 @@
 
         <!-- Here Maps -->
         <meta-data android:name="com.here.android.maps.appid"
-                   android:value=""/>
+                   android:value="Qpvn7nrHBdpz0ohBue9o"/>
         <meta-data android:name="com.here.android.maps.apptoken"
-                   android:value=""/>
+                   android:value="vnWdssfAt0PEnc6L85h2mQ"/>
         <meta-data android:name="com.here.android.maps.license.key"
-                   android:value=""/>
+                   android:value="ba1kSw6rH+0/10sQ39oJBSESp5tvu2kCOvnv7NCSpJ2yjXxaOP1ts6wQK4qZ2FWVfQnzAk3NJ39/j4pMB8dpU5RpjNzwK8rs+0iZgJ72Gkv1xdNRyvR50ScEBFOqmUgOAJFFvptFh2euYZO02PAGB2kmEKmxRlTos7SaGSN5k4Ka+wDYaKRB0dRiOyeENR1kc2hjGdVMHqOibYazCV9+5FIl4ATnAvhiTzrO4Tgyx0FSqVrvir8DRtEqUJkBRqrx+LAATaK/R+HjqzKgm6DFUGG/F0pTsid3x3K85snLKdRE4gcw+kZXcMgyRu3/0o033hu2JrRvYhtwYGfuI/oGSwZFvdj/k/IUhxZRY107VmCIGur9RZr0QWJofV69Ggijk+/RCtOFWtwbRYkXSVWL+GUhVAZ/TjAg9A8CkZJWDl97OiPfWb2BJIguvhtDw1CjnBo2E2xEXyx3Rr9CTkY1djN6Zjo1HTXI1kujubMfvxalmR5NFfLqJpFWylIibTgwYdP6dzDJZPbPY0JRJYh2PUbTOpc0LSbzM8FqY7DPplifGk3oPlpPEK5E9i4VntDhiHVPUegaf3OfP/1xlQy64BFaaCrDwA8GYDmHFV8lL4ZXZy9oHU9DV3zRm8Gs346PXndG4NbeTFYyCye2B89ymIDwqhl1cZOEXnhoc4eX4Xw="/>
 
         <service
             android:name="com.here.android.mpa.service.MapService"
@@ -65,12 +67,12 @@
         <!-- Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
+            android:value="AIzaSyDGgr7_22QHJQwSjdGi0yIiICfLFWNElAM"/>
 
         <!-- AMaps -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value=""/>
+            android:value="60aa1934c35721a20987c12cc2ecfed1"/>
 
         <activity
             android:name=".MainActivity"

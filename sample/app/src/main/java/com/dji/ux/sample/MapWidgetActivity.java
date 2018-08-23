@@ -14,15 +14,18 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
-
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,19 +46,20 @@ import com.here.android.mpa.mapping.Map;
 import com.here.android.mpa.mapping.MapOverlay;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import dji.common.flightcontroller.flyzone.FlyZoneCategory;
 import dji.ux.widget.MapWidget;
 
-import java.util.Random;
-
 public class MapWidgetActivity extends Activity implements CompoundButton.OnCheckedChangeListener,
-        RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener,
-        SeekBar.OnSeekBarChangeListener {
+    RadioGroup.OnCheckedChangeListener,
+    View.OnClickListener,
+    AdapterView.OnItemSelectedListener,
+    SeekBar.OnSeekBarChangeListener {
     private static final String TAG = "MapWidgetActivity";
     private MapWidget mapWidget;
     private ImageView selectedIcon;
-    int[] iconIds = {R.id.icon_1, R.id.icon_2, R.id.icon_3, R.id.icon_4, R.id.icon_5, R.id.icon_6};
+    private int[] iconIds = {R.id.icon_1, R.id.icon_2, R.id.icon_3, R.id.icon_4, R.id.icon_5};
 
     public static final String MAP_PROVIDER = "MapProvider";
     private Button flyZoneButton;
@@ -70,6 +74,9 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     private Map hereMap;
     private GoogleMap googleMap;
     private AMap aMap;
+    private ScrollView scrollView;
+    private ImageButton btnPanel;
+    private boolean isPanelOpen = true;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,6 +87,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             @Override
             public void onMapReady(@NonNull DJIMap map) {
                 map.setMapType(DJIMap.MapType.Normal);
+
             }
         };
         Intent intent = getIntent();
@@ -98,19 +106,24 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         mapWidget.onCreate(savedInstanceState);
 
         findViewById(R.id.btn_map_provider_test).setOnClickListener(this);
+
         ((CheckBox) findViewById(R.id.home_direction)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.lock_bounds)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.flight_path)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.home_point)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.gimbal_yaw)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.flyzone_unlock)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.flyzone_legend)).setOnCheckedChangeListener(this);
+        ((CheckBox) findViewById(R.id.login_state_indicator)).setOnCheckedChangeListener(this);
         ((RadioGroup) findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
+        scrollView = (ScrollView) findViewById(R.id.settings_scroll_view);
+        btnPanel = (ImageButton) findViewById(R.id.btn_settings);
+        btnPanel.setOnClickListener(this);
         findViewById(R.id.clear_flight_path).setOnClickListener(this);
         iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
         iconSpinner.setOnItemSelectedListener(this);
         mapSpinner = (Spinner) findViewById(R.id.map_spinner);
         mapSpinner.setOnItemSelectedListener(this);
-
         findViewById(R.id.replace).setOnClickListener(this);
         selectedIcon = (ImageView) findViewById(R.id.icon_1);
         for (int id : iconIds) {
@@ -155,6 +168,12 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case R.id.flyzone_unlock:
                 mapWidget.setTapToUnlockEnabled(isChecked);
                 break;
+            case R.id.flyzone_legend:
+                mapWidget.showFlyZoneLegend(isChecked);
+                break;
+            case R.id.login_state_indicator:
+                mapWidget.showDJIAccountLoginIndicator(isChecked);
+                break;
         }
     }
 
@@ -171,7 +190,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case R.id.map_center_none:
                 mapWidget.setMapCenterLock(MapWidget.MapCenterLock.NONE);
                 break;
-
         }
     }
 
@@ -201,7 +219,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case R.id.icon_3:
             case R.id.icon_4:
             case R.id.icon_5:
-            case R.id.icon_6:
                 ImageView imageView = (ImageView) view;
                 imageView.setSelected(true);
                 selectedIcon.setSelected(false);
@@ -212,13 +229,57 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 break;
             case R.id.line_color:
                 setRandomLineColor();
+            case R.id.btn_settings:
+                movePanel();
                 break;
         }
     }
 
+    private void movePanel() {
+        int translationStart = 0;
+        int translationEnd = 0;
+        if (isPanelOpen) {
+            translationStart = 0;
+            translationEnd = -scrollView.getWidth();
+        } else {
+
+            scrollView.bringToFront();
+            translationStart = -scrollView.getWidth();
+            translationEnd = 0;
+        }
+        TranslateAnimation animate = new TranslateAnimation(
+            translationStart, translationEnd, 0, 0);
+        animate.setDuration(300);
+        animate.setFillAfter(true);
+        animate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (isPanelOpen) {
+                    mapWidget.bringToFront();
+
+                }
+                btnPanel.bringToFront();
+                isPanelOpen = !isPanelOpen;
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        scrollView.startAnimation(animate);
+
+    }
+
     private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
-                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                                            vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         vectorDrawable.draw(canvas);
@@ -276,7 +337,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         builder.setPositiveButton("OK", positiveClickListener);
         AlertDialog dialog = builder.create();
         dialog.show();
-
     }
 
     @Override
@@ -284,9 +344,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
 
         switch (parent.getId()) {
             case R.id.map_spinner:
-                if (mapWidget.getMap() == null) {
-                    Toast.makeText(getApplicationContext(), "Could not init maps provider!", Toast.LENGTH_SHORT).show();
-                } else {
+
+                if (mapWidget.getMap() != null) {
                     switch ((int) id) {
                         case 0:
                             mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
@@ -294,10 +353,12 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                         case 1:
                             mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
                             break;
-                        case 2:
+                        default:
                             mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
                             break;
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Could not init maps provider!", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.line_spinner:
@@ -418,5 +479,4 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             mapWidget.setFlightPathColor(randomColor);
         }
     }
-
 }

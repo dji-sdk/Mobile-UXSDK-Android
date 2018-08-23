@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -114,14 +114,55 @@
             android:layout_marginTop="4dp"/>
 
         <Button
-            android:id="@+id/self_unlocked_color"
+            android:id="@+id/self_unlock_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/self_unlocked"
             android:layout_alignParentRight="true"
             android:text="@string/new_color"
             android:background="#9C27B0"/>
+        <View
+            android:id="@+id/custom_unlock_separator"
+            android:layout_margin="5dp"
+            android:background="@color/blue"
+            android:layout_below="@id/self_unlocked"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <Switch
+            android:layout_margin="5dp"
+            android:id="@+id/custom_unlock_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_unlock_separator"
+            android:textColor="@color/dark_gray"
+            android:text="Custom Unlocked Zone"/>
 
+        <Button
+            android:id="@+id/custom_unlock_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/custom_unlock_switch"
+            android:text="@string/new_color"
+            android:background="@color/light_gray"/>
+        <Button
+            android:layout_marginRight="5dp"
+            android:id="@+id/custom_unlock_sync"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_unlock_switch"
+            android:layout_toLeftOf="@id/custom_unlock_color"
+            android:text="@string/sync"
+            android:background="@color/light_gray"/>
+        <View
+            android:id="@+id/custom_unlock_separator2"
+            android:layout_margin="5dp"
+            android:background="@color/blue"
+            android:layout_below="@id/custom_unlock_color"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
     </RelativeLayout>
 
 </merge>

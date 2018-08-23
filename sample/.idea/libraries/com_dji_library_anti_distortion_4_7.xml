@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.dji:library-anti-distortion-4.7">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/343949f951936af6fe6287d28f85370716216ce4/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/343949f951936af6fe6287d28f85370716216ce4/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

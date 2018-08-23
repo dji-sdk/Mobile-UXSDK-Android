@@ -13,8 +13,13 @@
         android:id="@+id/fpv_custom_widget"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        custom:sourceCameraNameVisibility="true"
         custom:videoSource="primary"/>
 
+    <dji.ux.widget.FPVOverlayWidget
+        android:id="@+id/fpv_overlay_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <FrameLayout
         android:layout_width="160dp"
         android:layout_height="90dp"
@@ -22,16 +27,19 @@
         android:layout_alignParentBottom="true"
         android:background="@color/debug_2">
         <dji.ux.widget.FPVWidget
-            android:id="@+id/secondary_fpv_widtet"
+            android:id="@+id/secondary_fpv_widget"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            custom:sourceCameraNameVisibility="true"
             custom:videoSource="secondary"/>
+
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#80000000"
+        android:id="@+id/topWidgetBar"
         android:orientation="horizontal">
 
         <!-- Show customized pre-flight status widget -->
@@ -118,67 +126,118 @@
         <!-- Show customized battery widget -->
         <com.dji.ux.sample.custom.CustomizedBatteryWidget
             android:layout_width="96dp"
-            android:layout_height="22dp"
-            />
+            android:layout_height="22dp" />
 
+        <dji.ux.widget.FocusExposureSwitchWidget
+            android:layout_margin="10dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right|top" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/video_source_test"
-        android:layout_width="160dp"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:orientation="vertical">
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/topWidgetBar">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/txt_video_feed_selection"/>
-        <Button
-            android:id="@+id/primary_video_feed"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/set_primary_video_feed"
-            android:onClick="onPrimaryClick"/>
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_gray"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <Button
-            android:id="@+id/secondary_video_feed"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/set_secondary_video_feed"
-            android:onClick="onSecondaryClick"/>
+            <CheckBox
+                android:id="@+id/checkboxPrimaryCameraName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Primary Camera Name"
+                android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/auto_video_feed"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/set_auto_video_feed"
-            android:onClick="onAutoClick"/>
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkboxSecondaryCameraName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Secondary Camera Name"
+                android:textColor="@color/white" />
 
-    <LinearLayout
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/video_source_test">
+            <CheckBox
+                android:id="@+id/checkbox_touch_focus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Focus Point"
+                android:textColor="@color/white" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/txt_video_dynamic_size"/>
-        <Button
-            android:id="@+id/change_size"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/set_fpv_size"
-            android:onClick="onResizeClick"/>
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkbox_touch_metering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Metering Point"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_gimbal_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Gimbal Control"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_video_feed_selection"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/primary_video_feed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/set_primary_video_feed" />
+
+            <Button
+                android:id="@+id/secondary_video_feed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/set_secondary_video_feed" />
+
+            <Button
+                android:id="@+id/auto_video_feed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/set_auto_video_feed" />
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/txt_video_dynamic_size"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/change_size"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/set_fpv_size" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

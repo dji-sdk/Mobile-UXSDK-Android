@@ -2,9 +2,11 @@ package com.dji.ux.sample;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -32,13 +34,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
-import dji.common.useraccount.UserAccountState;
-import dji.common.util.CommonCallbacks;
 import dji.log.DJILog;
 import dji.sdk.base.BaseComponent;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.sdkmanager.DJISDKManager;
-import dji.sdk.useraccount.UserAccountManager;
 
 /** Main activity that displays three choices to user */
 public class MainActivity extends Activity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
@@ -54,9 +53,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
                 DJISDKManager.getInstance().startConnectionToProduct();
 
                 Toast.makeText(getApplicationContext(), "SDK registration succeeded!", Toast.LENGTH_LONG).show();
-
-                loginAccount();
-
             } else {
 
                 Toast.makeText(getApplicationContext(),
@@ -163,29 +159,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         checkAndRequestPermissions();
     }
 
-    @Override
-    protected void onDestroy() {
-        // Prevent memory leak by releasing DJISDKManager's references to this activity
-        if (DJISDKManager.getInstance() != null) {
-            DJISDKManager.getInstance().destroy();
-        }
-        super.onDestroy();
-    }
-
-    private void loginAccount(){
-        UserAccountManager.getInstance().logIntoDJIUserAccount(this,
-                new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
-                    @Override
-                    public void onSuccess(final UserAccountState userAccountState) {
-                        Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
-                    }
-                    @Override
-                    public void onFailure(DJIError error) {
-                        Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
-
     /**
      * Checks if there is any missing permissions, and
      * requests runtime permission if needed.
@@ -259,7 +232,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
             MenuInflater inflater = popup.getMenuInflater();
             inflater.inflate(R.menu.map_select_menu, popupMenu);
             popupMenu.findItem(R.id.here_map).setEnabled(isHereMapsSupported());
-            popupMenu.findItem(R.id.google_map).setEnabled(isGoogleMapsSupported());
+            popupMenu.findItem(R.id.google_map).setEnabled(isGoogleMapsSupported(this));
             popup.show();
             return;
         }
@@ -288,15 +261,23 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         return false;
     }
 
-    private boolean isHereMapsSupported() {
-        String arch = System.getProperty("os.arch");
-        DJILog.d(TAG, "arch = " + arch);
-        return arch.contains("armv7");
+    public static boolean isHereMapsSupported() {
+        String abi;
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            abi = Build.CPU_ABI;
+        } else {
+            abi = Build.SUPPORTED_ABIS[0];
+        }
+        DJILog.d(TAG, "abi=" + abi);
+
+        //The possible values are armeabi, armeabi-v7a, arm64-v8a, x86, x86_64, mips, mips64.
+        return abi.contains("arm");
     }
 
-    private boolean isGoogleMapsSupported(){
+    public static boolean isGoogleMapsSupported(Context context) {
         GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
-        int resultCode = googleApiAvailability.isGooglePlayServicesAvailable(this);
+        int resultCode = googleApiAvailability.isGooglePlayServicesAvailable(context);
         return resultCode == ConnectionResult.SUCCESS;
     }
 
