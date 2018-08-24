@@ -47,11 +47,11 @@
 
         <!-- Here Maps -->
         <meta-data android:name="com.here.android.maps.appid"
-                   android:value="Qpvn7nrHBdpz0ohBue9o"/>
+                   android:value=""/> <!--Please enter the App ID here. -->
         <meta-data android:name="com.here.android.maps.apptoken"
-                   android:value="vnWdssfAt0PEnc6L85h2mQ"/>
+                   android:value=""/> <!--Please enter the App Token here. -->
         <meta-data android:name="com.here.android.maps.license.key"
-                   android:value="ba1kSw6rH+0/10sQ39oJBSESp5tvu2kCOvnv7NCSpJ2yjXxaOP1ts6wQK4qZ2FWVfQnzAk3NJ39/j4pMB8dpU5RpjNzwK8rs+0iZgJ72Gkv1xdNRyvR50ScEBFOqmUgOAJFFvptFh2euYZO02PAGB2kmEKmxRlTos7SaGSN5k4Ka+wDYaKRB0dRiOyeENR1kc2hjGdVMHqOibYazCV9+5FIl4ATnAvhiTzrO4Tgyx0FSqVrvir8DRtEqUJkBRqrx+LAATaK/R+HjqzKgm6DFUGG/F0pTsid3x3K85snLKdRE4gcw+kZXcMgyRu3/0o033hu2JrRvYhtwYGfuI/oGSwZFvdj/k/IUhxZRY107VmCIGur9RZr0QWJofV69Ggijk+/RCtOFWtwbRYkXSVWL+GUhVAZ/TjAg9A8CkZJWDl97OiPfWb2BJIguvhtDw1CjnBo2E2xEXyx3Rr9CTkY1djN6Zjo1HTXI1kujubMfvxalmR5NFfLqJpFWylIibTgwYdP6dzDJZPbPY0JRJYh2PUbTOpc0LSbzM8FqY7DPplifGk3oPlpPEK5E9i4VntDhiHVPUegaf3OfP/1xlQy64BFaaCrDwA8GYDmHFV8lL4ZXZy9oHU9DV3zRm8Gs346PXndG4NbeTFYyCye2B89ymIDwqhl1cZOEXnhoc4eX4Xw="/>
+                   android:value=""/> <!--Please enter the License Key here. -->
 
         <service
             android:name="com.here.android.mpa.service.MapService"
@@ -67,12 +67,12 @@
         <!-- Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDGgr7_22QHJQwSjdGi0yIiICfLFWNElAM"/>
+            android:value=""/> <!--Please enter the App Key here. -->
 
         <!-- AMaps -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="60aa1934c35721a20987c12cc2ecfed1"/>
+            android:value=""/> <!--Please enter the API Key here. -->
 
         <activity
             android:name=".MainActivity"
