@@ -53,8 +53,8 @@ android {
 }
 
 dependencies {
-    compile 'com.dji:dji-uxsdk:4.7'
-    provided ('com.dji:dji-sdk-provided:4.7')
+    compile 'com.dji:dji-uxsdk:4.7.1'
+    provided ('com.dji:dji-sdk-provided:4.7.1')
 
     compile 'com.amap.api:map2d:5.2.0'
     compile 'com.amap.api:3dmap:5.5.0'
