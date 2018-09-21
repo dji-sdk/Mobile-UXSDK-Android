@@ -53,7 +53,11 @@ android {
 }
 
 dependencies {
-    compile 'com.dji:dji-uxsdk:4.7.1'
+    compile ('com.dji:dji-uxsdk:4.7.1', {
+        // Uncomment the following line if your app does not need Anti Distortion for
+        // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
+        // exclude module: 'library-anti-distortion'
+    })
     provided ('com.dji:dji-sdk-provided:4.7.1')
 
     compile 'com.amap.api:map2d:5.2.0'
