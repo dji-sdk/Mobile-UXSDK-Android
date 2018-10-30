@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -42,6 +43,7 @@ import dji.sdk.sdkmanager.DJISDKManager;
 /** Main activity that displays three choices to user */
 public class MainActivity extends Activity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
     private static final String TAG = "MainActivity";
+    private static final String LAST_USED_BRIDGE_IP = "bridgeip";
     private AtomicBoolean isRegistrationInProgress = new AtomicBoolean(false);
     private static boolean isAppStarted = false;
     private DJISDKManager.SDKManagerCallback registrationCallback = new DJISDKManager.SDKManagerCallback() {
@@ -101,6 +103,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         Manifest.permission.BLUETOOTH_ADMIN,
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.READ_PHONE_STATE,
+        Manifest.permission.RECORD_AUDIO
     };
     private static final int REQUEST_PERMISSION_CODE = 12345;
     private List<String> missingPermission = new ArrayList<>();
@@ -117,6 +120,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         TextView versionText = (TextView) findViewById(R.id.version);
         versionText.setText(getResources().getString(R.string.sdk_version, DJISDKManager.getInstance().getSDKVersion()));
         bridgeModeEditText = (EditText) findViewById(R.id.edittext_bridge_ip);
+        bridgeModeEditText.setText(PreferenceManager.getDefaultSharedPreferences(this).getString(LAST_USED_BRIDGE_IP,""));
         bridgeModeEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -157,6 +161,13 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
             }
         });
         checkAndRequestPermissions();
+    }
+
+    @Override
+    protected void onDestroy() {
+        DJISDKManager.getInstance().destroy();
+        isAppStarted = false;
+        super.onDestroy();
     }
 
     /**
@@ -200,7 +211,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         if (missingPermission.isEmpty()) {
             startSDKRegistration();
         } else {
-            Toast.makeText(getApplicationContext(), "Missing permissions!!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Missing permissions! Will not register SDK to connect to aircraft.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -284,9 +295,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
     private void handleBridgeIPTextChange() {
         // the user is done typing.
         final String bridgeIP = bridgeModeEditText.getText().toString();
-        DJISDKManager.getInstance().enableBridgeModeWithBridgeAppIP(bridgeIP);
+
         if (!TextUtils.isEmpty(bridgeIP)) {
+            DJISDKManager.getInstance().enableBridgeModeWithBridgeAppIP(bridgeIP);
             Toast.makeText(getApplicationContext(),"BridgeMode ON!\nIP: " + bridgeIP,Toast.LENGTH_SHORT).show();
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putString(LAST_USED_BRIDGE_IP,bridgeIP).apply();
         }
     }
 }

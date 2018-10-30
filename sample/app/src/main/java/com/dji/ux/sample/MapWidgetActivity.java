@@ -102,6 +102,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case 2:
                 mapWidget.initAMap(onMapReadyListener);
                 break;
+            default:
+                break;
         }
         mapWidget.onCreate(savedInstanceState);
 
@@ -279,7 +281,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
 
     private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
         Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
-                                            vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                                            vectorDrawable.getIntrinsicHeight(),
+                                            Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
         vectorDrawable.draw(canvas);
@@ -323,10 +326,14 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         DialogInterface.OnClickListener positiveClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mapWidget.setFlyZoneVisible(FlyZoneCategory.AUTHORIZATION, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.AUTHORIZATION));
-                mapWidget.setFlyZoneVisible(FlyZoneCategory.WARNING, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.WARNING));
-                mapWidget.setFlyZoneVisible(FlyZoneCategory.ENHANCED_WARNING, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.ENHANCED_WARNING));
-                mapWidget.setFlyZoneVisible(FlyZoneCategory.RESTRICTED, flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.RESTRICTED));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.AUTHORIZATION,
+                                            flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.AUTHORIZATION));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.WARNING,
+                                            flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.WARNING));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.ENHANCED_WARNING,
+                                            flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.ENHANCED_WARNING));
+                mapWidget.setFlyZoneVisible(FlyZoneCategory.RESTRICTED,
+                                            flyZoneDialogView.isFlyZoneEnabled(FlyZoneCategory.RESTRICTED));
                 dialog.dismiss();
             }
         };
@@ -413,9 +420,14 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                     LatLng latLng2 = new LatLng(testLat + 0.25, testLng + 0.25);
                     LatLng latLng3 = new LatLng(testLat - 0.25, testLng - 0.25);
                     LatLngBounds bounds = new LatLngBounds(latLng1, latLng2).including(latLng3);
-                    BitmapDescriptor aircraftImage = BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_compass_aircraft));
+                    BitmapDescriptor aircraftImage = BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(
+                        getResources(),
+                        R.drawable.ic_compass_aircraft));
                     GroundOverlayOptions groundOverlayOptions = new GroundOverlayOptions();
-                    groundOverlayOptions.image(aircraftImage).positionFromBounds(bounds).transparency(0.5f).visible(true);
+                    groundOverlayOptions.image(aircraftImage)
+                                        .positionFromBounds(bounds)
+                                        .transparency(0.5f)
+                                        .visible(true);
                     groundOverlay = googleMap.addGroundOverlay(groundOverlayOptions);
                 } else {
                     groundOverlay.remove();

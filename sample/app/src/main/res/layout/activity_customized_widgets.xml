@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/debug_2">
         <dji.ux.widget.FPVWidget
-            android:id="@+id/secondary_fpv_widget"
+            android:id="@+id/secondary_fpv_custom_widget"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             custom:sourceCameraNameVisibility="true"
@@ -149,19 +149,35 @@
             android:padding="10dp">
 
             <CheckBox
-                android:id="@+id/checkboxPrimaryCameraName"
+                android:id="@+id/checkbox_primary_camera_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Primary Camera Name"
+                android:text="@string/camera_name_primary"
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkboxSecondaryCameraName"
+                android:id="@+id/checkbox_secondary_camera_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Secondary Camera Name"
+                android:text="@string/camera_name_secondary"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_primary_camera_side"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/camera_side_primary"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_secondary_camera_side"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/camera_side_secondary"
                 android:textColor="@color/white" />
 
             <CheckBox
@@ -169,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Focus Point"
+                android:text="@string/focus_point"
                 android:textColor="@color/white" />
 
             <CheckBox
@@ -177,7 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Metering Point"
+                android:text="@string/metering_point"
                 android:textColor="@color/white" />
 
             <CheckBox
@@ -185,8 +201,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Gimbal Control"
+                android:text="@string/gimbal_control"
                 android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_display_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/display_grid"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_grid_overlay_selection"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/grid_type_none"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/grid_type_none" />
+
+            <Button
+                android:id="@+id/grid_type_parallel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/grid_type_parallel" />
+
+            <Button
+                android:id="@+id/grid_type_parallel_diagonal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/selector_map_type_bg"
+                android:text="@string/grid_type_parallel_diagonal" />
 
             <TextView
                 android:layout_marginTop="3dp"
@@ -239,5 +297,4 @@
                 android:text="@string/set_fpv_size" />
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

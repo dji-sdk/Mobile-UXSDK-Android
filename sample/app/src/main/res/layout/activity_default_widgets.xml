@@ -5,7 +5,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background_blue"
-                android:orientation="horizontal"
                 android:id="@+id/root_view"
                 tools:context=".MainActivity">
 
@@ -15,11 +14,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        custom:sourceCameraNameVisibility="true"/>
 
     <dji.ux.widget.FPVOverlayWidget
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_toRightOf="@+id/TakeOffReturnPanel"
+        android:layout_toLeftOf="@+id/CameraCapturePanel"
+        android:layout_below="@+id/camera"
+        tools:ignore="RtlHardcoded">
+
+        <dji.ux.widget.RadarWidget
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
 
     <dji.ux.widget.MapWidget
         android:id="@+id/map_widget"
@@ -29,6 +45,23 @@
         android:layout_marginBottom="12dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:id="@+id/secondary_video_view"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="7dp"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/TakeOffReturnPanel"
+        android:background="@color/black">
+        <dji.ux.widget.FPVWidget
+            android:id="@+id/secondary_fpv_widget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            custom:sourceCameraNameVisibility="true"
+            custom:videoSource="secondary"/>
+    </FrameLayout>
 
     <dji.ux.workflow.CompassCalibratingWorkFlow
         android:layout_width="match_parent"
@@ -89,6 +122,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp"
         android:layout_width="match_parent"
+        android:id="@+id/remaining_flight_time"
         android:background="@color/transparent"
         android:layout_height="20dp"/>
 
@@ -135,8 +169,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_below="@id/camera"
+        android:layout_toLeftOf="@+id/CameraCapturePanel"
         android:background="@color/dark_gray"
         android:orientation="horizontal">
+        <dji.ux.widget.SpeakerWidget
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
         <dji.ux.widget.AutoExposureLockWidget
             android:layout_width="35dp"
             android:layout_height="35dp"/>
@@ -146,10 +184,19 @@
         <dji.ux.widget.FocusExposureSwitchWidget
             android:layout_width="35dp"
             android:layout_height="35dp"/>
+        <dji.ux.widget.BeaconWidget
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <dji.ux.widget.SpotlightWidget
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <dji.ux.widget.AccessLockerWidget
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
     </LinearLayout>
     <dji.ux.widget.ManualFocusWidget
         android:layout_alignTop="@+id/camera2"
-        android:layout_toRightOf="@+id/camera2"
+        android:layout_toLeftOf="@+id/camera2"
 
         android:layout_width="50dp"
         android:layout_height="210dp"
@@ -158,6 +205,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/dashboard_widget"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:padding="12dp">
@@ -177,19 +225,21 @@
         android:id="@+id/TakeOffReturnPanel"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="4dp"
+        android:layout_above="@+id/dashboard_widget"
         android:orientation="vertical">
 
         <dji.ux.widget.TakeOffWidget
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="5dp" />
 
         <dji.ux.widget.ReturnHomeWidget
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
     </LinearLayout>
 
 
@@ -201,22 +251,6 @@
         android:layout_height="213dp"
         android:layout_marginTop="5dp"
         tools:ignore="RtlHardcoded"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="40dp"
-        android:layout_toRightOf="@id/TakeOffReturnPanel"
-        android:layout_toLeftOf="@id/CameraCapturePanel"
-        android:layout_below="@id/camera"
-        tools:ignore="RtlHardcoded">
-
-        <dji.ux.widget.RadarWidget
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
-
-    </RelativeLayout>
 
     <dji.ux.widget.HistogramWidget
         android:layout_toRightOf="@id/TakeOffReturnPanel"
@@ -267,4 +301,19 @@
         custom:excludeItem="ESCStatus"
         android:visibility="gone"/>
 
+    <dji.ux.panel.SpotlightPanel
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/camera2"
+        android:layout_alignRight="@+id/camera2"
+        android:visibility="gone"
+        android:gravity="center" />
+
+    <dji.ux.panel.SpeakerPanel
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/signal"
+        android:visibility="gone"
+        android:gravity="center" />
 </RelativeLayout>

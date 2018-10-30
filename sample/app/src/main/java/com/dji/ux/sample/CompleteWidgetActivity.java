@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import com.dji.mapkit.core.maps.DJIMap;
 import com.dji.mapkit.core.models.DJILatLng;
+import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
 
 /** Activity that shows all the UI elements together */
@@ -18,7 +20,9 @@ public class CompleteWidgetActivity extends Activity {
 
     private MapWidget mapWidget;
     private ViewGroup parentView;
-    private View fpvWidget;
+    private FPVWidget fpvWidget;
+    private FPVWidget secondaryFPVWidget;
+    private FrameLayout secondaryVideoView;
     private boolean isMapMini = true;
 
     private int height;
@@ -63,6 +67,15 @@ public class CompleteWidgetActivity extends Activity {
                 onViewClick(fpvWidget);
             }
         });
+        secondaryVideoView = (FrameLayout) findViewById(R.id.secondary_video_view);
+        secondaryFPVWidget = findViewById(R.id.secondary_fpv_widget);
+        secondaryFPVWidget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                swapVideoSource();
+            }
+        });
+        updateSecondaryVideoVisibility();
     }
 
     private void onViewClick(View view) {
@@ -72,7 +85,7 @@ public class CompleteWidgetActivity extends Activity {
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = true;
         } else if (view == mapWidget && isMapMini) {
-            resizeFPVWidget(width, height, margin, 3);
+            resizeFPVWidget(width, height, margin, 5);
             ResizeAnimation mapViewAnimation = new ResizeAnimation(mapWidget, width, height, deviceWidth, deviceHeight, 0);
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = false;
@@ -89,6 +102,24 @@ public class CompleteWidgetActivity extends Activity {
 
         parentView.removeView(fpvWidget);
         parentView.addView(fpvWidget, fpvInsertPosition);
+    }
+
+    private void swapVideoSource() {
+        if (secondaryFPVWidget.getVideoSource() == FPVWidget.VideoSource.SECONDARY) {
+            fpvWidget.setVideoSource(FPVWidget.VideoSource.SECONDARY);
+            secondaryFPVWidget.setVideoSource(FPVWidget.VideoSource.PRIMARY);
+        } else {
+            fpvWidget.setVideoSource(FPVWidget.VideoSource.PRIMARY);
+            secondaryFPVWidget.setVideoSource(FPVWidget.VideoSource.SECONDARY);
+        }
+    }
+
+    private void updateSecondaryVideoVisibility() {
+        if (secondaryFPVWidget.getVideoSource() == null) {
+            secondaryVideoView.setVisibility(View.GONE);
+        } else {
+            secondaryVideoView.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

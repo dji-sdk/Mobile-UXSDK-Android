@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -38,6 +38,16 @@
           <dl>
             <dt>Widget
             </dt>
+                  <dd><a href="DUXExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
+                  </dd>
+                  <dd><a href="DUXMapWidget.html">MapWidget</a>
+                  </dd>
+                  <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  </dd>
+                  <dd><a href="DUXRadarWidget.html">RadarWidget</a>
+                  </dd>
+                  <dd><a href="DUXHistogramWidget.html">HistogramWidget</a>
+                  </dd>
                   <dd><a href="AutoExposureLockWidget.html">AutoExposureLockWidget</a>
                   </dd>
                   <dd><a href="PreFlightStatusWidget.html">PreFlightStatusWidget</a>
@@ -96,8 +106,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
-                  </dd>
                   <dd><a href="CameraConfigShutterWidget.html">CameraConfigShutterWidget</a>
                   </dd>
                   <dd><a href="CameraConfigApertureWidget.html">CameraConfigApertureWidget</a>
@@ -114,46 +122,44 @@
                   </dd>
                   <dd><a href="CompassCalibratingWorkFlow.html">CompassCalibratingWorkFlow</a>
                   </dd>
-                  <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJILatLng.html">DJILatLng</a>
-                                      </dd>
-                              </ul>
-                            </dd>
-                    </ul>
+          </dl>
+          <dl>
+            <dt>Widgets
+            </dt>
+                  <dd><a href="DUXSpeakerWidget.html">SpeakerWidget</a>
                   </dd>
-                  <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  <dd><a href="DUXBeaconWidget.html">BeaconWidget</a>
                   </dd>
-                  <dd><a href="DUXRadarWidget.html">RadarWidget</a>
+                  <dd><a href="DUXSpotlightWidget.html">SpotlightWidget</a>
                   </dd>
-                  <dd><a href="DUXHistogramWidget.html">HistogramWidget</a>
+          </dl>
+          <dl>
+            <dt>Default Layout
+            </dt>
+                  <dd><a href="DUXSpeakerSettingsViewController.html">SpeakerPanel</a>
+                  </dd>
+                  <dd><a href="DUXAccessLockerWidget.html">AccessLockerWidget</a>
+                  </dd>
+                  <dd><a href="DUXSpotlightSettingsViewController.html">SpotlightPanel</a>
                   </dd>
           </dl>
           <dl>
             <dt>Panel
             </dt>
+                  <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
+                  </dd>
                   <dd><a href="CameraSettingAdvancedPanel.html">CameraSettingAdvancedPanel</a>
                   </dd>
                   <dd><a href="CameraSettingExposurePanel.html">CameraSettingExposurePanel</a>
                   </dd>
                   <dd><a href="RTKStatusPanel.html">RTKStatusPanel</a>
                   </dd>
-                  <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
-                  </dd>
           </dl>
         </div>
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>CameraConfigSSDWidget</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CameraConfigSSDWidget</span> <span class="keyword">extends</span> <span class="title">FrameLayoutWidget</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CameraConfigSSDWidget</span> <span class="keyword">extends</span> <span class="title">FrameLayoutWidget</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget.config</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>FrameLayoutWidget</code></font></td></tr></table></html>
 <h5 id="usage">Usage:</h5>
 <p><font color="#666">Shows SSD Video format, clip name, license, and capacity info.</font></p>
@@ -170,7 +176,7 @@
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak="">{{searchCount}}</span>&nbsp;Results
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">

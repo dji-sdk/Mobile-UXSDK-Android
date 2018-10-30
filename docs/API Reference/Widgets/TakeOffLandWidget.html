@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -38,6 +38,16 @@
           <dl>
             <dt>Widget
             </dt>
+                  <dd><a href="DUXExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
+                  </dd>
+                  <dd><a href="DUXMapWidget.html">MapWidget</a>
+                  </dd>
+                  <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  </dd>
+                  <dd><a href="DUXRadarWidget.html">RadarWidget</a>
+                  </dd>
+                  <dd><a href="DUXHistogramWidget.html">HistogramWidget</a>
+                  </dd>
                   <dd><a href="AutoExposureLockWidget.html">AutoExposureLockWidget</a>
                   </dd>
                   <dd><a href="PreFlightStatusWidget.html">PreFlightStatusWidget</a>
@@ -96,8 +106,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href="ExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
-                  </dd>
                   <dd><a href="CameraConfigShutterWidget.html">CameraConfigShutterWidget</a>
                   </dd>
                   <dd><a href="CameraConfigApertureWidget.html">CameraConfigApertureWidget</a>
@@ -114,46 +122,44 @@
                   </dd>
                   <dd><a href="CompassCalibratingWorkFlow.html">CompassCalibratingWorkFlow</a>
                   </dd>
-                  <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
-                                      </dd>
-                                      <dd><a href="DJIMap_DJILatLng.html">DJILatLng</a>
-                                      </dd>
-                              </ul>
-                            </dd>
-                    </ul>
+          </dl>
+          <dl>
+            <dt>Widgets
+            </dt>
+                  <dd><a href="DUXSpeakerWidget.html">SpeakerWidget</a>
                   </dd>
-                  <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
+                  <dd><a href="DUXBeaconWidget.html">BeaconWidget</a>
                   </dd>
-                  <dd><a href="DUXRadarWidget.html">RadarWidget</a>
+                  <dd><a href="DUXSpotlightWidget.html">SpotlightWidget</a>
                   </dd>
-                  <dd><a href="DUXHistogramWidget.html">HistogramWidget</a>
+          </dl>
+          <dl>
+            <dt>Default Layout
+            </dt>
+                  <dd><a href="DUXSpeakerSettingsViewController.html">SpeakerPanel</a>
+                  </dd>
+                  <dd><a href="DUXAccessLockerWidget.html">AccessLockerWidget</a>
+                  </dd>
+                  <dd><a href="DUXSpotlightSettingsViewController.html">SpotlightPanel</a>
                   </dd>
           </dl>
           <dl>
             <dt>Panel
             </dt>
+                  <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
+                  </dd>
                   <dd><a href="CameraSettingAdvancedPanel.html">CameraSettingAdvancedPanel</a>
                   </dd>
                   <dd><a href="CameraSettingExposurePanel.html">CameraSettingExposurePanel</a>
                   </dd>
                   <dd><a href="RTKStatusPanel.html">RTKStatusPanel</a>
                   </dd>
-                  <dd><a href="PreFlightCheckListPanel.html">PreFlightCheckListPanel</a>
-                  </dd>
           </dl>
         </div>
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>TakeOffWidget</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TakeOffWidget</span> <span class="keyword">extends</span> <span class="title">ButtonWidget</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TakeOffWidget</span> <span class="keyword">extends</span> <span class="title">ButtonWidget</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>ButtonWidget</code></font></td></tr></table></html>
 <h5 id="display">Display:</h5>
 <p><img src="../assets/TAKEOFF.gif" alt="uilib_image"><br style="clear:both"></p>
@@ -174,25 +180,25 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_ontakeoffstatuschange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_ontakeoffstatuschange_inline">onTakeOffStatusChange</a></div></div><div class="inline-doc" id="takeofflandwidget_ontakeoffstatuschange_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onTakeOffStatusChange</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffStatusChange</span><span class="params">(<span class="keyword">boolean</span> isTakingOff)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffStatusChange</span><span class="params">(<span class="keyword">boolean</span> isTakingOff)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Triggers when take off status changes.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isTakingOff</font></font></td><td><font color="#666"><i>true if taking off, false otherwise</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isTakingOff</font></font></td><td><font color="#666"><i><code>true</code> if taking off, <code>false</code> otherwise</i></font></td></tr></table></html></div>
 <div class="api-row" id="takeofflandwidget_onlandingstatuschange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_onlandingstatuschange_inline">onLandingStatusChange</a></div></div><div class="inline-doc" id="takeofflandwidget_onlandingstatuschange_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onLandingStatusChange</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingStatusChange</span><span class="params">(<span class="keyword">boolean</span> isLanding)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingStatusChange</span><span class="params">(<span class="keyword">boolean</span> isLanding)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Triggers when landing status changes.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isLanding</font></font></td><td><font color="#666"><i>true if in process of landing, false otherwise</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">isLanding</font></font></td><td><font color="#666"><i><code>true</code> if in process of landing, <code>false</code> otherwise</i></font></td></tr></table></html></div>
 <div class="api-row" id="takeofflandwidget_performtakeoffaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_performtakeoffaction_inline">performTakeOffAction</a></div></div><div class="inline-doc" id="takeofflandwidget_performtakeoffaction_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>performTakeOffAction</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performTakeOffAction</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performTakeOffAction</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Performs take off action @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_ontakeoffactionresult">onTakeOffActionResult</a></code> to listen on the action result by overridding</font></p>
@@ -200,7 +206,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_performlandingaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_performlandingaction_inline">performLandingAction</a></div></div><div class="inline-doc" id="takeofflandwidget_performlandingaction_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>performLandingAction</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performLandingAction</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performLandingAction</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Performs landing action @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_onlandingactionresult">onLandingActionResult</a></code> to listen on the action result by overridding</font></p>
@@ -208,7 +214,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_performcancellandingaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_performcancellandingaction_inline">performCancelLandingAction</a></div></div><div class="inline-doc" id="takeofflandwidget_performcancellandingaction_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>performCancelLandingAction</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performCancelLandingAction</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">performCancelLandingAction</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Performs cancel landing action @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_oncancellandingactionresult">onCancelLandingActionResult</a></code> to listen on the action result by overridding</font></p>
@@ -216,7 +222,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_performlandingconfirmationaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_performlandingconfirmationaction_inline">performLandingConfirmationAction</a></div></div><div class="inline-doc" id="takeofflandwidget_performlandingconfirmationaction_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>performLandingConfirmationAction</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">performLandingConfirmationAction</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">performLandingConfirmationAction</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Performs the landing confirmation action. This allows aircraft to land when landing  confirmation is received.</font></p>
@@ -224,7 +230,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_ontakeoffactionresult"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_ontakeoffactionresult_inline">onTakeOffActionResult</a></div></div><div class="inline-doc" id="takeofflandwidget_ontakeoffactionresult_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onTakeOffActionResult</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffActionResult</span><span class="params">(@Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffActionResult</span><span class="params">(@Nullable DJIError error)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Triggers when take off action completes @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_performtakeoffaction">performTakeOffAction</a></code></font></p>
@@ -233,7 +239,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_onlandingactionresult"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_onlandingactionresult_inline">onLandingActionResult</a></div></div><div class="inline-doc" id="takeofflandwidget_onlandingactionresult_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onLandingActionResult</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingActionResult</span><span class="params">(@Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingActionResult</span><span class="params">(@Nullable DJIError error)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Triggers when landing action completes @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_performlandingaction">performLandingAction</a></code></font></p>
@@ -242,7 +248,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_oncancellandingactionresult"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_oncancellandingactionresult_inline">onCancelLandingActionResult</a></div></div><div class="inline-doc" id="takeofflandwidget_oncancellandingactionresult_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onCancelLandingActionResult</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onCancelLandingActionResult</span><span class="params">(@Nullable DJIError error)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onCancelLandingActionResult</span><span class="params">(@Nullable DJIError error)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Triggers when cancel landing action completes @see #<code><a href="../Widgets/TakeOffLandWidget.html#takeofflandwidget_performcancellandingaction">performCancelLandingAction</a></code></font></p>
@@ -251,7 +257,7 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_onlandingconfirmedresult"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_onlandingconfirmedresult_inline">onLandingConfirmedResult</a></div></div><div class="inline-doc" id="takeofflandwidget_onlandingconfirmedresult_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onLandingConfirmedResult</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"><span class="meta">@Keep</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingConfirmedResult</span><span class="params">(DJIError error)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="meta">@Keep</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onLandingConfirmedResult</span><span class="params">(DJIError error)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Triggers when confirm landing action completes.</font></p>
@@ -260,12 +266,12 @@ to cancel landing.</li>
 <div class="api-row" id="takeofflandwidget_ontakeoffenable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#takeofflandwidget_ontakeoffenable_inline">onTakeOffEnable</a></div></div><div class="inline-doc" id="takeofflandwidget_ontakeoffenable_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>onTakeOffEnable</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@MainThread</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffEnable</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">onTakeOffEnable</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Triggers when TakeOff Widget changes between being enabled or not.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i>Current state that is true if button is enabled.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">enabled</font></font></td><td><font color="#666"><i>Current state that is <code>true</code> if button is enabled.</i></font></td></tr></table></html></div>
 
         </div>
       </div>
@@ -279,7 +285,7 @@ to cancel landing.</li>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
           <div class="modal-body">
-            <p v-show="!!searchCount" class="search-count"><span v-cloak>{{searchCount}}</span>&nbsp;Results
+            <p v-show="!!searchCount" class="search-count"><span v-cloak="">{{searchCount}}</span>&nbsp;Results
             </p>
             <ul v-show="!!searchCount" class="search-result">
               <li v-for="item in searchResult"><a v-bind:href="item.url | docUrl">

@@ -1,5 +1,5 @@
 <resources>
-    <string name="ux_sample_name">DJI UX Sample</string>
+    <string name="app_name">DJI UX Sample</string>
     <string name="select_all">Select All</string>
     <string name="select_none">Select None</string>
     <string name="search">Search</string>
@@ -28,6 +28,19 @@
     <string name="dji_account_indicator">DJI Account Login Indicator</string>
     <string name="new_color">New Color</string>
     <string name="sync">Sync</string>
+    <string name="camera_name_primary">Primary Camera Name</string>
+    <string name="camera_name_secondary">Secondary Camera Name</string>
+    <string name="camera_side_primary">Primary Camera Side</string>
+    <string name="camera_side_secondary">Secondary Camera Side</string>
+    <string name="focus_point">Focus Point</string>
+    <string name="metering_point">Metering Point</string>
+    <string name="gimbal_control">Gimbal Control</string>
+    <string name="display_grid">Display Grid</string>
+    <string name="txt_grid_overlay_selection">Change Grid Overlay Type: </string>
+    <string name="grid_type_none">None</string>
+    <string name="grid_type_parallel">Parallel</string>
+    <string name="grid_type_parallel_diagonal">Parallel with Diagonals</string>
+
     <string-array name="iconArray">
         <item>Aircraft</item>
         <item>Home</item>
