@@ -83,96 +83,80 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/build-info" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-apk" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-main-apk-res" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifest-checker" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/multi-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/resources" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/split-apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/splits-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.bouncycastle:bcpkix-jdk15on:1.57@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.lmax:disruptor:3.3.9@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:multidex-1.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-maps-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.1.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/zlinoliver/.gradle/caches/transforms-1/files-1.1/HERE-sdk.aar/d48aefd68d9dfbb5140612b557f6b2df:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-telemetry-2.2.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.14.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-places-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.amap.api:search:5.5.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-java-core:2.2.10@jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:multidex-instrumentation-1.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-services-2.2.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-location-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.amap.api:map2d:5.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-places-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-maps-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapzen.android:lost-3.0.4" level="project" />
-    <orderEntry type="library" name="Gradle: com.jakewharton.timber:timber-4.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.10.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.amap.api:location:3.6.1@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-location-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-25.4.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-java-services:2.2.10@jar" level="project" />
-    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:recyclerview-v7-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: android.arch.core:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.dji:dji-sdk-provided:4.8@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.vividsolutions:jts:1.8@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.dji:library-anti-distortion-4.7" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-sdk-5.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.wire:wire-runtime:2.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-java-geojson:2.2.10@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-fragment-27.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-v4-25.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.57@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base-license-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.10.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks-11.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.dji:dji-sdk-4.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.amap.api:3dmap:5.5.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.dji:dji-uxsdk-4.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.2.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.0.0" level="project" />
+    <orderEntry type="library" name="org.bouncycastle:bcprov-jdk15on:1.57@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:multidex-1.0.2" level="project" />
+    <orderEntry type="library" name="com.squareup.okhttp3:okhttp:3.10.0@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.okio:okio:1.14.0@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:animated-vector-drawable-27.0.0" level="project" />
+    <orderEntry type="library" name="com.mapzen.android:lost-3.0.4" level="project" />
+    <orderEntry type="library" name="android.arch.lifecycle:common:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-base-license-11.8.0" level="project" />
+    <orderEntry type="library" name="com.android.support:support-core-utils-27.0.0" level="project" />
+    <orderEntry type="library" name="android.arch.lifecycle:runtime-1.0.0" level="project" />
+    <orderEntry type="library" name="com.dji:dji-uxsdk-4.8.1" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-basement-license-11.8.0" level="project" />
+    <orderEntry type="library" name="com.android.support:support-compat-27.0.0" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-java-geojson:2.2.10@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:support-vector-drawable-27.0.0" level="project" />
+    <orderEntry type="library" name="org.bouncycastle:bcpkix-jdk15on:1.57@jar" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-android-services-2.2.10" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-java-services:2.2.10@jar" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.8.2@jar" level="project" />
+    <orderEntry type="library" name="com.amap.api:search:5.5.0@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.retrofit2:converter-gson:2.2.0@jar" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-basement-11.8.0" level="project" />
+    <orderEntry type="library" name="com.android.support:support-core-ui-27.0.0" level="project" />
+    <orderEntry type="library" name="android.arch.core:common:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-tasks-11.8.0" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-places-license-11.8.0" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-location-license-11.8.0" level="project" />
+    <orderEntry type="library" name="com.dji:dji-sdk-4.8.1" level="project" />
+    <orderEntry type="library" name="org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:/Users/zlinoliver/.gradle/caches/transforms-1/files-1.1/HERE-sdk.aar/9a80d635d1647f7714a29b3fe813adf4:unspecified@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="com.android.support:multidex-instrumentation-1.0.2" level="project" />
+    <orderEntry type="library" name="com.amap.api:map2d:5.2.0@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.retrofit2:retrofit:2.2.0@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:support-fragment-27.0.0" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-base-11.8.0" level="project" />
+    <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.0" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-places-11.8.0" level="project" />
+    <orderEntry type="library" name="com.squareup.wire:wire-runtime:2.2.0@jar" level="project" />
+    <orderEntry type="library" name="com.squareup.okhttp3:logging-interceptor:3.10.0@jar" level="project" />
+    <orderEntry type="library" name="com.dji:library-anti-distortion-4.7" level="project" />
+    <orderEntry type="library" name="com.jakewharton.timber:timber-4.5.1" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-maps-license-11.8.0" level="project" />
+    <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.0" level="project" />
+    <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.1.2" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-android-telemetry-2.2.10" level="project" />
+    <orderEntry type="library" name="com.android.support:support-v4-25.2.0" level="project" />
+    <orderEntry type="library" name="com.android.support:support-media-compat-25.4.0" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-maps-11.8.0" level="project" />
+    <orderEntry type="library" name="com.amap.api:location:3.6.1@jar" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-location-11.8.0" level="project" />
+    <orderEntry type="library" name="com.lmax:disruptor:3.3.9@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:support-annotations:27.0.0@jar" level="project" />
+    <orderEntry type="library" name="com.amap.api:3dmap:5.5.0@jar" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-android-sdk-5.5.1" level="project" />
+    <orderEntry type="library" name="com.mapbox.mapboxsdk:mapbox-java-core:2.2.10@jar" level="project" />
+    <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.1.2@jar" level="project" />
+    <orderEntry type="library" name="com.dji:dji-sdk-provided:4.8.1@jar" level="project" />
+    <orderEntry type="library" name="com.vividsolutions:jts:1.8@jar" level="project" />
+    <orderEntry type="library" name="com.google.android.gms:play-services-tasks-license-11.8.0" level="project" />
   </component>
 </module>
