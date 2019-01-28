@@ -4,8 +4,21 @@
     <string name="select_none">Select None</string>
     <string name="search">Search</string>
     <string name="run">Run</string>
+    <string name="camera_name_primary">Primary Camera Name</string>
+    <string name="camera_name_secondary">Secondary Camera Name</string>
+    <string name="camera_side_primary">Primary Camera Side</string>
+    <string name="camera_side_secondary">Secondary Camera Side</string>
+    <string name="focus_point">Focus Point</string>
+    <string name="metering_point">Metering Point</string>
+    <string name="gimbal_control">Gimbal Control</string>
+    <string name="display_grid">Display Grid</string>
+    <string name="txt_grid_overlay_selection">Change Grid Overlay Type: </string>
+    <string name="txt_center_point_selection">Change Center Point Type: </string>
     <string name="txt_video_feed_selection">Change Video Source: </string>
     <string name="txt_video_dynamic_size">Test FPV widget view in different size: </string>
+    <string name="grid_type_none">None</string>
+    <string name="grid_type_parallel">Parallel</string>
+    <string name="grid_type_parallel_diagonal">Parallel with Diagonals</string>
     <string name="set_auto_video_feed">Auto</string>
     <string name="set_primary_video_feed">Primary</string>
     <string name="set_secondary_video_feed">Secondary</string>
@@ -15,6 +28,7 @@
     <string name="provider_google_maps">Google Maps</string>
     <string name="provider_here_maps">Here Maps</string>
     <string name="provider_amaps">AMaps</string>
+    <string name="error_map_not_initialized">The map has not been initialized yet</string>
     <string name="home_direction">Home Direction</string>
     <string name="auto_frame">Auto Frame</string>
     <string name="unlock_flyzones">Unlock Fly Zones</string>
@@ -28,19 +42,6 @@
     <string name="dji_account_indicator">DJI Account Login Indicator</string>
     <string name="new_color">New Color</string>
     <string name="sync">Sync</string>
-    <string name="camera_name_primary">Primary Camera Name</string>
-    <string name="camera_name_secondary">Secondary Camera Name</string>
-    <string name="camera_side_primary">Primary Camera Side</string>
-    <string name="camera_side_secondary">Secondary Camera Side</string>
-    <string name="focus_point">Focus Point</string>
-    <string name="metering_point">Metering Point</string>
-    <string name="gimbal_control">Gimbal Control</string>
-    <string name="display_grid">Display Grid</string>
-    <string name="txt_grid_overlay_selection">Change Grid Overlay Type: </string>
-    <string name="grid_type_none">None</string>
-    <string name="grid_type_parallel">Parallel</string>
-    <string name="grid_type_parallel_diagonal">Parallel with Diagonals</string>
-
     <string-array name="iconArray">
         <item>Aircraft</item>
         <item>Home</item>

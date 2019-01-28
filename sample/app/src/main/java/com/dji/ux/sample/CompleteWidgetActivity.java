@@ -12,8 +12,12 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import com.dji.mapkit.core.maps.DJIMap;
 import com.dji.mapkit.core.models.DJILatLng;
+import dji.keysdk.CameraKey;
+import dji.keysdk.KeyManager;
+import dji.ux.widget.FPVOverlayWidget;
 import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
+import dji.ux.widget.controls.CameraControlsWidget;
 
 /** Activity that shows all the UI elements together */
 public class CompleteWidgetActivity extends Activity {
@@ -81,11 +85,14 @@ public class CompleteWidgetActivity extends Activity {
     private void onViewClick(View view) {
         if (view == fpvWidget && !isMapMini) {
             resizeFPVWidget(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT, 0, 0);
+            reorderCameraCapturePanel();
             ResizeAnimation mapViewAnimation = new ResizeAnimation(mapWidget, deviceWidth, deviceHeight, width, height, margin);
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = true;
         } else if (view == mapWidget && isMapMini) {
-            resizeFPVWidget(width, height, margin, 5);
+            hidePanels();
+            resizeFPVWidget(width, height, margin, 12);
+            reorderCameraCapturePanel();
             ResizeAnimation mapViewAnimation = new ResizeAnimation(mapWidget, width, height, deviceWidth, deviceHeight, 0);
             mapWidget.startAnimation(mapViewAnimation);
             isMapMini = false;
@@ -98,10 +105,25 @@ public class CompleteWidgetActivity extends Activity {
         fpvParams.width = width;
         fpvParams.rightMargin = margin;
         fpvParams.bottomMargin = margin;
+        if (isMapMini) {
+            fpvParams.addRule(RelativeLayout.CENTER_IN_PARENT, 0);
+            fpvParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+            fpvParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+        } else {
+            fpvParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+            fpvParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
+            fpvParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        }
         fpvWidget.setLayoutParams(fpvParams);
 
         parentView.removeView(fpvWidget);
         parentView.addView(fpvWidget, fpvInsertPosition);
+    }
+
+    private void reorderCameraCapturePanel() {
+        View cameraCapturePanel = findViewById(R.id.CameraCapturePanel);
+        parentView.removeView(cameraCapturePanel);
+        parentView.addView(cameraCapturePanel, isMapMini ? 9 : 13);
     }
 
     private void swapVideoSource() {
@@ -120,6 +142,16 @@ public class CompleteWidgetActivity extends Activity {
         } else {
             secondaryVideoView.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void hidePanels() {
+        KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED), false, null);
+        KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED), false, null);
+
+        findViewById(R.id.pre_flight_check_list).setVisibility(View.GONE);
+        findViewById(R.id.rtk_panel).setVisibility(View.GONE);
+        findViewById(R.id.spotlight_panel).setVisibility(View.GONE);
+        findViewById(R.id.speaker_panel).setVisibility(View.GONE);
     }
 
     @Override

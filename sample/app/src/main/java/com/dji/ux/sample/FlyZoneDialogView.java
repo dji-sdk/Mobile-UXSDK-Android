@@ -121,23 +121,23 @@ public class FlyZoneDialogView extends ScrollView {
         btnCustomUnlockSync.setEnabled(mapWidget.isCustomUnlockZonesVisible());
 
 
-        float strokeWidth = mapWidget.getFlyZoneBorderWidth();
+        final float STROKE_WIDTH = 15.0f;
         authColor.setBackground(getBackground(mapWidget.getFlyZoneColor(FlyZoneCategory.AUTHORIZATION),
                                               mapWidget.getFlyZoneAlpha(FlyZoneCategory.AUTHORIZATION),
-                                              strokeWidth));
+                                              STROKE_WIDTH));
         warningColor.setBackground(getBackground(mapWidget.getFlyZoneColor(FlyZoneCategory.WARNING),
                                                  mapWidget.getFlyZoneAlpha(FlyZoneCategory.WARNING),
-                                                 strokeWidth));
+                                                 STROKE_WIDTH));
         enhancedWarningColor.setBackground(getBackground(mapWidget.getFlyZoneColor(FlyZoneCategory.ENHANCED_WARNING),
                                                          mapWidget.getFlyZoneAlpha(FlyZoneCategory.ENHANCED_WARNING),
-                                                         strokeWidth));
+                                                         STROKE_WIDTH));
         restrictedColor.setBackground(getBackground(mapWidget.getFlyZoneColor(FlyZoneCategory.RESTRICTED),
                                                     mapWidget.getFlyZoneAlpha(FlyZoneCategory.RESTRICTED),
-                                                    strokeWidth));
+                                                    STROKE_WIDTH));
         maxHeightColor.setBackground(getBackground(mapWidget.getMaximumHeightColor(),
-                                                   mapWidget.getMaximumHeightAlpha(), strokeWidth));
+                                                   mapWidget.getMaximumHeightAlpha(), STROKE_WIDTH));
         selfUnlockColor.setBackground(getBackground(mapWidget.getSelfUnlockColor(),
-                                                    mapWidget.getSelfUnlockAlpha(), strokeWidth));
+                                                    mapWidget.getSelfUnlockAlpha(), STROKE_WIDTH));
 
         OnClickListener onClickListener = new OnClickListener() {
             @Override

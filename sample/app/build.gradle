@@ -6,7 +6,7 @@ repositories {
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.dji.ux.sample"
         minSdkVersion 16
@@ -54,19 +54,16 @@ android {
 }
 
 dependencies {
-    implementation ('com.dji:dji-uxsdk:4.8.1', {
+    implementation ('com.dji:dji-uxsdk:4.9', {
         // Uncomment the following line if your app does not need Anti Distortion for
         // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
         // exclude module: 'library-anti-distortion'
     })
-    compileOnly ('com.dji:dji-sdk-provided:4.8.1')
-
+    compileOnly ('com.dji:dji-sdk-provided:4.9')
     implementation 'com.amap.api:map2d:5.2.0'
     implementation 'com.amap.api:3dmap:5.5.0'
     implementation 'com.amap.api:search:5.5.0'
     implementation 'com.amap.api:location:3.6.1'
-
     //HERE maps
-    implementation files('libs/HERE-sdk.aar')
-
+    implementation files('libs/HERE-sdk-3.8.0.aar')
 }

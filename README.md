@@ -12,21 +12,21 @@ Declare dependency via Maven:
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-uxsdk</artifactId>
-    <version>4.8.1</version>
+    <version>4.9</version>
 </dependency>
 
 <dependency>
     <groupId>com.dji</groupId>
     <artifactId>dji-sdk-provided</artifactId>
-    <version>4.8.1</version>
+    <version>4.9</version>
 </dependency>
 ~~~
 
 or Gradle:
 
 ~~~groovy
-compile 'com.dji:dji-uxsdk:4.8.1'
-provided 'com.dji:dji-sdk-provided:4.8.1'
+compile 'com.dji:dji-uxsdk:4.9'
+provided 'com.dji:dji-sdk-provided:4.9'
 ~~~
 
 For further detail on how to integrate the DJI UX SDK into your Android Studio project, please check the [Getting Started with UX SDK](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UXSDKDemo.html#import-maven-dependency) tutorial.

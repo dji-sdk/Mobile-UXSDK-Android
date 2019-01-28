@@ -11,7 +11,7 @@
 
     <style name="MapTheme" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="colorAccent">@color/blue</item>
+        <item name="android:textColorSecondary">@color/blue</item>
         <item name="android:windowFullscreen">true</item>
     </style>
-
 </resources>

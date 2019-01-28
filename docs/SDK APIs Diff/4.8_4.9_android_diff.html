@@ -1,0 +1,50 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI UX SDK 4.8 to 4.9 Differences</h1>
+
+<br>
+
+<h2>APIs removed from 4.8</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ux.widget.MapWidget.</span><span class="interface-name">initMapboxMap</span></td><td width=15%><span class="source-code">void initMapboxMap(final OnMapReadyListener listener, String mapboxAccessToken) </span></td></tr></table><br>
+
+<h2>APIs added to 4.9</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">dji.ux.widget.MapWidget.</span><span class="interface-name">setDialogTheme</span></td><td width=15%><span class="source-code">void setDialogTheme(@StyleRes int dialogTheme) </span></td></tr></table><p style="font-size:50%; color:white">e95c127 f4aea97 fb5f6ab b254775 </p></body>
+</html>
+

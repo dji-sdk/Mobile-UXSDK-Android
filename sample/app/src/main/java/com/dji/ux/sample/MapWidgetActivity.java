@@ -87,7 +87,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             @Override
             public void onMapReady(@NonNull DJIMap map) {
                 map.setMapType(DJIMap.MapType.Normal);
-
             }
         };
         Intent intent = getIntent();
@@ -125,6 +124,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
         iconSpinner.setOnItemSelectedListener(this);
         mapSpinner = (Spinner) findViewById(R.id.map_spinner);
+        mapSpinner.setSelection(0, false); // so the listener won't be called before the map is initialized
         mapSpinner.setOnItemSelectedListener(this);
         findViewById(R.id.replace).setOnClickListener(this);
         selectedIcon = (ImageView) findViewById(R.id.icon_1);
@@ -351,7 +351,6 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
 
         switch (parent.getId()) {
             case R.id.map_spinner:
-
                 if (mapWidget.getMap() != null) {
                     switch ((int) id) {
                         case 0:
@@ -365,7 +364,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                             break;
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Could not init maps provider!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.error_map_not_initialized, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.line_spinner:
@@ -397,6 +396,11 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     }
 
     private void addOverlay() {
+        if (mapWidget.getMap() == null) {
+            Toast.makeText(getApplicationContext(), R.string.error_map_not_initialized, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         float testLat = 37.4419f;
         float testLng = -122.1430f;
         switch (mapProvider) {

@@ -79,9 +79,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         public void onComponentChange(BaseProduct.ComponentKey key,
                                       BaseComponent oldComponent,
                                       BaseComponent newComponent) {
-            Toast.makeText(getApplicationContext(),
-                           key.toString() + " changed",
-                           Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(),
+//                           key.toString() + " changed",
+//                           Toast.LENGTH_LONG).show();
 
         }
     };
