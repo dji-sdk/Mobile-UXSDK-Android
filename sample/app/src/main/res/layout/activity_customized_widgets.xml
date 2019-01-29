@@ -20,7 +20,8 @@
     <dji.ux.widget.FPVOverlayWidget
         android:id="@+id/fpv_overlay_widget"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        custom:overlayVideoSource="primary"/>
     <FrameLayout
         android:layout_width="160dp"
         android:layout_height="90dp"
