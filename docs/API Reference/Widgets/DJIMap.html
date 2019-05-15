@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android UX SDK API Reference</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UX SDK API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -134,7 +134,19 @@
                   </dd>
                   <dd><a href="DUXExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
-                  <dd><a href="DUXMapWidget.html">MapWidget</a>
+                  <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
                   </dd>
@@ -158,8 +170,8 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMap</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMap</span></span></div></pre></td></tr></table></figure>
+        <div class="article"><div class="article"><h1><font color="#AAA">interface </font>DJIMap</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJIMap</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The public interface of map object.</font></p>
@@ -175,21 +187,30 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a> <font color="#000">markerOptions</font></font></td><td><font color="#666"><i>Describes how to create the marker.</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarker.html#djimap_djimarker">DJIMarker</a></font></td><td><font color="#666"><i>The marker that was added to the map.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_getmap"><div class="api-col left">Get Map</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_getmap_inline">getMap</a></div></div><div class="inline-doc" id="djimap_getmap_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>getMap</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">Object <span class="title">getMap</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Gets the base Map Object. This will enable all the features available by default in each Map Provider</font></p>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Object</font></td><td><font color="#666"><i>The DJIMap object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_setoncamerachangelistener"><div class="api-col left">Set Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setoncamerachangelistener_inline">setOnCameraChangeListener</a></div></div><div class="inline-doc" id="djimap_setoncamerachangelistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setOnCameraChangeListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnCameraChangeListener</span><span class="params">(<span class="keyword">final</span> OnCameraChangeListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Sets the <code>DJIMap_onCameraChangeListenerInterface</code> which can listen to camera changes.</font></p>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Sets the <code><a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> which can listen to camera changes.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final OnCameraChangeListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_setonmarkerclicklistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setonmarkerclicklistener_inline">setOnMarkerClickListener</a></div></div><div class="inline-doc" id="djimap_setonmarkerclicklistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setOnMarkerClickListener</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnMarkerClickListener</span><span class="params">(OnMarkerClickListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">Sets the <code><a href="../Widgets/DJIMap.html#djimap_onmarkerclicklistenerinterface"></a></code> which can listen click events on the map's markers.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMarkerClickListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
@@ -198,67 +219,95 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnMapClickListener</span><span class="params">(OnMapClickListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the <code><a href="../Widgets/DJIMap.html#djimap_onmapclicklistenerinterface"></a></code>.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMapClickListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_setonmarkerdraglistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setonmarkerdraglistener_inline">setOnMarkerDragListener</a></div></div><div class="inline-doc" id="djimap_setonmarkerdraglistener_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>setOnMarkerDragListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnMarkerDragListener</span><span class="params">(OnMarkerDragListener listener)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Sets the map's <code><a href="../Widgets/DJIMap.html#djimap_onmarkerdraglistenerinterface"></a></code>.</font></p>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMarkerDragListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_removealloncamerachangelisteners"><div class="api-col left">Remove Listener</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removealloncamerachangelisteners_inline">removeAllOnCameraChangeListeners</a></div></div><div class="inline-doc" id="djimap_removealloncamerachangelisteners_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>removeAllOnCameraChangeListeners</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllOnCameraChangeListeners</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">Removes all instances of <code>DJIMap_onCameraChangeListenerInterface</code> from the map.</font></p>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Removes all instances of <code><a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> from the map.</font></p>
 </div>
 <div class="api-row" id="djimap_removeonmarkerclicklistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removeonmarkerclicklistener_inline">removeOnMarkerClickListener</a></div></div><div class="inline-doc" id="djimap_removeonmarkerclicklistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>removeOnMarkerClickListener</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeOnMarkerClickListener</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeOnMarkerClickListener</span><span class="params">(OnMarkerClickListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Removes the <code><a href="../Widgets/DJIMap.html#djimap_onmarkerclicklistenerinterface"></a></code> from the map.</font></p>
-</div>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMarkerClickListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to remove.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_setcameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setcameraposition_inline">setCameraPosition</a></div></div><div class="inline-doc" id="djimap_setcameraposition_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setCameraPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCameraPosition</span><span class="params">(DJICameraPosition cameraPosition)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Sets the camera position.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a> <font color="#000">cameraPosition</font></font></td><td><font color="#666"><i>The camera position.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_getcameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_getcameraposition_inline">getCameraPosition</a></div></div><div class="inline-doc" id="djimap_getcameraposition_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getCameraPosition</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJICameraPosition <span class="title">getCameraPosition</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Gets the camera position.</font></p>
-<h5 id="return-v2">Return:</h5>
+<h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a></code> object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_setmaptype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setmaptype_inline">setMapType</a></div></div><div class="inline-doc" id="djimap_setmaptype_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setMapType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMapType</span><span class="params">(MapType type)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Sets the map type of this map.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap_maptype">MapType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>The map type that the map will be set to.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_removeonmapclicklistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removeonmapclicklistener_inline">removeOnMapClickListener</a></div></div><div class="inline-doc" id="djimap_removeonmapclicklistener_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>removeOnMapClickListener</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeOnMapClickListener</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeOnMapClickListener</span><span class="params">(OnMapClickListener listener)</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Removes the <code><a href="../Widgets/DJIMap.html#djimap_onmapclicklistenerinterface"></a></code> from the map.</font></p>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMapClickListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to remove.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_removeonmarkerdraglistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removeonmarkerdraglistener_inline">removeOnMarkerDragListener</a></div></div><div class="inline-doc" id="djimap_removeonmarkerdraglistener_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>removeOnMarkerDragListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeOnMarkerDragListener</span><span class="params">(OnMarkerDragListener listener)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
+<p><font color="#666">Removes the <code><a href="../Widgets/DJIMap.html#djimap_onmarkerdraglistenerinterface"></a></code> from the map.</font></p>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">OnMarkerDragListener <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to remove.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_removeallonmarkerdraglistener"><div class="api-col left">Remove Listeners</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removeallonmarkerdraglistener_inline">removeAllOnMarkerDragListener</a></div></div><div class="inline-doc" id="djimap_removeallonmarkerdraglistener_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>removeAllOnMarkerDragListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllOnMarkerDragListener</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666">Removes all <code><a href="../Widgets/DJIMap.html#djimap_onmarkerdraglistenerinterface"></a></code>'s from the map.</font></p>
 </div>
 <div class="api-row" id="djimap_maptype"><div class="api-col left">Map Type</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djimap_maptype_inline">MapType</a></div></div><div class="inline-doc" id="djimap_maptype_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>MapType</h6></div>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">enum</span> MapType</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">The overall representation of the map.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimap_maptype_normal_inline"></a>Normal</font></td><td><font color="#666">The overall representation of the map.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimap_maptype_satellite_inline"></a>Satellite</font></td><td><font color="#666">Satellite photograph data.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimap_maptype_hybrid_inline"></a>Hybrid</font></td><td><font color="#666">Satellite photograph data and roads</font></td></tr></table></html>
@@ -270,7 +319,7 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnMarkerClickListener</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Listener on the marker click event.</font></p>
 </div>
 <div class="api-row" id="djimap_onmapclicklistenerinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#djimap_onmapclicklistenerinterface_inline"></a></div></div><div class="inline-doc" id="djimap_onmapclicklistenerinterface_inline" <blockquote="">
@@ -278,10 +327,44 @@
 
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnMapClickListener</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Listener on the map click event.</font></p>
 </div>
-<div class="api-row" id="djimap_djimarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarker.html">DJIMarker</a></div></div><div class="api-row" id="djimap_djimarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a></div></div><div class="api-row" id="djimap_djicameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraPosition.html">DJICameraPosition</a></div></div><div class="api-row" id="djimap_djilatlng"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJILatLng.html">DJILatLng</a></div></div>
+<div class="api-row" id="djimap_onmarkerdraglistenerinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#djimap_onmarkerdraglistenerinterface_inline"></a></div></div><div class="inline-doc" id="djimap_onmarkerdraglistenerinterface_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">unknown </font></h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnMarkerDragListener</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Listener on the marker drag event.</font></p>
+</div>
+<div class="api-row" id="djimap_oncamerachangelistenerinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_oncamerachangelistenerinterface_inline">OnCameraChangeListener</a></div></div><div class="inline-doc" id="djimap_oncamerachangelistenerinterface_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">interface </font>OnCameraChangeListener</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnCameraChangeListener</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.callback</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
+<p><font color="#666">Listener on the camera change event.</font></p>
+<h5 id="interface-methods">Interface Methods:</h5>
+<h4 id="callback-method">Callback Method</h4>
+<div class="api-row" id="djimap_oncamerachangecallback"><div class="api-col left">Camera Position Changed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_oncamerachangecallback_inline">onCameraChange</a></div></div><div class="inline-doc" id="djimap_oncamerachangecallback_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>onCameraChange</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCameraChange</span><span class="params">(DJICameraPosition cameraPosition)</span></span></div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.callback</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
+<p><font color="#666">A callback indicating that the camera position has changed.</font></p>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a> <font color="#000">cameraPosition</font></font></td><td><font color="#666"><i>The new camera position.</i></font></td></tr></table></html></div>
+</div>
+<div class="api-row" id="djimap_djimarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarker.html">DJIMarker</a></div></div><div class="api-row" id="djimap_djimarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a></div></div><div class="api-row" id="djimap_djicameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraPosition.html">DJICameraPosition</a></div></div><div class="api-row" id="djimap_djilatlng"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djimap_djilatlng_inline">com.dji.mapkit.core.utils.DJIGpsUtils</a></div></div><div class="inline-doc" id="djimap_djilatlng_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>com.dji.mapkit.core.utils.DJIGpsUtils</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> com.dji.mapkit.core.utils.DJIGpsUtils</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
+<p><font color="#666">Represents a point which includes latitude, longitude, altitude,  and accuracy info on a map.</font></p>
+</div>
 
         </div>
       </div>

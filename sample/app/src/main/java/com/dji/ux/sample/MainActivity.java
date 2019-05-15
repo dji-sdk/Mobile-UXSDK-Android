@@ -35,10 +35,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
+import dji.common.useraccount.UserAccountState;
+import dji.common.util.CommonCallbacks;
 import dji.log.DJILog;
+import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.base.BaseComponent;
 import dji.sdk.base.BaseProduct;
-import dji.sdk.sdkmanager.DJISDKManager;
+import dji.sdk.sdkmanager.DJISDKInitEvent;
+import dji.sdk.useraccount.UserAccountManager;
 
 /** Main activity that displays three choices to user */
 public class MainActivity extends Activity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
@@ -52,6 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         public void onRegister(DJIError error) {
             isRegistrationInProgress.set(false);
             if (error == DJISDKError.REGISTRATION_SUCCESS) {
+                loginAccount();
                 DJISDKManager.getInstance().startConnectionToProduct();
 
                 Toast.makeText(getApplicationContext(), "SDK registration succeeded!", Toast.LENGTH_LONG).show();
@@ -79,12 +84,36 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
         public void onComponentChange(BaseProduct.ComponentKey key,
                                       BaseComponent oldComponent,
                                       BaseComponent newComponent) {
-//            Toast.makeText(getApplicationContext(),
-//                           key.toString() + " changed",
-//                           Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),
+                           key.toString() + " changed",
+                           Toast.LENGTH_LONG).show();
+
+        }
+
+        @Override
+        public void onInitProcess(DJISDKInitEvent event, int totalProcess) {
 
         }
     };
+
+    private void loginAccount(){
+        UserAccountManager.getInstance().logIntoDJIUserAccount(this,
+                new CommonCallbacks.CompletionCallbackWith<UserAccountState>() {
+                    @Override
+                    public void onSuccess(final UserAccountState userAccountState) {
+                        Toast.makeText(getApplicationContext(),
+                                "Login Success!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    @Override
+                    public void onFailure(DJIError error) {
+                        Toast.makeText(getApplicationContext(),
+                                "Login Error!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+
+    }
 
     public static boolean isStarted() {
         return isAppStarted;
@@ -265,6 +294,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
                 break;
             case R.id.amap:
                 mapBrand = 2;
+                break;
+            case R.id.mapbox:
+                mapBrand = 3;
                 break;
         }
         intent.putExtra(MapWidgetActivity.MAP_PROVIDER, mapBrand);

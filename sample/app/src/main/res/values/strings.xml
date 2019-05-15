@@ -28,6 +28,7 @@
     <string name="provider_google_maps">Google Maps</string>
     <string name="provider_here_maps">Here Maps</string>
     <string name="provider_amaps">AMaps</string>
+    <string name="provider_mapbox">Mapbox</string>
     <string name="error_map_not_initialized">The map has not been initialized yet</string>
     <string name="home_direction">Home Direction</string>
     <string name="auto_frame">Auto Frame</string>
@@ -59,4 +60,6 @@
         <item>Flight Path</item>
         <item>Fly Zone Border</item>
     </string-array>
+
+    <string name="mapbox_id">Please enter the map box key here.</string>
 </resources>

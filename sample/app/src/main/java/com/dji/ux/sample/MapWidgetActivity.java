@@ -34,6 +34,9 @@ import com.amap.api.maps.model.HeatmapTileProvider;
 import com.amap.api.maps.model.TileOverlay;
 import com.amap.api.maps.model.TileOverlayOptions;
 import com.dji.mapkit.core.maps.DJIMap;
+import com.dji.mapkit.core.models.DJILatLng;
+import com.dji.mapkit.core.models.annotations.DJIMarker;
+import com.dji.mapkit.core.models.annotations.DJIMarkerOptions;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -45,7 +48,9 @@ import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.mapping.Map;
 import com.here.android.mpa.mapping.MapOverlay;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import dji.common.flightcontroller.flyzone.FlyZoneCategory;
@@ -62,8 +67,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     private int[] iconIds = {R.id.icon_1, R.id.icon_2, R.id.icon_3, R.id.icon_4, R.id.icon_5};
 
     public static final String MAP_PROVIDER = "MapProvider";
-    private Button flyZoneButton;
-    private Spinner mapSpinner, iconSpinner, lineSpinner;
+    private Spinner iconSpinner, lineSpinner;
     private SeekBar lineWidthPicker;
     private int lineWidthValue;
     private TextView lineColor;
@@ -77,16 +81,60 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     private ScrollView scrollView;
     private ImageButton btnPanel;
     private boolean isPanelOpen = true;
+    private List<DJIMarker> markerList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_widget);
-        mapWidget = (MapWidget) findViewById(R.id.map_widget);
+        mapWidget = findViewById(R.id.map_widget);
+        markerList = new ArrayList<>();
         MapWidget.OnMapReadyListener onMapReadyListener = new MapWidget.OnMapReadyListener() {
             @Override
-            public void onMapReady(@NonNull DJIMap map) {
+            public void onMapReady(@NonNull final DJIMap map) {
                 map.setMapType(DJIMap.MapType.Normal);
+
+                map.setOnMarkerDragListener(new DJIMap.OnMarkerDragListener() {
+                    @Override
+                    public void onMarkerDragStart(DJIMarker djiMarker) {
+                        if (markerList.contains(djiMarker)) {
+                            Toast.makeText(MapWidgetActivity.this,
+                                           "Marker " + markerList.indexOf(djiMarker) + " drag started",
+                                           Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onMarkerDrag(DJIMarker djiMarker) {
+                        // do nothing
+                    }
+
+                    @Override
+                    public void onMarkerDragEnd(DJIMarker djiMarker) {
+                        if (markerList.contains(djiMarker)) {
+                            Toast.makeText(MapWidgetActivity.this,
+                                           "Marker " + markerList.indexOf(djiMarker) + " drag ended",
+                                           Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                mapWidget.setOnMarkerClickListener(new DJIMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(DJIMarker djiMarker) {
+                        Toast.makeText(MapWidgetActivity.this, "Marker " + markerList.indexOf(djiMarker) + " clicked",
+                                       Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+
+                map.setOnMapClickListener(new DJIMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(DJILatLng djiLatLng) {
+                        DJIMarker marker = map.addMarker(new DJIMarkerOptions().position(djiLatLng).draggable(true));
+                        markerList.add(marker);
+                    }
+                });
+
             }
         };
         Intent intent = getIntent();
@@ -102,6 +150,9 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 mapWidget.initAMap(onMapReadyListener);
                 break;
             default:
+            case 3:
+                //TODO: Remove this key before putting on github
+                mapWidget.initMapboxMap(onMapReadyListener, getResources().getString(R.string.mapbox_id));
                 break;
         }
         mapWidget.onCreate(savedInstanceState);
@@ -117,22 +168,22 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         ((CheckBox) findViewById(R.id.flyzone_legend)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.login_state_indicator)).setOnCheckedChangeListener(this);
         ((RadioGroup) findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
-        scrollView = (ScrollView) findViewById(R.id.settings_scroll_view);
-        btnPanel = (ImageButton) findViewById(R.id.btn_settings);
+        scrollView = findViewById(R.id.settings_scroll_view);
+        btnPanel = findViewById(R.id.btn_settings);
         btnPanel.setOnClickListener(this);
         findViewById(R.id.clear_flight_path).setOnClickListener(this);
-        iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
+        iconSpinner = findViewById(R.id.icon_spinner);
         iconSpinner.setOnItemSelectedListener(this);
-        mapSpinner = (Spinner) findViewById(R.id.map_spinner);
+        Spinner mapSpinner = findViewById(R.id.map_spinner);
         mapSpinner.setSelection(0, false); // so the listener won't be called before the map is initialized
         mapSpinner.setOnItemSelectedListener(this);
         findViewById(R.id.replace).setOnClickListener(this);
-        selectedIcon = (ImageView) findViewById(R.id.icon_1);
+        selectedIcon = findViewById(R.id.icon_1);
         for (int id : iconIds) {
             findViewById(id).setOnClickListener(this);
         }
         findViewById(R.id.icon_1).setSelected(true);
-        flyZoneButton = (Button) findViewById(R.id.btn_fly_zone);
+        Button flyZoneButton = findViewById(R.id.btn_fly_zone);
         mapWidget.showAllFlyZones();
         flyZoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,11 +192,11 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             }
         });
 
-        lineSpinner = (Spinner) findViewById(R.id.line_spinner);
+        lineSpinner = findViewById(R.id.line_spinner);
         lineSpinner.setOnItemSelectedListener(this);
-        lineWidthPicker = (SeekBar) findViewById(R.id.line_width_picker);
+        lineWidthPicker = findViewById(R.id.line_width_picker);
         lineWidthPicker.setOnSeekBarChangeListener(this);
-        lineColor = (TextView) findViewById(R.id.line_color);
+        lineColor = findViewById(R.id.line_color);
         lineColor.setOnClickListener(this);
     }
 
@@ -238,8 +289,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     }
 
     private void movePanel() {
-        int translationStart = 0;
-        int translationEnd = 0;
+        int translationStart;
+        int translationEnd;
         if (isPanelOpen) {
             translationStart = 0;
             translationEnd = -scrollView.getWidth();
@@ -443,8 +494,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                     aMap = (AMap) mapWidget.getMap().getMap();
                     com.amap.api.maps.model.LatLng[] latlngs = new com.amap.api.maps.model.LatLng[500];
                     for (int i = 0; i < 500; i++) {
-                        double x_ = 0;
-                        double y_ = 0;
+                        double x_;
+                        double y_;
                         x_ = Math.random() * 0.5 - 0.25;
                         y_ = Math.random() * 0.5 - 0.25;
                         latlngs[i] = new com.amap.api.maps.model.LatLng(testLat + x_, testLng + y_);

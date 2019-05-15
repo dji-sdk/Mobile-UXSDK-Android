@@ -14,7 +14,6 @@ import com.dji.mapkit.core.maps.DJIMap;
 import com.dji.mapkit.core.models.DJILatLng;
 import dji.keysdk.CameraKey;
 import dji.keysdk.KeyManager;
-import dji.ux.widget.FPVOverlayWidget;
 import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
 import dji.ux.widget.controls.CameraControlsWidget;
@@ -48,7 +47,7 @@ public class CompleteWidgetActivity extends Activity {
         deviceHeight = displayMetrics.heightPixels;
         deviceWidth = displayMetrics.widthPixels;
 
-        mapWidget = (MapWidget) findViewById(R.id.map_widget);
+        mapWidget = findViewById(R.id.map_widget);
         mapWidget.initAMap(new MapWidget.OnMapReadyListener() {
             @Override
             public void onMapReady(@NonNull DJIMap map) {
@@ -62,7 +61,7 @@ public class CompleteWidgetActivity extends Activity {
         });
         mapWidget.onCreate(savedInstanceState);
 
-        parentView = (ViewGroup) findViewById(R.id.root_view);
+        parentView = findViewById(R.id.root_view);
 
         fpvWidget = findViewById(R.id.fpv_widget);
         fpvWidget.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +70,7 @@ public class CompleteWidgetActivity extends Activity {
                 onViewClick(fpvWidget);
             }
         });
-        secondaryVideoView = (FrameLayout) findViewById(R.id.secondary_video_view);
+        secondaryVideoView = findViewById(R.id.secondary_video_view);
         secondaryFPVWidget = findViewById(R.id.secondary_fpv_widget);
         secondaryFPVWidget.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,9 +144,16 @@ public class CompleteWidgetActivity extends Activity {
     }
 
     private void hidePanels() {
+        //These panels appear based on keys from the drone itself.
         KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED), false, null);
         KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED), false, null);
 
+        //These panels have buttons that toggle them, so call the methods to make sure the button state is correct.
+        CameraControlsWidget controlsWidget = findViewById(R.id.CameraCapturePanel);
+        controlsWidget.setAdvancedPanelVisibility(false);
+        controlsWidget.setExposurePanelVisibility(false);
+
+        //These panels don't have a button state, so we can just hide them.
         findViewById(R.id.pre_flight_check_list).setVisibility(View.GONE);
         findViewById(R.id.rtk_panel).setVisibility(View.GONE);
         findViewById(R.id.spotlight_panel).setVisibility(View.GONE);

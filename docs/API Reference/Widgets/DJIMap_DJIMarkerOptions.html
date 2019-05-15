@@ -10,7 +10,7 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Android UX SDK API Reference</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UX SDK API REFERENCE</a></div>
     </div>
   </nav>
   <div id="documentation-page" class="documentation-page">
@@ -134,7 +134,19 @@
                   </dd>
                   <dd><a href="DUXExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
-                  <dd><a href="DUXMapWidget.html">MapWidget</a>
+                  <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
+                                      </dd>
+                                      <dd><a href="" class="active">DJIMarkerOptions</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a href="DUXWiFiSignalWidget.html">WiFiSignalWidget</a>
                   </dd>
@@ -180,7 +192,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sets the position the new Marker will have when added to the Map.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a> <font color="#000">position</font></font></td><td><font color="#666"><i>The coordinates of the Marker</i></font></td></tr></table></html>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJILatLng <font color="#000">position</font></font></td><td><font color="#666"><i>The coordinates of the Marker</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_djimarkeroptions_icon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_icon_inline">icon</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_icon_inline" <blockquote="">

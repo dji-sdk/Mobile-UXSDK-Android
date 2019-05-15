@@ -57,7 +57,7 @@
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/signal"
-            custom:excludeItem="aircraftBatteryTemperature|aircraftBattery|visionSensors|ESCStatus|gimbalStatus|flightMode|IMUStatus|radioChannelQuality|remainingStorageCapacity|remoteControllerMode|remoteControllerBattery|overall|compass"
+            custom:excludeItem="aircraftBatteryTemperature|aircraftBattery|visionSensors|ESCStatus|gimbalStatus|flightMode|IMUStatus|radioChannelQuality|remainingStorageCapacity|remoteControllerMode|remoteControllerBattery|overall|compass|maxFlightDistance|maxAltitude|internalStorage"
             android:visibility="gone"/>
         <Space
             android:layout_width="0dp"

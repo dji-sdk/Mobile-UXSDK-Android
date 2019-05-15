@@ -6,4 +6,6 @@
           android:title="@string/provider_google_maps" />
     <item android:id="@+id/amap"
           android:title="@string/provider_amaps" />
+    <item android:id="@+id/mapbox"
+          android:title="@string/provider_mapbox" />
 </menu>
