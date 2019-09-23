@@ -10,9 +10,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -92,7 +92,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         MapWidget.OnMapReadyListener onMapReadyListener = new MapWidget.OnMapReadyListener() {
             @Override
             public void onMapReady(@NonNull final DJIMap map) {
-                map.setMapType(DJIMap.MapType.Normal);
+                map.setMapType(DJIMap.MapType.NORMAL);
 
                 map.setOnMarkerDragListener(new DJIMap.OnMarkerDragListener() {
                     @Override
@@ -405,13 +405,13 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                 if (mapWidget.getMap() != null) {
                     switch ((int) id) {
                         case 0:
-                            mapWidget.getMap().setMapType(DJIMap.MapType.Normal);
+                            mapWidget.getMap().setMapType(DJIMap.MapType.NORMAL);
                             break;
                         case 1:
-                            mapWidget.getMap().setMapType(DJIMap.MapType.Satellite);
+                            mapWidget.getMap().setMapType(DJIMap.MapType.SATELLITE);
                             break;
                         default:
-                            mapWidget.getMap().setMapType(DJIMap.MapType.Hybrid);
+                            mapWidget.getMap().setMapType(DJIMap.MapType.HYBRID);
                             break;
                     }
                 } else {
