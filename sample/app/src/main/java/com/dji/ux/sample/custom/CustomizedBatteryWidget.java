@@ -1,12 +1,15 @@
 package com.dji.ux.sample.custom;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.dji.ux.sample.R;
+
+import dji.ux.model.base.BaseDynamicWidgetAppearances;
 import dji.ux.widget.BatteryWidget;
 import dji.common.battery.ConnectionState;
 
@@ -41,6 +44,11 @@ public class CustomizedBatteryWidget extends BatteryWidget {
         batteryIcon = (ImageView) view.findViewById(R.id.imageview_battery_icon);
         batteryValue.setText("0%");
         batteryIcon.setImageResource(R.mipmap.battery_error);
+    }
+
+    @Override
+    protected BaseDynamicWidgetAppearances getWidgetAppearances() {
+        return null;
     }
 
     /** Called when battery percentage changes */

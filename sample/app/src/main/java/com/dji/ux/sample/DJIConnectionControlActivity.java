@@ -6,9 +6,13 @@ import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.view.View;
 
-import dji.sdk.sdkmanager.DJISDKManager;
-
+/**
+ * This activity will launch when a USB accessory is attached and attempt to connect to the USB
+ * accessory.
+ */
 public class DJIConnectionControlActivity extends Activity {
+
+    public static final String ACCESSORY_ATTACHED = "com.dji.ux.sample.ACCESSORY_ATTACHED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +24,7 @@ public class DJIConnectionControlActivity extends Activity {
             String action = usbIntent.getAction();
             if (UsbManager.ACTION_USB_ACCESSORY_ATTACHED.equals(action)) {
                 Intent attachedIntent=new Intent();
-                attachedIntent.setAction(DJISDKManager.USB_ACCESSORY_ATTACHED);
+                attachedIntent.setAction(ACCESSORY_ATTACHED);
                 sendBroadcast(attachedIntent);
             }
         }
