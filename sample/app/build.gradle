@@ -62,6 +62,10 @@ android {
         exclude 'META-INF/proguard/okhttp3.pro'
         exclude 'META-INF/rxjava.properties'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
