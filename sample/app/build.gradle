@@ -5,12 +5,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.1'
     defaultConfig {
         applicationId "com.dji.ux.sample"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 29
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         ndk {
@@ -65,16 +65,17 @@ android {
 }
 
 dependencies {
-    implementation ('com.dji:dji-uxsdk:4.11.1', {
+    //Internal maven 4.11 exist error. please use 4.11.0.1 in internal maven.
+    implementation ('com.dji:dji-uxsdk:4.11.2', {
         // Uncomment the following line if your app does not need Anti Distortion for
         // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
         // exclude module: 'library-anti-distortion'
     })
-    compileOnly ('com.dji:dji-sdk-provided:4.11.1')
+    compileOnly ('com.dji:dji-sdk-provided:4.11.2')
 
-    implementation 'com.amap.api:3dmap:5.5.0'
-    implementation 'com.amap.api:search:5.5.0'
-    implementation 'com.amap.api:location:3.6.1'
+    implementation 'com.amap.api:3dmap:6.9.2'
+    implementation 'com.amap.api:search:6.9.2'
+    implementation 'com.amap.api:location:4.7.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     implementation 'androidx.appcompat:appcompat:1.0.0'
