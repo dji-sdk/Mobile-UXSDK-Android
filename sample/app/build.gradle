@@ -71,9 +71,14 @@ android {
 dependencies {
     //Internal maven 4.11 exist error. please use 4.11.0.1 in internal maven.
     implementation ('com.dji:dji-uxsdk:4.11.2', {
-        // Uncomment the following line if your app does not need Anti Distortion for
-        // Mavic 2 Pro and Mavic 2 Zoom. It will greatly reducing the size of the APK:
-        // exclude module: 'library-anti-distortion'
+        /**
+         * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
+         * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
+         * is called.
+         * Both will greatly reducing the size of the APK.
+         */
+        exclude module: 'library-anti-distortion'
+        exclude module: 'fly-safe-database'
     })
     compileOnly ('com.dji:dji-sdk-provided:4.11.2')
 
