@@ -33,36 +33,34 @@
 
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Please enter your App Key here." />
+            android:value="Enter your API key here" />
 
         <!-- Here Maps -->
         <meta-data android:name="com.here.android.maps.appid"
-                   android:value=""/>
+                   android:value="Enter your API key here"/>
         <meta-data android:name="com.here.android.maps.apptoken"
-                   android:value=""/>
+                   android:value="Enter your API key here"/>
         <meta-data android:name="com.here.android.maps.license.key"
-                   android:value=""/>
+                   android:value="Enter your API key here"/>
 
         <service
             android:name="com.here.android.mpa.service.MapService"
-            android:label="HereMapService"
-            android:process="global.Here.Map.Service.v3"
-            android:exported="true" >
+            android:label="HereMapService">
             <intent-filter>
-                <action android:name="com.here.android.mpa.service.MapService.v3" >
-                </action>
+                <!--Note, action name should not be changed.-->
+                <action android:name="com.here.android.mpa.service.MapService.v3" />
             </intent-filter>
         </service>
 
         <!-- Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
+            android:value="Enter your API key here"/>
 
         <!-- AMaps -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value=""/>
+            android:value="Enter your API key here"/>
 
         <activity
             android:name=".MainActivity"
