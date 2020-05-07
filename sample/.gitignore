@@ -45,6 +45,7 @@ proguard/
 .signing/
 
 # User-specific configurations
+.idea/
 .idea/libraries/
 .idea/workspace.xml
 .idea/tasks.xml
