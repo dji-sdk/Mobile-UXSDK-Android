@@ -9,7 +9,7 @@ android {
     buildToolsVersion '29.0.1'
     defaultConfig {
         applicationId "com.dji.ux.sample"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -48,6 +48,8 @@ android {
         doNotStrip "*/*/libDJICSDKCommon.so"
         doNotStrip "*/*/libDJIUpgradeCore.so"
         doNotStrip "*/*/libDJIUpgradeJNI.so"
+        doNotStrip "*/*/libDJIWaypointV2Core.so"
+        doNotStrip "*/*/libDJIMOP.so"
 
         pickFirst 'lib/*/libstlport_shared.so'
         pickFirst 'lib/*/libRoadLineRebuildAPI.so'
