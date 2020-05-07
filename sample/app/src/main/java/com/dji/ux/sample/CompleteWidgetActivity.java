@@ -2,7 +2,6 @@ package com.dji.ux.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +9,28 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.NonNull;
+
 import com.dji.mapkit.core.maps.DJIMap;
 import com.dji.mapkit.core.models.DJILatLng;
+
 import dji.keysdk.CameraKey;
 import dji.keysdk.KeyManager;
 import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
 import dji.ux.widget.controls.CameraControlsWidget;
 
-/** Activity that shows all the UI elements together */
+/**
+ * Activity that shows all the UI elements together
+ */
 public class CompleteWidgetActivity extends Activity {
 
     private MapWidget mapWidget;
     private ViewGroup parentView;
     private FPVWidget fpvWidget;
     private FPVWidget secondaryFPVWidget;
+    private RelativeLayout primaryVideoView;
     private FrameLayout secondaryVideoView;
     private boolean isMapMini = true;
 
@@ -61,7 +67,7 @@ public class CompleteWidgetActivity extends Activity {
         });
         mapWidget.onCreate(savedInstanceState);
 
-        parentView = findViewById(R.id.root_view);
+        parentView = (ViewGroup) findViewById(R.id.root_view);
 
         fpvWidget = findViewById(R.id.fpv_widget);
         fpvWidget.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +76,8 @@ public class CompleteWidgetActivity extends Activity {
                 onViewClick(fpvWidget);
             }
         });
-        secondaryVideoView = findViewById(R.id.secondary_video_view);
+        primaryVideoView = (RelativeLayout) findViewById(R.id.fpv_container);
+        secondaryVideoView = (FrameLayout) findViewById(R.id.secondary_video_view);
         secondaryFPVWidget = findViewById(R.id.secondary_fpv_widget);
         secondaryFPVWidget.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +106,7 @@ public class CompleteWidgetActivity extends Activity {
     }
 
     private void resizeFPVWidget(int width, int height, int margin, int fpvInsertPosition) {
-        RelativeLayout.LayoutParams fpvParams = (RelativeLayout.LayoutParams) fpvWidget.getLayoutParams();
+        RelativeLayout.LayoutParams fpvParams = (RelativeLayout.LayoutParams) primaryVideoView.getLayoutParams();
         fpvParams.height = height;
         fpvParams.width = width;
         fpvParams.rightMargin = margin;
@@ -113,10 +120,10 @@ public class CompleteWidgetActivity extends Activity {
             fpvParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
             fpvParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         }
-        fpvWidget.setLayoutParams(fpvParams);
+        primaryVideoView.setLayoutParams(fpvParams);
 
-        parentView.removeView(fpvWidget);
-        parentView.addView(fpvWidget, fpvInsertPosition);
+        parentView.removeView(primaryVideoView);
+        parentView.addView(primaryVideoView, fpvInsertPosition);
     }
 
     private void reorderCameraCapturePanel() {
@@ -145,8 +152,10 @@ public class CompleteWidgetActivity extends Activity {
 
     private void hidePanels() {
         //These panels appear based on keys from the drone itself.
-        KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED), false, null);
-        KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED), false, null);
+        if (KeyManager.getInstance() != null) {
+            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED), false, null);
+            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED), false, null);
+        }
 
         //These panels have buttons that toggle them, so call the methods to make sure the button state is correct.
         CameraControlsWidget controlsWidget = findViewById(R.id.CameraCapturePanel);
@@ -167,11 +176,11 @@ public class CompleteWidgetActivity extends Activity {
         // Hide both the navigation bar and the status bar.
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         mapWidget.onResume();
     }

@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                xmlns:custom="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/background_blue"
-                android:id="@+id/root_view"
-                tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_blue"
+    android:id="@+id/root_view"
+    tools:context=".MainActivity">
 
     <!-- Widget to see first person view (FPV) -->
-    <dji.ux.widget.FPVWidget
-        android:id="@+id/fpv_widget"
+    <RelativeLayout
+        android:id="@+id/fpv_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        custom:sourceCameraNameVisibility="true"/>
+        android:layout_height="match_parent">
+
+        <dji.ux.widget.FPVWidget
+            android:id="@+id/fpv_widget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            custom:sourceCameraNameVisibility="true" />
+
+    </RelativeLayout>
 
     <dji.ux.widget.FPVOverlayWidget
         android:id="@+id/fpv_overlay_widget"
@@ -155,6 +162,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
 
+    <!-- Everything below this line will appear on top of the full-screen map widget -->
+
     <dji.ux.widget.controls.CameraControlsWidget
         android:id="@+id/CameraCapturePanel"
         android:layout_alignParentRight="true"
@@ -163,8 +172,6 @@
         android:layout_height="213dp"
         android:layout_marginTop="5dp"
         tools:ignore="RtlHardcoded"/>
-
-    <!-- Everything below this line will appear on top of the full-screen map widget -->
 
     <!-- Widgets in top status bar -->
     <LinearLayout

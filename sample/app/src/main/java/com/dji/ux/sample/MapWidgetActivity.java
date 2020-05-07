@@ -48,6 +48,7 @@ import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.mapping.Map;
 import com.here.android.mpa.mapping.MapOverlay;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,6 +56,8 @@ import java.util.Random;
 
 import dji.common.flightcontroller.flyzone.FlyZoneCategory;
 import dji.ux.widget.MapWidget;
+
+import static com.here.android.mpa.common.MapSettings.setIsolatedDiskCacheRootPath;
 
 public class MapWidgetActivity extends Activity implements CompoundButton.OnCheckedChangeListener,
     RadioGroup.OnCheckedChangeListener,
@@ -141,7 +144,11 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         mapProvider = intent.getIntExtra(MAP_PROVIDER, 0);
         switch (mapProvider) {
             case 0:
-                mapWidget.initHereMap(onMapReadyListener);
+                boolean success = setIsolatedDiskCacheRootPath(
+                        getExternalFilesDir(null) + File.separator + ".here-maps-cache");
+                if (success) {
+                    mapWidget.initHereMap(onMapReadyListener);
+                }
                 break;
             case 1:
                 mapWidget.initGoogleMap(onMapReadyListener);

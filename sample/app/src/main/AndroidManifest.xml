@@ -45,12 +45,10 @@
 
         <service
             android:name="com.here.android.mpa.service.MapService"
-            android:label="HereMapService"
-            android:process="global.Here.Map.Service.v3"
-            android:exported="true" >
+            android:label="HereMapService">
             <intent-filter>
-                <action android:name="com.here.android.mpa.service.MapService.v3" >
-                </action>
+                <!--Note, action name should not be changed.-->
+                <action android:name="com.here.android.mpa.service.MapService.v3" />
             </intent-filter>
         </service>
 
