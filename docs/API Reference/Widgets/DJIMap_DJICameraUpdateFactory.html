@@ -1,6 +1,6 @@
-<script>window.pathPrefix="../";</script><!DOCTYPE html>
-<html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><!DOCTYPE html>
+<html lang="en"></html>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -10,9 +10,43 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UX SDK API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
+      <div id="header-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/mobile-sdk">Mobile SDK</a></li>
+          <li><a href="/ux-sdk">UX SDK</a></li>
+          <li><a href="/onboard-sdk">Onboard SDK</a></li>
+          <li><a href="/payload-sdk">Payload SDK</a></li>
+          <li><a href="/windows-sdk">Windows SDK</a></li>
+        </ul>
+        <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li><a href="https://account.dji.com/login?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US">Login</a></li>
+          <li><a href="https://account.dji.com/register?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US" class="head-cta">Register</a></li>
+        </ul>
+        <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
+            <ul class="hovedown-menu hovedown-menu-right">
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
+  <div data-offset-top="60" data-spy="affix" class="sub-nav">
+    <div class="container">
+      <h1 class="logo">Mobile SDK</h1>
+      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+          <ul class="hovedown-menu">
+            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
+            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
+            <li><a href="/api-reference/ios-uilib-api/index.html">IOS UX SDK</a></li>
+            <li><a href="/api-reference/android-uilib-api/index.html">Android UX SDK</a></li>
+          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
+      </nav>
+    </div>
+  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -56,7 +90,7 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
                                       </dd>
-                                      <dd><a href="" class="active">DJICameraUpdateFactory</a>
+                                      <dd><a href class="active">DJICameraUpdateFactory</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIBitmapDescriptorFactory.html">DJIBitmapDescriptorFactory</a>
                                       </dd>
@@ -191,15 +225,15 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJICameraUpdateFactory</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DJICameraUpdateFactory</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DJICameraUpdateFactory</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.camera</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Factory for creating DJICameraUpdate objects.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djimap_djicameraupdatefactory_newcameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newcameraposition_inline">newCameraPosition</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newcameraposition_inline" <blockquote="">
+<div class="api-row" id="djimap_djicameraupdatefactory_newcameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newcameraposition_inline">newCameraPosition</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newcameraposition_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>newCameraPosition</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newCameraPosition</span><span class="params">(@NonNull DJICameraPosition cameraPosition)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newCameraPosition</span><span class="params">(@NonNull DJICameraPosition cameraPosition)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.camera</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Creates a camera update that moves the center of the screen to the <code><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a></code>.</font></p>
@@ -207,10 +241,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a> <font color="#000">cameraPosition</font></font></td><td><font color="#666"><i>The new position of the camera.</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJICameraUpdate</font></td><td><font color="#666"><i>A DJICameraUpdate object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicameraupdatefactory_newlatlngboundswithpadding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newlatlngboundswithpadding_inline">newLatLngBounds</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newlatlngboundswithpadding_inline" <blockquote="">
+<div class="api-row" id="djimap_djicameraupdatefactory_newlatlngboundswithpadding"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newlatlngboundswithpadding_inline">newLatLngBounds</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newlatlngboundswithpadding_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>newLatLngBounds</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newLatLngBounds</span><span class="params">(@NonNull DJILatLngBounds bounds, <span class="keyword">int</span> zoom, <span class="keyword">int</span> padding)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newLatLngBounds</span><span class="params">(@NonNull DJILatLngBounds bounds, <span class="keyword">int</span> zoom, <span class="keyword">int</span> padding)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.camera</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Creates a camera update that moves the center of the screen to the <code><a href="../Widgets/DJIMap_DJILatLngBounds.html#djimap_djilatlngbounds">DJILatLngBounds</a></code> at the given zoom level or with the given padding.</font></p>
@@ -218,10 +252,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../Widgets/DJIMap_DJILatLngBounds.html#djimap_djilatlngbounds">DJILatLngBounds</a> <font color="#000">bounds</font></font></td><td><font color="#666"><i>The bounding box.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">zoom</font></font></td><td><font color="#666"><i>The zoom level.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">int <font color="#000">padding</font></font></td><td><font color="#666"><i>Additional space in pixels to leave between the bounds and the edge.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJICameraUpdate</font></td><td><font color="#666"><i>A DJICameraUpdate object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicameraupdatefactory_newlatlngbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newlatlngbounds_inline">newLatLngBounds</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newlatlngbounds_inline" <blockquote="">
+<div class="api-row" id="djimap_djicameraupdatefactory_newlatlngbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicameraupdatefactory_newlatlngbounds_inline">newLatLngBounds</a></div></div><div class="inline-doc" id="djimap_djicameraupdatefactory_newlatlngbounds_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>newLatLngBounds</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newLatLngBounds</span><span class="params">(@NonNull DJILatLngBounds bounds, <span class="keyword">int</span> zoom)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJICameraUpdate <span class="title">newLatLngBounds</span><span class="params">(@NonNull DJILatLngBounds bounds, <span class="keyword">int</span> zoom)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.camera</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Creates a camera update that moves the center of the screen to the <code><a href="../Widgets/DJIMap_DJILatLngBounds.html#djimap_djilatlngbounds">DJILatLngBounds</a></code> at the given zoom level.</font></p>
@@ -259,6 +293,22 @@
       </div>
     </div>
   </div>
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <div class="foot-nav row">
+        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
+      </div>
+      <div class="foot-copyright row">
+        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2019 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",

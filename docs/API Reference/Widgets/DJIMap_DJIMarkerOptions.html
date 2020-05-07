@@ -1,6 +1,6 @@
-<script>window.pathPrefix="../";</script><!DOCTYPE html>
-<html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><!DOCTYPE html>
+<html lang="en"></html>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -10,9 +10,43 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UX SDK API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
+      <div id="header-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/mobile-sdk">Mobile SDK</a></li>
+          <li><a href="/ux-sdk">UX SDK</a></li>
+          <li><a href="/onboard-sdk">Onboard SDK</a></li>
+          <li><a href="/payload-sdk">Payload SDK</a></li>
+          <li><a href="/windows-sdk">Windows SDK</a></li>
+        </ul>
+        <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li><a href="https://account.dji.com/login?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US">Login</a></li>
+          <li><a href="https://account.dji.com/register?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US" class="head-cta">Register</a></li>
+        </ul>
+        <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
+            <ul class="hovedown-menu hovedown-menu-right">
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
+  <div data-offset-top="60" data-spy="affix" class="sub-nav">
+    <div class="container">
+      <h1 class="logo">Mobile SDK</h1>
+      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+          <ul class="hovedown-menu">
+            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
+            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
+            <li><a href="/api-reference/ios-uilib-api/index.html">IOS UX SDK</a></li>
+            <li><a href="/api-reference/android-uilib-api/index.html">Android UX SDK</a></li>
+          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
+      </nav>
+    </div>
+  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -48,7 +82,7 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
                                       </dd>
-                                      <dd><a href="" class="active">DJIMarkerOptions</a>
+                                      <dd><a href class="active">DJIMarkerOptions</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a>
                                       </dd>
@@ -191,23 +225,23 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMarkerOptions</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMarkerOptions</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMarkerOptions</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Represents a set of instructions for creating a new <code><a href="../Widgets/DJIMap_DJIMarker.html#djimap_djimarker">DJIMarker</a></code>. This object can be passed to <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> to add a new marker to a map. Each method returns the object itself so that they can be used in a builder pattern.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djimap_djimarkeroptions_init"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_init_inline">DJIMarkerOptions</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_init_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_init"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_init_inline">DJIMarkerOptions</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_init_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIMarkerOptions</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">DJIMarkerOptions()</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DJIMarkerOptions()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Creates a new <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</font></p>
 </div>
-<div class="api-row" id="djimap_djimarkeroptions_draggable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_draggable_inline">draggable</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_draggable_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_draggable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_draggable_inline">draggable</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_draggable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>draggable</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">draggable</span><span class="params">(<span class="keyword">boolean</span> draggable)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">draggable</span><span class="params">(<span class="keyword">boolean</span> draggable)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sets the draggability the new marker will have when added to the map.</font></p>
@@ -215,10 +249,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">draggable</font></font></td><td><font color="#666"><i>The draggability of the marker.</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_position"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_position_inline">position</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_position_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_position"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_position_inline">position</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_position_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>position</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">position</span><span class="params">(DJILatLng position)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">position</span><span class="params">(DJILatLng position)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Sets the position the new marker will have when added to the map.</font></p>
@@ -226,10 +260,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a> <font color="#000">position</font></font></td><td><font color="#666"><i>The coordinates of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_anchor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_anchor_inline">anchor</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_anchor_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_anchor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_anchor_inline">anchor</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_anchor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>anchor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">anchor</span><span class="params">(@FloatRange(from = <span class="number">0</span>, to = <span class="number">1</span>)</span> <span class="keyword">float</span> u,</span></div><div class="line">                                  @<span class="title">FloatRange</span><span class="params">(from = <span class="number">0</span>, to = <span class="number">1</span>)</span> <span class="keyword">float</span> v)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">anchor</span><span class="params">(@FloatRange(from = <span class="number">0</span>, to = <span class="number">1</span>)</span> <span class="keyword">float</span> u,</span></span><br><span class="line"><span class="function">                                  @<span class="title">FloatRange</span><span class="params">(from = <span class="number">0</span>, to = <span class="number">1</span>)</span> <span class="keyword">float</span> v)</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Sets the anchor point the marker image will have when added to the map. The default is (0.5, 0.5).</font></p>
@@ -237,10 +271,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@FloatRange(from = 0, to = 1) float <font color="#000">u</font></font></td><td><font color="#666"><i>Horizontal distance, normalized to [0, 1], of the anchor from the left edge.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">@FloatRange(from = 0, to = 1) float <font color="#000">v</font></font></td><td><font color="#666"><i>Vertical distance, normalized to [0, 1], of the anchor from the top edge.</i></font></td></tr></table></html>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_icon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_icon_inline">icon</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_icon_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_icon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_icon_inline">icon</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_icon_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>icon</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">icon</span><span class="params">(DJIBitmapDescriptor bitmap)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">icon</span><span class="params">(DJIBitmapDescriptor bitmap)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the icon the new marker will have when added to the map.</font></p>
@@ -248,10 +282,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">DJIBitmapDescriptor <font color="#000">bitmap</font></font></td><td><font color="#666"><i>The icon of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_rotation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_rotation_inline">rotation</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_rotation_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_rotation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_rotation_inline">rotation</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_rotation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>rotation</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">rotation</span><span class="params">(<span class="keyword">float</span> rotation)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">rotation</span><span class="params">(<span class="keyword">float</span> rotation)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Sets the rotation the new marker will have when added to the map.</font></p>
@@ -259,10 +293,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">rotation</font></font></td><td><font color="#666"><i>The rotation of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_zindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_zindex_inline">zIndex</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_zindex_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_zindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_zindex_inline">zIndex</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_zindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>zIndex</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">zIndex</span><span class="params">(<span class="keyword">int</span> zIndex)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">zIndex</span><span class="params">(<span class="keyword">int</span> zIndex)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the zIndex the new marker will have when added to the map.</font></p>
@@ -270,10 +304,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">zIndex</font></font></td><td><font color="#666"><i>The zIndex of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_visible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_visible_inline">visible</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_visible_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_visible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_visible_inline">visible</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_visible_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>visible</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">visible</span><span class="params">(<span class="keyword">boolean</span> visible)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">visible</span><span class="params">(<span class="keyword">boolean</span> visible)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Sets the visibility the new marker will have when added to the map.</font></p>
@@ -281,10 +315,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">visible</font></font></td><td><font color="#666"><i>The visibility of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_title"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_title_inline">title</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_title_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_title"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_title_inline">title</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_title_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>title</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">title</span><span class="params">(String title)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">title</span><span class="params">(String title)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Sets the title the new marker will have when added to the map.</font></p>
@@ -292,10 +326,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">title</font></font></td><td><font color="#666"><i>The title of the marker.</i></font></td></tr></table></html>
 <h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_flat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_flat_inline">flat</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_flat_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_flat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_flat_inline">flat</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_flat_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>flat</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">flat</span><span class="params">(<span class="keyword">boolean</span> flat)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">flat</span><span class="params">(<span class="keyword">boolean</span> flat)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Sets whether the marker should be flat against the map when added to the map. Only supported by AMaps and Google Maps.</font></p>
@@ -303,10 +337,10 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">flat</font></font></td><td><font color="#666"><i><code>true</code> if the marker should be flat against the map, <code>false</code> if the marker should be a billboard facing the camera.</i></font></td></tr></table></html>
 <h5 id="return-v9">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIMarkerOptions.html#djimap_djimarkeroptions">DJIMarkerOptions</a></code> object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimarkeroptions_infowindowenable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_infowindowenable_inline">setInfoWindowEnable</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_infowindowenable_inline" <blockquote="">
+<div class="api-row" id="djimap_djimarkeroptions_infowindowenable"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimarkeroptions_infowindowenable_inline">setInfoWindowEnable</a></div></div><div class="inline-doc" id="djimap_djimarkeroptions_infowindowenable_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setInfoWindowEnable</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function">DJIMarkerOptions <span class="title">setInfoWindowEnable</span><span class="params">(<span class="keyword">boolean</span> infoWindowEnable)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJIMarkerOptions <span class="title">setInfoWindowEnable</span><span class="params">(<span class="keyword">boolean</span> infoWindowEnable)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Sets whether the info window is enabled for the new marker when added to the map. Only supported by AMaps.</font></p>
@@ -344,6 +378,22 @@
       </div>
     </div>
   </div>
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <div class="foot-nav row">
+        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
+      </div>
+      <div class="foot-copyright row">
+        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2019 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",

@@ -224,22 +224,98 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>FocusExposureSwitchWidget</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FocusExposureSwitchWidget</span> <span class="keyword">extends</span> <span class="title">FrameLayoutWidget</span> <span class="keyword">implements</span> <span class="title">ImageButton</span>.<span class="title">OnClickListener</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>FrameLayoutWidget implements ImageButton.OnClickListener</code></font></td></tr></table></html>
-<h5 id="display">Display:</h5>
-<br style="clear:both">
-<p><font color="#666">Widget has two visual states to indicate the current tapping interaction mode with <code><a href="../Widgets/FPVOverlayWidget.html#fpvoverlaywidget">FPVOverlayWidget</a></code>.</font></p>
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMapViewInternal</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMapViewInternal</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description">Description:</h5>
+<p><font color="#666">A view which displays a map.
+All the life cycle methods must be forwarded from the Activity or Fragment containing this view to the corresponding ones in this class. In particular, the following methods must be forwarded:</font></p>
 <ul>
-<li>Green square indicates focus mode. In this mode, tapping on
-<code><a href="../Widgets/FPVOverlayWidget.html#fpvoverlaywidget">FPVOverlayWidget</a></code> will select a target focus point.</li>
-<li>Yellow circle indicates meter mode. In this mode, tapping on
-<code><a href="../Widgets/FPVOverlayWidget.html#fpvoverlaywidget">FPVOverlayWidget</a></code> will select a exposure metering target point.</li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_oncreate">onCreate</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onstart">onStart</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onresume">onResume</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onpause">onPause</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onstop">onStop</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_ondestroy">onDestroy</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onsaveinstancestate">onSaveInstanceState</a></code></li>
+    <li><code><a href="../Widgets/DJIMap_DJIMapViewInternal.html#djimap_djimapviewinternal_onlowmemory">onLowMemory</a></code></li>
 </ul>
-<h5 id="interaction">Interaction:</h5>
-<p><font color="#666">Tapping will toggle between Focus and Meter mode.</font></p>
-<h5 id="usage">Usage:</h5>
-<p><font color="#666">Preferred Aspect Ratio: 1:1</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="djimap_djimapviewinternal_oncreate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_oncreate_inline">onCreate</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_oncreate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onCreate</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bundle <font color="#000">saveInstanceState</font></font></td><td><font color="#666"><i>Bundle which contains the saved instance state.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_djimapviewinternal_onstart"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onstart_inline">onStart</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onstart_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_onresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onresume_inline">onResume</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onresume_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onResume</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_onpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onpause_inline">onPause</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onpause_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onPause</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_onstop"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onstop_inline">onStop</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onstop_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onStop</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_ondestroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_ondestroy_inline">onDestroy</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_ondestroy_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onDestroy</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_onsaveinstancestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onsaveinstancestate_inline">onSaveInstanceState</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onsaveinstancestate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onSaveInstanceState</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle outState)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bundle <font color="#000">outState</font></font></td><td><font color="#666"><i>Bundle in which to place your saved state.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimap_djimapviewinternal_onlowmemory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onlowmemory_inline">onLowMemory</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onlowmemory_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onLowMemory</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onLowMemory</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
+</div>
+<div class="api-row" id="djimap_djimapviewinternal_getdjimapasync"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_getdjimapasync_inline">getDJIMapAsync</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_getdjimapasync_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>getDJIMapAsync</h6></div>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getDJIMapAsync</span><span class="params">(DJIMapView.OnDJIMapReadyCallback callback)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Initializes the map view.</font></p>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMapView.html#djimap_djimapview">DJIMapView</a>.<a href="../Widgets/DJIMap_DJIMapView.html#djimap_djimapview_ondjimapreadycallbackinterface">OnDJIMapReadyCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The callback that will be invoked when the map is ready to be used.</i></font></td></tr></table></html></div>
 
         </div>
       </div>

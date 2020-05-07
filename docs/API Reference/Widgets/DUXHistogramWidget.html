@@ -1,6 +1,6 @@
-<script>window.pathPrefix="../";</script><!DOCTYPE html>
-<html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><!DOCTYPE html>
+<html lang="en"></html>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -10,9 +10,43 @@
 <body>
   <nav id="site-header" class="site-header navbar">
     <div class="container">
-      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">ANDROID UX SDK API REFERENCE</a></div>
+      <div class="navbar-header"><a href="/" class="logo"><img src="../images/dji-logo@2x.png">Developer</a></div>
+      <div id="header-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/mobile-sdk">Mobile SDK</a></li>
+          <li><a href="/ux-sdk">UX SDK</a></li>
+          <li><a href="/onboard-sdk">Onboard SDK</a></li>
+          <li><a href="/payload-sdk">Payload SDK</a></li>
+          <li><a href="/windows-sdk">Windows SDK</a></li>
+        </ul>
+        <ul v-cloak v-show="!loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li><a href="https://account.dji.com/login?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US">Login</a></li>
+          <li><a href="https://account.dji.com/register?appId=dji_sdk&amp;backUrl=https%3A%2F%2Fdeveloper.dji.com%2Fuser&amp;locale=en_US" class="head-cta">Register</a></li>
+        </ul>
+        <ul v-cloak v-show="loggedIn" class="nav navbar-nav navbar-right nav-user">
+          <li class="hovedown"><a href="javascript:void(0);" class="hovedown-toggle"><i class="fa fa-user"></i></a>
+            <ul class="hovedown-menu hovedown-menu-right">
+              <li><a href="/user">User Center</a></li>
+              <li><a href="javascript:void(0);" v-on="click: logout">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
+  <div data-offset-top="60" data-spy="affix" class="sub-nav">
+    <div class="container">
+      <h1 class="logo">Mobile SDK</h1>
+      <nav><a href="/mobile-sdk">Overview</a><a href="/mobile-sdk/documentation">Documentation</a><span class="active hovedown menu-item">API Reference<span class="caret"></span>
+          <ul class="hovedown-menu">
+            <li><a href="/api-reference/ios-api/index.html">IOS SDK</a></li>
+            <li><a href="/api-reference/android-api/index.html">Android SDK</a></li>
+            <li><a href="/api-reference/ios-uilib-api/index.html">IOS UX SDK</a></li>
+            <li><a href="/api-reference/android-uilib-api/index.html">Android UX SDK</a></li>
+          </ul></span><a href="/mobile-sdk/downloads">Downloads</a><a href="/mobile-sdk/support">Support</a>
+      </nav>
+    </div>
+  </div>
   <div id="documentation-page" class="documentation-page">
     <div class="container">
       <div class="site-sidebar">
@@ -78,7 +112,7 @@
                   </dd>
                   <dd><a href="DUXRadarWidget.html">RadarWidget</a>
                   </dd>
-                  <dd><a href="" class="active">HistogramWidget</a>
+                  <dd><a href class="active">HistogramWidget</a>
                   </dd>
                   <dd><a href="AutoExposureLockWidget.html">AutoExposureLockWidget</a>
                   </dd>
@@ -191,132 +225,132 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>HistogramWidget</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistogramWidget</span> <span class="keyword">extends</span> <span class="title">FrameLayoutWidget</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span>, <span class="title">View</span>.<span class="title">OnClickListener</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistogramWidget</span> <span class="keyword">extends</span> <span class="title">FrameLayoutWidget</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnTouchListener</span>, <span class="title">View</span>.<span class="title">OnClickListener</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>FrameLayoutWidget implements View.OnTouchListener, View.OnClickListener</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Widget to display histogram chart.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="duxhistogramwidget_histogramlinecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramlinecolor_inline">getHistogramLineColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramlinecolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_histogramlinecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramlinecolor_inline">getHistogramLineColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramlinecolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getHistogramLineColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span></div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramLineColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramLineColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Line color of the histogram.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of histogram line color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_sethistogramlinecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramlinecolor_inline">setHistogramLineColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramlinecolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_sethistogramlinecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramlinecolor_inline">setHistogramLineColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramlinecolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setHistogramLineColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramLineColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramLineColor)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramLineColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramLineColor)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Set line color of the histogram.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">histogramLineColor</font></font></td><td><font color="#666"><i>An int value of histogram line color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_histogramfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramfillcolor_inline">getHistogramFillColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramfillcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_histogramfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramfillcolor_inline">getHistogramFillColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramfillcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getHistogramFillColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span></div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramFillColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramFillColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Fill color of the histogram.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of histogram fill color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_sethistogramfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramfillcolor_inline">setHistogramFillColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramfillcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_sethistogramfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramfillcolor_inline">setHistogramFillColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramfillcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setHistogramFillColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramFillColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramFillColor)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramFillColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramFillColor)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Set fill color of the histogram.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">histogramFillColor</font></font></td><td><font color="#666"><i>An int value of the histogram fill color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_histogramgridcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramgridcolor_inline">getHistogramGridColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramgridcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_histogramgridcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogramgridcolor_inline">getHistogramGridColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogramgridcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getHistogramGridColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span></div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramGridColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramGridColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Grid color of the histogram.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the histogram grid color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_sethistogramgridcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramgridcolor_inline">setHistogramGridColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramgridcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_sethistogramgridcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogramgridcolor_inline">setHistogramGridColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogramgridcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setHistogramGridColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramGridColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramGridColor)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramGridColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramGridColor)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Set grid color of the histogram.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">histogramGridColor</font></font></td><td><font color="#666"><i>An int value of the histogram grid color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_histogrambackgroundcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogrambackgroundcolor_inline">getHistogramBackgroundColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogrambackgroundcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_histogrambackgroundcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_histogrambackgroundcolor_inline">getHistogramBackgroundColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_histogrambackgroundcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getHistogramBackgroundColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@ColorInt</span></div><div class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramBackgroundColor</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">getHistogramBackgroundColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Background color of the histogram.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>An int value of the histogram background color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_sethistogrambackgroundcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogrambackgroundcolor_inline">setHistogramBackgroundColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogrambackgroundcolor_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_sethistogrambackgroundcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_sethistogrambackgroundcolor_inline">setHistogramBackgroundColor</a></div></div><div class="inline-doc" id="duxhistogramwidget_sethistogrambackgroundcolor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setHistogramBackgroundColor</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramBackgroundColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramBackgroundColor)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHistogramBackgroundColor</span><span class="params">(@ColorInt <span class="keyword">int</span> histogramBackgroundColor)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Set background color of the histogram.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">histogramBackgroundColor</font></font></td><td><font color="#666"><i>An int value of the histogram background color.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_shoulddrawgrid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shoulddrawgrid_inline">shouldDrawGrid</a></div></div><div class="inline-doc" id="duxhistogramwidget_shoulddrawgrid_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_shoulddrawgrid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shoulddrawgrid_inline">shouldDrawGrid</a></div></div><div class="inline-doc" id="duxhistogramwidget_shoulddrawgrid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>shouldDrawGrid</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldDrawGrid</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldDrawGrid</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Return <code>true</code> if grid needs to be drawn.</font></p>
 <h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if grid needs to be drawn.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_setshoulddrawgrid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshoulddrawgrid_inline">setShouldDrawGrid</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshoulddrawgrid_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_setshoulddrawgrid"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshoulddrawgrid_inline">setShouldDrawGrid</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshoulddrawgrid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setShouldDrawGrid</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldDrawGrid</span><span class="params">(<span class="keyword">boolean</span> shouldDrawGrid)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldDrawGrid</span><span class="params">(<span class="keyword">boolean</span> shouldDrawGrid)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Determine whether grid needs to be drawn.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">shouldDrawGrid</font></font></td><td><font color="#666"><i><code>true</code> if grid needs to be drawn.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_shoulddrawcubic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shoulddrawcubic_inline">shouldDrawCubic</a></div></div><div class="inline-doc" id="duxhistogramwidget_shoulddrawcubic_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_shoulddrawcubic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shoulddrawcubic_inline">shouldDrawCubic</a></div></div><div class="inline-doc" id="duxhistogramwidget_shoulddrawcubic_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>shouldDrawCubic</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldDrawCubic</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldDrawCubic</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Return <code>true</code> if histogram should be drawn in cubic mode.</font></p>
 <h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if cubic needs to be drawn.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_setshoulddrawcubic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshoulddrawcubic_inline">setShouldDrawCubic</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshoulddrawcubic_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_setshoulddrawcubic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshoulddrawcubic_inline">setShouldDrawCubic</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshoulddrawcubic_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setShouldDrawCubic</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldDrawCubic</span><span class="params">(<span class="keyword">boolean</span> shouldDrawCubic)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldDrawCubic</span><span class="params">(<span class="keyword">boolean</span> shouldDrawCubic)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Determine whether cubic needs to be drawn.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">shouldDrawCubic</font></font></td><td><font color="#666"><i><code>true</code> if cubic needs to be drawn.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_shouldshowclosebutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shouldshowclosebutton_inline">shouldShowCloseButton</a></div></div><div class="inline-doc" id="duxhistogramwidget_shouldshowclosebutton_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_shouldshowclosebutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_shouldshowclosebutton_inline">shouldShowCloseButton</a></div></div><div class="inline-doc" id="duxhistogramwidget_shouldshowclosebutton_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>shouldShowCloseButton</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldShowCloseButton</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">shouldShowCloseButton</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Return <code>true</code> if histogram should show the close button.</font></p>
 <h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i>A boolean value to check if histogram needs to show the close button.</i></font></td></tr></table></html></div>
-<div class="api-row" id="duxhistogramwidget_setshouldshowclosebutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshouldshowclosebutton_inline">setShouldShowCloseButton</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshouldshowclosebutton_inline" <blockquote="">
+<div class="api-row" id="duxhistogramwidget_setshouldshowclosebutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxhistogramwidget_setshouldshowclosebutton_inline">setShouldShowCloseButton</a></div></div><div class="inline-doc" id="duxhistogramwidget_setshouldshowclosebutton_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setShouldShowCloseButton</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldShowCloseButton</span><span class="params">(<span class="keyword">boolean</span> shouldShowCloseButton)</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setShouldShowCloseButton</span><span class="params">(<span class="keyword">boolean</span> shouldShowCloseButton)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Determine whether histogram should show the close button.</font></p>
@@ -352,6 +386,22 @@
       </div>
     </div>
   </div>
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <div class="foot-nav row">
+        <nav class="link-list col-xs-2"><span class="title">SDK</span><a href="/mobile-sdk">Mobile SDK</a><a href="/ux-sdk">UX SDK</a><a href="/onboard-sdk">Onboard SDK</a><a href="/payload-sdk">Payload SDK</a><a href="/windows-sdk">Windows SDK</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Info</span><a href="/products">Products</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Community</span><a href="http://stackoverflow.com/questions/tagged/dji-sdk" target="_blank">Stack Overflow</a><a href="https://www.youtube.com/channel/UCPQwN5xsob8zZGIcDhkYqUA" target="_blank">YouTube</a><a href="https://twitter.com/djidevelopers" target="_blank">Twitter</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Contact Us</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">Business Cooperation</span><a href="mailto:dev@dji.com"> dev@dji.com</a></nav>
+        <nav class="link-list col-xs-2"><span class="title">BILLING</span><a href="mailto:billing-dev@dji.com"> billing-dev@dji.com</a></nav>
+      </div>
+      <div class="foot-copyright row">
+        <div class="col-xs-3 foot-logo"><img src="../images/dji-logo-foot.png"></div>
+        <div class="copyright col-xs-7"><span>Copyright © 2019 DJI All Rights Reserved</span><a href="/policies/privacy">Privacy Policy</a><a href="/policies/terms">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
   <script type="text/javascript">
     window.Config = window.config = {
       sdk: "mobile-sdk",
