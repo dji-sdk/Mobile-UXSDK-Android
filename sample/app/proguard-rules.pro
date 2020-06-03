@@ -62,6 +62,8 @@
 
 -keep class com.secneo.** { *; }
 
+-keep class org.greenrobot.eventbus.**{*;}
+
 -keepclasseswithmembers,allowshrinking class * {
     native <methods>;
 }
