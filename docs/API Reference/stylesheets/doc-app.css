@@ -1,4 +1,4 @@
-<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script>/* mixin */
+<script>window.pathPrefix="../";</script><script>window.pathPrefix="../";</script>/* mixin */
 /* color */
 /* $light-text-color: #a6acaa; */
 /* b4b4b4 */
@@ -107,6 +107,9 @@ ul, ol {
 /* Redeclare since we override the float above */
 .navbar-nav.navbar-right {
   float: right; }
+
+img[alt=uilib_image] {
+  float: left; }
 
 .article p, .article ul, .article ol, .article img, .article dl, .article blockquote, .article table {
   margin-bottom: 20px; }

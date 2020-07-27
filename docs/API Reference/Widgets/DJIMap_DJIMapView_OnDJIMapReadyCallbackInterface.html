@@ -68,7 +68,7 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJICameraUpdateFactory.html">DJICameraUpdateFactory</a>
                                       </dd>
-                                      <dd><a href="" class="active">DJIBitmapDescriptorFactory</a>
+                                      <dd><a href="DJIMap_DJIBitmapDescriptorFactory.html">DJIBitmapDescriptorFactory</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJILatLng.html">DJILatLng</a>
                                       </dd>
@@ -78,7 +78,7 @@
                                       </dd>
                                       <dd><a data-href="DJIMap_DJIMapView.html" class="sub-toggle">DJIMapView<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
-                                                <dd><a href="DJIMap_DJIMapView_OnDJIMapReadyCallbackInterface.html">OnDJIMapReadyCallback</a>
+                                                <dd><a href="" class="active">OnDJIMapReadyCallback</a>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -206,67 +206,21 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIBitmapDescriptorFactory</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIBitmapDescriptorFactory</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>OnDJIMapReadyCallback</h1></div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnDJIMapReadyCallback</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Used to create instances of DJIBitmapDescriptor.</font></p>
+<p><font color="#666">Callback for the map ready event.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djimap_djibitmapdescriptorfactory_fromasset"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djibitmapdescriptorfactory_fromasset_inline">fromAsset</a></div></div><div class="inline-doc" id="djimap_djibitmapdescriptorfactory_fromasset_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>fromAsset</h6></div>
+<div class="api-row" id="djimap_djimapview_ondjimapreadycallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapview_ondjimapreadycallback_inline">onDJIMapReady</a></div></div><div class="inline-doc" id="djimap_djimapview_ondjimapreadycallback_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>onDJIMapReady</h6></div>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIBitmapDescriptor <span class="title">fromAsset</span><span class="params">(String assetName)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onDJIMapReady</span><span class="params">(DJIMap map)</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Creates a DJIBitmapDescriptor using the name of a bitmap file in the assets directory.</font></p>
+<p><font color="#666">A callback indicating that the DJIMap is ready.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">assetName</font></font></td><td><font color="#666"><i>The name of a bitmap in the assets directory.</i></font></td></tr></table></html>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJIBitmapDescriptor</font></td><td><font color="#666"><i>A DJIBitmapDescriptor object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djibitmapdescriptorfactory_frombitmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djibitmapdescriptorfactory_frombitmap_inline">fromBitmap</a></div></div><div class="inline-doc" id="djimap_djibitmapdescriptorfactory_frombitmap_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>fromBitmap</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIBitmapDescriptor <span class="title">fromBitmap</span><span class="params">(Bitmap image)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Creates a DJIBitmapDescriptor from the given Bitmap.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bitmap <font color="#000">image</font></font></td><td><font color="#666"><i>A Bitmap image.</i></font></td></tr></table></html>
-<h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJIBitmapDescriptor</font></td><td><font color="#666"><i>A `DJIBitmapDescriptor object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djibitmapdescriptorfactory_fromfile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djibitmapdescriptorfactory_fromfile_inline">fromFile</a></div></div><div class="inline-doc" id="djimap_djibitmapdescriptorfactory_fromfile_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>fromFile</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIBitmapDescriptor <span class="title">fromFile</span><span class="params">(String fileName)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Creates a DJIBitmapDescriptor using the name of a bitmap image file located in the internal storage.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">fileName</font></font></td><td><font color="#666"><i>The name of the bitmap image file.</i></font></td></tr></table></html>
-<h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJIBitmapDescriptor</font></td><td><font color="#666"><i>A DJIBitmapDescriptor object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djibitmapdescriptorfactory_frompath"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djibitmapdescriptorfactory_frompath_inline">fromPath</a></div></div><div class="inline-doc" id="djimap_djibitmapdescriptorfactory_frompath_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>fromPath</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIBitmapDescriptor <span class="title">fromPath</span><span class="params">(String path)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">Creates a DJIBitmapDescriptor from the absolute file path of a bitmap image.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">String <font color="#000">path</font></font></td><td><font color="#666"><i>The absolute file path of the bitmap image file.</i></font></td></tr></table></html>
-<h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJIBitmapDescriptor</font></td><td><font color="#666"><i>A `DJIBitmapDescriptor object.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djibitmapdescriptorfactory_fromresource"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djibitmapdescriptorfactory_fromresource_inline">fromResource</a></div></div><div class="inline-doc" id="djimap_djibitmapdescriptorfactory_fromresource_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>fromResource</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> DJIBitmapDescriptor <span class="title">fromResource</span><span class="params">(<span class="keyword">int</span> resourceId)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666">Creates a DJIBitmapDescriptor from the resource id of a bitmap image.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">resourceId</font></font></td><td><font color="#666"><i>The resource id of a bitmap image.</i></font></td></tr></table></html>
-<h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">static DJIBitmapDescriptor</font></td><td><font color="#666"><i>A DJIBitmapDescriptor object.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap">DJIMap</a> <font color="#000">map</font></font></td><td><font color="#666"><i>The DJIMap.</i></font></td></tr></table></html></div>
 
         </div>
       </div>

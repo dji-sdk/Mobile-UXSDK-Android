@@ -10,7 +10,7 @@
 -dontwarn sun.**
 -dontwarn java.**
 -dontwarn com.mapbox.**
--dontwarn okhttp3.internal.**
+-dontwarn okhttp3.**
 -dontwarn retrofit2.**
 
 -dontwarn com.amap.api.**
@@ -72,7 +72,7 @@
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
 
--keep class android.support.v7.widget.SearchView { *; }
+-keep class androidx.appcompat.widget.SearchView { *; }
 
 -keepclassmembers class * extends android.app.Service
 -keepclassmembers public class * extends android.view.View {
@@ -118,3 +118,9 @@
 -keepclassmembers class android.arch.** { *; }
 -keep class android.arch.** { *; }
 -dontwarn android.arch.**
+
+
+#<------------ utmiss config start------------>
+-keep class dji.sdk.utmiss.** { *; }
+-keep class utmisslib.** { *; }
+#<------------ utmiss config end------------>

@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -42,17 +42,27 @@
                   </dd>
                   <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="DUXMapWidget_OnMapReadyListener.html">OnMapReadyListener</a>
+                            </dd>
                             <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="DJIMap_onCameraChangeListenerInterface.html">OnCameraChangeListener</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICircle.html">DJICircle</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJICircleOptions.html">DJICircleOptions</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
                                       </dd>
+                                      <dd><a href="DJIMap_DJIPolygon.html">DJIPolygon</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a>
                                       </dd>
-                                      <dd><a href class="active">DJIPolylineOptions</a>
+                                      <dd><a href="DJIMap_DJIPolyline.html">DJIPolyline</a>
+                                      </dd>
+                                      <dd><a href="" class="active">DJIPolylineOptions</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJICameraPosition.html">DJICameraPosition</a>
                                       </dd>
@@ -64,7 +74,13 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJILatLngBounds.html">DJILatLngBounds</a>
                                       </dd>
-                                      <dd><a href="DJIMap_DJIMapView.html">DJIMapView</a>
+                                      <dd><a href="DJIMap_DJIMapViewInternal.html">DJIMapViewInternal</a>
+                                      </dd>
+                                      <dd><a data-href="DJIMap_DJIMapView.html" class="sub-toggle">DJIMapView<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="DJIMap_DJIMapView_OnDJIMapReadyCallbackInterface.html">OnDJIMapReadyCallback</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a href="DJIMap_MapProvider.html">MapProvider</a>
                                       </dd>
@@ -194,7 +210,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIPolylineOptions</span> <span class="keyword">extends</span> <span class="title">BasePointCollection</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>BasePointCollection</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Represents a set of instructions for creating a new <code><a href="../Widgets/DJIMap.html#djimap_djipolyline">DJIPolyline</a></code>. This object can be passed to <code><a href="../Widgets/DJIMap_DJIPolylineOptions.html#djimap_djipolylineoptions">DJIPolylineOptions</a></code> to add a new polyline to a map. Each method returns the object itself so that they can be used in a builder pattern.</font></p>
+<p><font color="#666">Represents a set of instructions for creating a new <code><a href="../Widgets/DJIMap_DJIPolyline.html#djimap_djipolyline">DJIPolyline</a></code>. This object can be passed to <code><a href="../Widgets/DJIMap_DJIPolylineOptions.html#djimap_djipolylineoptions">DJIPolylineOptions</a></code> to add a new polyline to a map. Each method returns the object itself so that they can be used in a builder pattern.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djimap_djipolylineoptions_init"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolylineoptions_init_inline">DJIPolylineOptions</a></div></div><div class="inline-doc" id="djimap_djipolylineoptions_init_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>DJIPolylineOptions</h6></div>

@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -42,15 +42,25 @@
                   </dd>
                   <dd><a data-href="DUXMapWidget.html" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a href="DUXMapWidget_OnMapReadyListener.html">OnMapReadyListener</a>
+                            </dd>
+                            <dd><a data-href="" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="DJIMap_onCameraChangeListenerInterface.html">OnCameraChangeListener</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICircle.html">DJICircle</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJICircleOptions.html">DJICircleOptions</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
                                       </dd>
+                                      <dd><a href="DJIMap_DJIPolygon.html">DJIPolygon</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJIPolyline.html">DJIPolyline</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIPolylineOptions.html">DJIPolylineOptions</a>
                                       </dd>
@@ -64,7 +74,13 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJILatLngBounds.html">DJILatLngBounds</a>
                                       </dd>
-                                      <dd><a href="DJIMap_DJIMapView.html">DJIMapView</a>
+                                      <dd><a href="DJIMap_DJIMapViewInternal.html">DJIMapViewInternal</a>
+                                      </dd>
+                                      <dd><a data-href="DJIMap_DJIMapView.html" class="sub-toggle">DJIMapView<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="DJIMap_DJIMapView_OnDJIMapReadyCallbackInterface.html">OnDJIMapReadyCallback</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a href="DJIMap_MapProvider.html">MapProvider</a>
                                       </dd>
@@ -191,7 +207,7 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMap</h1></div>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DJIMap</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJIMap</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The public interface of map object.</font></p>
@@ -231,9 +247,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setOnCameraChangeListener</span><span class="params">(<span class="keyword">final</span> OnCameraChangeListener listener)</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Sets the <code><a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> which can listen to camera changes.</font></p>
+<p><font color="#666">Sets the <code><a href="../Widgets/DJIMap_onCameraChangeListenerInterface.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> which can listen to camera changes.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DJIMap_onCameraChangeListenerInterface.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener that is added to this map.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_setonmarkerclicklistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_setonmarkerclicklistener_inline">setOnMarkerClickListener</a></div></div><div class="inline-doc" id="djimap_setonmarkerclicklistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setOnMarkerClickListener</h6></div>
 
@@ -267,7 +283,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">removeAllOnCameraChangeListeners</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Removes all instances of <code><a href="../Widgets/DJIMap.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> from the map.</font></p>
+<p><font color="#666">Removes all instances of <code><a href="../Widgets/DJIMap_onCameraChangeListenerInterface.html#djimap_oncamerachangelistenerinterface">OnCameraChangeListener</a></code> from the map.</font></p>
 </div>
 <div class="api-row" id="djimap_removeonmarkerclicklistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_removeonmarkerclicklistener_inline">removeOnMarkerClickListener</a></div></div><div class="inline-doc" id="djimap_removeonmarkerclicklistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeOnMarkerClickListener</h6></div>
@@ -341,7 +357,7 @@
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIPolylineOptions.html#djimap_djipolylineoptions">DJIPolylineOptions</a> <font color="#000">options</font></font></td><td><font color="#666"><i>The polyline options.</i></font></td></tr></table></html>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap_djipolyline">DJIPolyline</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap.html#djimap_djipolyline">DJIPolyline</a></code> that was added to the map.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIPolyline.html#djimap_djipolyline">DJIPolyline</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIPolyline.html#djimap_djipolyline">DJIPolyline</a></code> that was added to the map.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_addpolygon"><div class="api-col left">Add Polygon</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_addpolygon_inline">addPolygon</a></div></div><div class="inline-doc" id="djimap_addpolygon_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addPolygon</h6></div>
 
@@ -352,7 +368,7 @@
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIPolygonOptions.html#djimap_djipolygonoptions">DJIPolygonOptions</a> <font color="#000">options</font></font></td><td><font color="#666"><i>The polygon options.</i></font></td></tr></table></html>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap_djipolygon">DJIPolygon</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap.html#djimap_djipolygon">DJIPolygon</a></code> that was added to the map. Returns null if the polygon is invalid.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIPolygon.html#djimap_djipolygon">DJIPolygon</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJIPolygon.html#djimap_djipolygon">DJIPolygon</a></code> that was added to the map. Returns null if the polygon is invalid.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_addsinglecircle"><div class="api-col left">Add Circle</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_addsinglecircle_inline">addSingleCircle</a></div></div><div class="inline-doc" id="djimap_addsinglecircle_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addSingleCircle</h6></div>
 
@@ -363,7 +379,7 @@
 <h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICircleOptions.html#djimap_djicircleoptions">DJICircleOptions</a> <font color="#000">options</font></font></td><td><font color="#666"><i>The circle options.</i></font></td></tr></table></html>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap.html#djimap_djicircle">DJICircle</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap.html#djimap_djicircle">DJICircle</a></code> that was added to the map. Returns null if the circle is invalid.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICircle.html#djimap_djicircle">DJICircle</a></font></td><td><font color="#666"><i>The <code><a href="../Widgets/DJIMap_DJICircle.html#djimap_djicircle">DJICircle</a></code> that was added to the map. Returns null if the circle is invalid.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimap_maptype"><div class="api-col left">Map Type</div><div class="api-col middle" style="color:#AAA">unknown</div><div class="api-col right"><a class="trigger" href="#djimap_maptype_inline"></a></div></div><div class="inline-doc" id="djimap_maptype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">unknown </font></h6></div>
 
@@ -397,433 +413,7 @@
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Listener on the marker drag event.</font></p>
 </div>
-<div class="api-row" id="djimap_oncamerachangelistenerinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_oncamerachangelistenerinterface_inline">OnCameraChangeListener</a></div></div><div class="inline-doc" id="djimap_oncamerachangelistenerinterface_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>OnCameraChangeListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnCameraChangeListener</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.callback</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
-<p><font color="#666">Listener on the camera change event.</font></p>
-<h5 id="interface-methods">Interface Methods:</h5>
-<h4 id="callback-method">Callback Method</h4>
-<div class="api-row" id="djimap_oncamerachangecallback"><div class="api-col left">Camera Position Changed</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_oncamerachangecallback_inline">onCameraChange</a></div></div><div class="inline-doc" id="djimap_oncamerachangecallback_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onCameraChange</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCameraChange</span><span class="params">(DJICameraPosition cameraPosition)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.callback</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
-<p><font color="#666">A callback indicating that the camera position has changed.</font></p>
-<h5 id="input-parameters-v15">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJICameraPosition.html#djimap_djicameraposition">DJICameraPosition</a> <font color="#000">cameraPosition</font></font></td><td><font color="#666"><i>The new camera position.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap_djicircle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_inline">DJICircle</a></div></div><div class="inline-doc" id="djimap_djicircle_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>DJICircle</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJICircle</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
-<p><font color="#666">A circle that exists on a map object. To add a new circle to a map, see <code><a href="../Widgets/DJIMap_DJICircleOptions.html#djimap_djicircleoptions">DJICircleOptions</a></code>.</font></p>
-<h5 id="interface-methods-v2">Interface Methods:</h5>
-<div class="api-row" id="djimap_djicircle_remove"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_remove_inline">remove</a></div></div><div class="inline-doc" id="djimap_djicircle_remove_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>remove</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
-<p><font color="#666">Removes the circle from the map it is on.</font></p>
-</div>
-<div class="api-row" id="djimap_djicircle_setvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setvisible_inline">setVisible</a></div></div><div class="inline-doc" id="djimap_djicircle_setvisible_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setVisible</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVisible</span><span class="params">(<span class="keyword">boolean</span> visible)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
-<p><font color="#666">Changes the visibility of the circle.</font></p>
-<h5 id="input-parameters-v16">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">visible</font></font></td><td><font color="#666"><i><code>true</code> if the circle is visible, <code>false</code> if it is hidden.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_isvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_isvisible_inline">isVisible</a></div></div><div class="inline-doc" id="djimap_djicircle_isvisible_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>isVisible</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVisible</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
-<p><font color="#666">Gets the visibility of the circle.</font></p>
-<h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the circle is visible, <code>false</code> if it is hidden.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setcenter"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setcenter_inline">setCenter</a></div></div><div class="inline-doc" id="djimap_djicircle_setcenter_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setCenter</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCenter</span><span class="params">(DJILatLng center)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
-<p><font color="#666">Sets the center of the circle.</font></p>
-<h5 id="input-parameters-v17">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a> <font color="#000">center</font></font></td><td><font color="#666"><i>The coordinates of the center of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getcenter"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getcenter_inline">getCenter</a></div></div><div class="inline-doc" id="djimap_djicircle_getcenter_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getCenter</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">DJILatLng <span class="title">getCenter</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
-<p><font color="#666">Gets the center of the circle.</font></p>
-<h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a></font></td><td><font color="#666"><i>The coordinates of the center of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setradius_inline">setRadius</a></div></div><div class="inline-doc" id="djimap_djicircle_setradius_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setRadius</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setRadius</span><span class="params">(<span class="keyword">double</span> radius)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
-<p><font color="#666">Sets the radius of the circle.</font></p>
-<h5 id="input-parameters-v18">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">double <font color="#000">radius</font></font></td><td><font color="#666"><i>The radius of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getradius_inline">getRadius</a></div></div><div class="inline-doc" id="djimap_djicircle_getradius_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getRadius</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getRadius</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
-<p><font color="#666">Gets the radius of the circle.</font></p>
-<h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">double</font></td><td><font color="#666"><i>The radius of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setfillcolor_inline">setFillColor</a></div></div><div class="inline-doc" id="djimap_djicircle_setfillcolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setFillColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFillColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
-<p><font color="#666">Sets the fill color of the circle.</font></p>
-<h5 id="input-parameters-v19">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The fill color of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getfillcolor_inline">getFillColor</a></div></div><div class="inline-doc" id="djimap_djicircle_getfillcolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getFillColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getFillColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
-<p><font color="#666">The fill color of the circle.</font></p>
-<h5 id="return-v10">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The fill color of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setstrokecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setstrokecolor_inline">setStrokeColor</a></div></div><div class="inline-doc" id="djimap_djicircle_setstrokecolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setStrokeColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStrokeColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
-<p><font color="#666">Sets the stroke color of the circle.</font></p>
-<h5 id="input-parameters-v20">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The stroke color of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getstrokecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getstrokecolor_inline">getStrokeColor</a></div></div><div class="inline-doc" id="djimap_djicircle_getstrokecolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getStrokeColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getStrokeColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
-<p><font color="#666">Gets the stroke color of the circle.</font></p>
-<h5 id="return-v11">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The stroke color of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setstrokewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setstrokewidth_inline">setStrokeWidth</a></div></div><div class="inline-doc" id="djimap_djicircle_setstrokewidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setStrokeWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStrokeWidth</span><span class="params">(<span class="keyword">float</span> strokeWidth)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
-<p><font color="#666">Sets the stroke width of the circle.</font></p>
-<h5 id="input-parameters-v21">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">strokeWidth</font></font></td><td><font color="#666"><i>The stroke width of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getstrokewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getstrokewidth_inline">getStrokeWidth</a></div></div><div class="inline-doc" id="djimap_djicircle_getstrokewidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getStrokeWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getStrokeWidth</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
-<p><font color="#666">Gets the stroke width of the circle.</font></p>
-<h5 id="return-v12">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The stroke width of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_setzindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_setzindex_inline">setZIndex</a></div></div><div class="inline-doc" id="djimap_djicircle_setzindex_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setZIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setZIndex</span><span class="params">(<span class="keyword">float</span> zIndex)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v40">Description:</h5>
-<p><font color="#666">Sets the zIndex of the circle.</font></p>
-<h5 id="input-parameters-v22">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">zIndex</font></font></td><td><font color="#666"><i>The zIndex of the circle.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djicircle_getzindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djicircle_getzindex_inline">getZIndex</a></div></div><div class="inline-doc" id="djimap_djicircle_getzindex_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getZIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getZIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v41">Description:</h5>
-<p><font color="#666">Gets the zIndex of the circle.</font></p>
-<h5 id="return-v13">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The zIndex of the circle.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap_djicircleoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICircleOptions.html">DJICircleOptions</a></div></div><div class="api-row" id="djimap_djimarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarker.html">DJIMarker</a></div></div><div class="api-row" id="djimap_djimarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a></div></div><div class="api-row" id="djimap_djipolygon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_inline">DJIPolygon</a></div></div><div class="inline-doc" id="djimap_djipolygon_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>DJIPolygon</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJIPolygon</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v42">Description:</h5>
-<p><font color="#666">A polygon that exists on a map object. To add a new polygon to a map, see <code><a href="../Widgets/DJIMap_DJIPolygonOptions.html#djimap_djipolygonoptions">DJIPolygonOptions</a></code>.</font></p>
-<h5 id="interface-methods-v3">Interface Methods:</h5>
-<div class="api-row" id="djimap_djipolygon_remove"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_remove_inline">remove</a></div></div><div class="inline-doc" id="djimap_djipolygon_remove_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>remove</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v43">Description:</h5>
-<p><font color="#666">Removes the polygon from the map it is on.</font></p>
-</div>
-<div class="api-row" id="djimap_djipolygon_setvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_setvisible_inline">setVisible</a></div></div><div class="inline-doc" id="djimap_djipolygon_setvisible_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setVisible</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setVisible</span><span class="params">(<span class="keyword">boolean</span> visible)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v44">Description:</h5>
-<p><font color="#666">Changes the visibility of the polygon.</font></p>
-<h5 id="input-parameters-v23">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean <font color="#000">visible</font></font></td><td><font color="#666"><i><code>true</code> if the polygon is visible, <code>false</code> if it is hidden.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_isvisible"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_isvisible_inline">isVisible</a></div></div><div class="inline-doc" id="djimap_djipolygon_isvisible_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>isVisible</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isVisible</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v45">Description:</h5>
-<p><font color="#666">Gets the visibility of the polygon.</font></p>
-<h5 id="return-v14">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">boolean</font></td><td><font color="#666"><i><code>true</code> if the polygon is visible, <code>false</code> if it is hidden.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_setpoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_setpoints_inline">setPoints</a></div></div><div class="inline-doc" id="djimap_djipolygon_setpoints_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setPoints</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPoints</span><span class="params">(List&lt;DJILatLng&gt; points)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v46">Description:</h5>
-<p><font color="#666">Sets the points of the polygon.</font></p>
-<h5 id="input-parameters-v24">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a>&gt; <font color="#000">points</font></font></td><td><font color="#666"><i>The points of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_setfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_setfillcolor_inline">setFillColor</a></div></div><div class="inline-doc" id="djimap_djipolygon_setfillcolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setFillColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setFillColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v47">Description:</h5>
-<p><font color="#666">Sets the fill color of the polygon.</font></p>
-<h5 id="input-parameters-v25">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The fill color of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_getfillcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_getfillcolor_inline">getFillColor</a></div></div><div class="inline-doc" id="djimap_djipolygon_getfillcolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getFillColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getFillColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v48">Description:</h5>
-<p><font color="#666">The fill color of the polygon.</font></p>
-<h5 id="return-v15">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The fill color of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_setstrokecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_setstrokecolor_inline">setStrokeColor</a></div></div><div class="inline-doc" id="djimap_djipolygon_setstrokecolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setStrokeColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStrokeColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v49">Description:</h5>
-<p><font color="#666">Sets the stroke color of the polygon.</font></p>
-<h5 id="input-parameters-v26">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The stroke color of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_getstrokecolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_getstrokecolor_inline">getStrokeColor</a></div></div><div class="inline-doc" id="djimap_djipolygon_getstrokecolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getStrokeColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ColorInt</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getStrokeColor</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v50">Description:</h5>
-<p><font color="#666">Gets the stroke color of the polygon.</font></p>
-<h5 id="return-v16">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int</font></td><td><font color="#666"><i>The stroke color of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_setstrokewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_setstrokewidth_inline">setStrokeWidth</a></div></div><div class="inline-doc" id="djimap_djipolygon_setstrokewidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setStrokeWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStrokeWidth</span><span class="params">(<span class="keyword">float</span> strokeWidth)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v51">Description:</h5>
-<p><font color="#666">Sets the stroke width of the polygon.</font></p>
-<h5 id="input-parameters-v27">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">strokeWidth</font></font></td><td><font color="#666"><i>The stroke width of the polygon.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolygon_getstrokewidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolygon_getstrokewidth_inline">getStrokeWidth</a></div></div><div class="inline-doc" id="djimap_djipolygon_getstrokewidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getStrokeWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getStrokeWidth</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v52">Description:</h5>
-<p><font color="#666">Gets the stroke width of the polygon.</font></p>
-<h5 id="return-v17">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The stroke width of the polygon.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap_djipolygonoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a></div></div><div class="api-row" id="djimap_djipolyline"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_inline">DJIPolyline</a></div></div><div class="inline-doc" id="djimap_djipolyline_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>DJIPolyline</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJIPolyline</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v53">Description:</h5>
-<p><font color="#666">A polyline that exists on a map object. To add a new polyline to a map, see <code><a href="../Widgets/DJIMap_DJIPolylineOptions.html#djimap_djipolylineoptions">DJIPolylineOptions</a></code>.</font></p>
-<h5 id="interface-methods-v4">Interface Methods:</h5>
-<div class="api-row" id="djimap_djipolyline_remove"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_remove_inline">remove</a></div></div><div class="inline-doc" id="djimap_djipolyline_remove_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>remove</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v54">Description:</h5>
-<p><font color="#666">Removes the polyline from the map it is on.</font></p>
-</div>
-<div class="api-row" id="djimap_djipolyline_setwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_setwidth_inline">setWidth</a></div></div><div class="inline-doc" id="djimap_djipolyline_setwidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">float</span> width)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v55">Description:</h5>
-<p><font color="#666">Sets the width of the polyline.</font></p>
-<h5 id="input-parameters-v28">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">width</font></font></td><td><font color="#666"><i>The width of the polyline.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolyline_getwidth"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_getwidth_inline">getWidth</a></div></div><div class="inline-doc" id="djimap_djipolyline_getwidth_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getWidth</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getWidth</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v56">Description:</h5>
-<p><font color="#666">Gets the width of the polyline.</font></p>
-<h5 id="return-v18">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The width of the polyline.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolyline_setpoints"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_setpoints_inline">setPoints</a></div></div><div class="inline-doc" id="djimap_djipolyline_setpoints_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setPoints</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setPoints</span><span class="params">(List&lt;DJILatLng&gt; points)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v57">Description:</h5>
-<p><font color="#666">Sets the points of the polyline.</font></p>
-<h5 id="input-parameters-v29">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">List&lt;<a href="../Widgets/DJIMap_DJILatLng.html#djimap_djilatlng">DJILatLng</a>&gt; <font color="#000">points</font></font></td><td><font color="#666"><i>The points of the polyline.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolyline_setcolor"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_setcolor_inline">setColor</a></div></div><div class="inline-doc" id="djimap_djipolyline_setcolor_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setColor</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setColor</span><span class="params">(@ColorInt <span class="keyword">int</span> color)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v58">Description:</h5>
-<p><font color="#666">Sets the color of the polyline.</font></p>
-<h5 id="input-parameters-v30">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@ColorInt int <font color="#000">color</font></font></td><td><font color="#666"><i>The color of the polyline.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolyline_setzindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_setzindex_inline">setZIndex</a></div></div><div class="inline-doc" id="djimap_djipolyline_setzindex_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setZIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setZIndex</span><span class="params">(<span class="keyword">float</span> zIndex)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v59">Description:</h5>
-<p><font color="#666">Sets the zIndex of the polyline.</font></p>
-<h5 id="input-parameters-v31">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">zIndex</font></font></td><td><font color="#666"><i>The zIndex of the polyline.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djipolyline_getzindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djipolyline_getzindex_inline">getZIndex</a></div></div><div class="inline-doc" id="djimap_djipolyline_getzindex_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getZIndex</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">getZIndex</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.models.annotations</font></td></tr></table></html>
-<h5 id="description-v60">Description:</h5>
-<p><font color="#666">Gets the zIndex of the polyline.</font></p>
-<h5 id="return-v19">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float</font></td><td><font color="#666"><i>The zIndex of the polyline.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap_djipolylineoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolylineOptions.html">DJIPolylineOptions</a></div></div><div class="api-row" id="djimap_djicameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraPosition.html">DJICameraPosition</a></div></div><div class="api-row" id="djimap_djicameraupdatefactory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraUpdateFactory.html">DJICameraUpdateFactory</a></div></div><div class="api-row" id="djimap_djibitmapdescriptorfactory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIBitmapDescriptorFactory.html">DJIBitmapDescriptorFactory</a></div></div><div class="api-row" id="djimap_djilatlng"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJILatLng.html">DJILatLng</a></div></div><div class="api-row" id="djimap_djilatlngbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJILatLngBounds.html">DJILatLngBounds</a></div></div><div class="api-row" id="djimap_djimapviewinternal"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_inline">DJIMapViewInternal</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>DJIMapViewInternal</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DJIMapViewInternal</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v61">Description:</h5>
-<p><font color="#666">A view which displays a map.
-All the life cycle methods must be forwarded from the Activity or Fragment containing this view to the corresponding ones in this class. In particular, the following methods must be forwarded:</font></p>
-<ul>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_oncreate">onCreate</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onstart">onStart</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onresume">onResume</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onpause">onPause</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onstop">onStop</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_ondestroy">onDestroy</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onsaveinstancestate">onSaveInstanceState</a></code></li>
-    <li><code><a href="../Widgets/DJIMap.html#djimap_djimapviewinternal_onlowmemory">onLowMemory</a></code></li>
-</ul>
-<h5 id="interface-methods-v5">Interface Methods:</h5>
-<div class="api-row" id="djimap_djimapviewinternal_oncreate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_oncreate_inline">onCreate</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_oncreate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onCreate</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v62">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-<h5 id="input-parameters-v32">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bundle <font color="#000">saveInstanceState</font></font></td><td><font color="#666"><i>Bundle which contains the saved instance state.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimapviewinternal_onstart"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onstart_inline">onStart</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onstart_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onStart</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v63">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_onresume"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onresume_inline">onResume</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onresume_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onResume</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v64">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_onpause"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onpause_inline">onPause</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onpause_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onPause</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v65">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_onstop"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onstop_inline">onStop</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onstop_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onStop</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v66">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_ondestroy"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_ondestroy_inline">onDestroy</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_ondestroy_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onDestroy</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v67">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_onsaveinstancestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onsaveinstancestate_inline">onSaveInstanceState</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onsaveinstancestate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onSaveInstanceState</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle outState)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v68">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-<h5 id="input-parameters-v33">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">Bundle <font color="#000">outState</font></font></td><td><font color="#666"><i>Bundle in which to place your saved state.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djimap_djimapviewinternal_onlowmemory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_onlowmemory_inline">onLowMemory</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_onlowmemory_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onLowMemory</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onLowMemory</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v69">Description:</h5>
-<p><font color="#666">Must be called from the parent Activity/Fragment's corresponding method.</font></p>
-</div>
-<div class="api-row" id="djimap_djimapviewinternal_getdjimapasync"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimap_djimapviewinternal_getdjimapasync_inline">getDJIMapAsync</a></div></div><div class="inline-doc" id="djimap_djimapviewinternal_getdjimapasync_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getDJIMapAsync</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getDJIMapAsync</span><span class="params">(DJIMapView.OnDJIMapReadyCallback callback)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">com.dji.mapkit.core.maps</font></td></tr></table></html>
-<h5 id="description-v70">Description:</h5>
-<p><font color="#666">Initializes the map view.</font></p>
-<h5 id="input-parameters-v34">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../Widgets/DJIMap_DJIMapView.html#djimap_djimapview">DJIMapView</a>.<a href="../Widgets/DJIMap_DJIMapView.html#djimap_djimapview_ondjimapreadycallbackinterface">OnDJIMapReadyCallback</a> <font color="#000">callback</font></font></td><td><font color="#666"><i>The callback that will be invoked when the map is ready to be used.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap_djimapview"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMapView.html">DJIMapView</a></div></div><div class="api-row" id="djimap_mapprovider"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_MapProvider.html">MapProvider</a></div></div><div class="api-row" id="djimap_mapkit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_Mapkit.html">Mapkit</a></div></div>
+<div class="api-row" id="djimap_oncamerachangelistenerinterface"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_onCameraChangeListenerInterface.html">OnCameraChangeListener</a></div></div><div class="api-row" id="djimap_djicircle"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICircle.html">DJICircle</a></div></div><div class="api-row" id="djimap_djicircleoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICircleOptions.html">DJICircleOptions</a></div></div><div class="api-row" id="djimap_djimarker"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarker.html">DJIMarker</a></div></div><div class="api-row" id="djimap_djimarkeroptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a></div></div><div class="api-row" id="djimap_djipolygon"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolygon.html">DJIPolygon</a></div></div><div class="api-row" id="djimap_djipolygonoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a></div></div><div class="api-row" id="djimap_djipolyline"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolyline.html">DJIPolyline</a></div></div><div class="api-row" id="djimap_djipolylineoptions"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIPolylineOptions.html">DJIPolylineOptions</a></div></div><div class="api-row" id="djimap_djicameraposition"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraPosition.html">DJICameraPosition</a></div></div><div class="api-row" id="djimap_djicameraupdatefactory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJICameraUpdateFactory.html">DJICameraUpdateFactory</a></div></div><div class="api-row" id="djimap_djibitmapdescriptorfactory"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIBitmapDescriptorFactory.html">DJIBitmapDescriptorFactory</a></div></div><div class="api-row" id="djimap_djilatlng"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJILatLng.html">DJILatLng</a></div></div><div class="api-row" id="djimap_djilatlngbounds"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJILatLngBounds.html">DJILatLngBounds</a></div></div><div class="api-row" id="djimap_djimapviewinternal"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMapViewInternal.html">DJIMapViewInternal</a></div></div><div class="api-row" id="djimap_djimapview"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_DJIMapView.html">DJIMapView</a></div></div><div class="api-row" id="djimap_mapprovider"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_MapProvider.html">MapProvider</a></div></div><div class="api-row" id="djimap_mapkit"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap_Mapkit.html">Mapkit</a></div></div>
 
         </div>
       </div>
