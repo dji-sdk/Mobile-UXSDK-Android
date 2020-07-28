@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -40,17 +40,27 @@
             </dt>
                   <dd><a href="DUXExposureFocusSwitchWidget.html">FocusExposureSwitchWidget</a>
                   </dd>
-                  <dd><a data-href class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="" class="sub-toggle">MapWidget<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="DUXMapWidget_OnMapReadyListener.html">OnMapReadyListener</a>
+                            </dd>
                             <dd><a data-href="DJIMap.html" class="sub-toggle">DJIMap<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
+                                      <dd><a href="DJIMap_onCameraChangeListenerInterface.html">OnCameraChangeListener</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJICircle.html">DJICircle</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJICircleOptions.html">DJICircleOptions</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarker.html">DJIMarker</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIMarkerOptions.html">DJIMarkerOptions</a>
                                       </dd>
+                                      <dd><a href="DJIMap_DJIPolygon.html">DJIPolygon</a>
+                                      </dd>
                                       <dd><a href="DJIMap_DJIPolygonOptions.html">DJIPolygonOptions</a>
+                                      </dd>
+                                      <dd><a href="DJIMap_DJIPolyline.html">DJIPolyline</a>
                                       </dd>
                                       <dd><a href="DJIMap_DJIPolylineOptions.html">DJIPolylineOptions</a>
                                       </dd>
@@ -64,7 +74,13 @@
                                       </dd>
                                       <dd><a href="DJIMap_DJILatLngBounds.html">DJILatLngBounds</a>
                                       </dd>
-                                      <dd><a href="DJIMap_DJIMapView.html">DJIMapView</a>
+                                      <dd><a href="DJIMap_DJIMapViewInternal.html">DJIMapViewInternal</a>
+                                      </dd>
+                                      <dd><a data-href="DJIMap_DJIMapView.html" class="sub-toggle">DJIMapView<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="DJIMap_DJIMapView_OnDJIMapReadyCallbackInterface.html">OnDJIMapReadyCallback</a>
+                                                </dd>
+                                        </ul>
                                       </dd>
                                       <dd><a href="DJIMap_MapProvider.html">MapProvider</a>
                                       </dd>
@@ -216,7 +232,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with Here Maps. <br><br>Note: Here Maps currently only works on arm v7 devices,  and you must sign up for their premium package.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget_OnMapReadyListener.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_initgooglemap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_initgooglemap_inline">initGoogleMap</a></div></div><div class="inline-doc" id="duxmapwidget_initgooglemap_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>initGoogleMap</h6></div>
 
@@ -225,7 +241,7 @@
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with Google Maps. <br><br> Note: Google Maps only works on devices with Google  Play Services (not Crystal Sky). <br> Important: The following lifecycle methods in your activity must call  the corresponding methods in MapWidget in order for the map to render correctly: {@link #onCreate(Bundle)},  {@link #onResume()}, {@link #onPause()}, {@link #onDestroy()}, {@link #onSaveInstanceState(Bundle)}, and {@link #onLowMemory()}.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget_OnMapReadyListener.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_initamap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_initamap_inline">initAMap</a></div></div><div class="inline-doc" id="duxmapwidget_initamap_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>initAMap</h6></div>
 
@@ -234,7 +250,7 @@
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with AMaps.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget_OnMapReadyListener.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_initmapbox"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_initmapbox_inline">initMapboxMap</a></div></div><div class="inline-doc" id="duxmapwidget_initmapbox_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>initMapboxMap</h6></div>
 
@@ -243,7 +259,7 @@
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Initializes the MapWidget with Mapbox. <br> Important: The following lifecycle methods in your activity must call  the corresponding methods in MapWidget in order for the map to render correctly: {@link #onCreate(Bundle)},  {@link #onResume()}, {@link #onPause()}, {@link #onDestroy()}, {@link #onSaveInstanceState(Bundle)}, and {@link #onLowMemory()}.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">String <font color="#000">mapboxAccessToken</font></font></td><td><font color="#666"><i>The API access token from Mapbox.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">final <a href="../Widgets/DUXMapWidget_OnMapReadyListener.html#duxmapwidget_onmapreadylistener">OnMapReadyListener</a> <font color="#000">listener</font></font></td><td><font color="#666"><i>The OnMapReadyListener which will invoke the onMapReady method when the map has finished initializing.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">String <font color="#000">mapboxAccessToken</font></font></td><td><font color="#666"><i>The API access token from Mapbox.</i></font></td></tr></table></html></div>
 <div class="api-row" id="duxmapwidget_getmap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_getmap_inline">getMap</a></div></div><div class="inline-doc" id="duxmapwidget_getmap_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getMap</h6></div>
 
@@ -934,25 +950,7 @@ the direction to home.</font></p>
 <p><font color="#666">Call this to sync currently shown custom unlock zones to aircraft. They will still need to be manually enabled.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="duxmapwidget_onmapreadylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">interface</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_onmapreadylistener_inline">OnMapReadyListener</a></div></div><div class="inline-doc" id="duxmapwidget_onmapreadylistener_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">interface </font>OnMapReadyListener</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">OnMapReadyListener</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v82">Description:</h5>
-<p><font color="#666">When added to the MapWidget, the OnMapReadyListener can be used to  determine when the map is ready to modify. No modifications should  be done to the MapWidget before the map is initialized using one  of the initialization methods.</font></p>
-<h5 id="interface-methods">Interface Methods:</h5>
-<div class="api-row" id="duxmapwidget_onmapreadycallback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#duxmapwidget_onmapreadycallback_inline">onMapReady</a></div></div><div class="inline-doc" id="duxmapwidget_onmapreadycallback_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>onMapReady</h6></div>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onMapReady</span><span class="params">(@NonNull DJIMap map)</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Package:</i></font></td><td width="85%"><font color="#999">dji.ux.widget</font></td></tr></table></html>
-<h5 id="description-v83">Description:</h5>
-<p><font color="#666">A callback indicating that the map is finished initializing.</font></p>
-<h5 id="input-parameters-v51">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">@NonNull <a href="../Widgets/DJIMap.html#djimap">DJIMap</a> <font color="#000">map</font></font></td><td><font color="#666"><i>The object of <code><a href="../Widgets/DJIMap.html#djimap">DJIMap</a></code>.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djimap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap.html">DJIMap</a></div></div>
+<div class="api-row" id="duxmapwidget_onmapreadylistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DUXMapWidget_OnMapReadyListener.html">OnMapReadyListener</a></div></div><div class="api-row" id="djimap"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../Widgets/DJIMap.html">DJIMap</a></div></div>
 
         </div>
       </div>

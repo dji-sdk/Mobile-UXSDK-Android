@@ -9,9 +9,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -26,6 +23,10 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -38,10 +39,10 @@ import dji.common.error.DJISDKError;
 import dji.common.useraccount.UserAccountState;
 import dji.common.util.CommonCallbacks;
 import dji.log.DJILog;
-import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.base.BaseComponent;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.sdkmanager.DJISDKInitEvent;
+import dji.sdk.sdkmanager.DJISDKManager;
 import dji.sdk.useraccount.UserAccountManager;
 
 /** Main activity that displays three choices to user */
@@ -73,11 +74,17 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
                            "product disconnect!",
                            Toast.LENGTH_LONG).show();
         }
+
         @Override
         public void onProductConnect(BaseProduct product) {
             Toast.makeText(getApplicationContext(),
                            "product connect!",
                            Toast.LENGTH_LONG).show();
+        }
+        
+        @Override
+        public void onProductChanged(BaseProduct product) {
+
         }
 
         @Override

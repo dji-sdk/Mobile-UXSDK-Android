@@ -6,7 +6,7 @@ repositories {
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '29.0.1'
+    buildToolsVersion '29.0.3'
     defaultConfig {
         applicationId "com.dji.ux.sample"
         minSdkVersion 19
@@ -49,6 +49,7 @@ android {
         doNotStrip "*/*/libDJIUpgradeCore.so"
         doNotStrip "*/*/libDJIUpgradeJNI.so"
         doNotStrip "*/*/libDJIWaypointV2Core.so"
+        doNotStrip "*/*/libAMapSDK_MAP_v6_9_2.so"
         doNotStrip "*/*/libDJIMOP.so"
 
         pickFirst 'lib/*/libstlport_shared.so'
@@ -63,6 +64,8 @@ android {
         pickFirst 'lib/*/libsfjni.so'
         exclude 'META-INF/proguard/okhttp3.pro'
         exclude 'META-INF/rxjava.properties'
+        exclude 'assets/location_map_gps_locked.png'
+        exclude 'assets/location_map_gps_3d.png'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -72,7 +75,7 @@ android {
 
 dependencies {
     //Internal maven 4.11 exist error. please use 4.11.0.1 in internal maven.
-    implementation ('com.dji:dji-uxsdk:4.12', {
+    implementation ('com.dji:dji-uxsdk:4.13', {
         /**
          * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
          * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
@@ -88,7 +91,7 @@ dependencies {
          */
         // exclude group: 'com.amap.api'
     })
-    compileOnly ('com.dji:dji-sdk-provided:4.12')
+    compileOnly ('com.dji:dji-sdk-provided:4.13')
 
     // AMAP: Do not include if publishing to Google Play Store
     implementation 'com.amap.api:3dmap:6.9.2'

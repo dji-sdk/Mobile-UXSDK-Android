@@ -1,10 +1,13 @@
 package com.dji.ux.sample;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Point;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
@@ -49,9 +52,12 @@ public class CompleteWidgetActivity extends Activity {
         width = DensityUtil.dip2px(this, 150);
         margin = DensityUtil.dip2px(this, 12);
 
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        deviceHeight = displayMetrics.heightPixels;
-        deviceWidth = displayMetrics.widthPixels;
+        WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        final Display display = windowManager.getDefaultDisplay();
+        Point outPoint = new Point();
+        display.getRealSize(outPoint);
+        deviceHeight = outPoint.y;
+        deviceWidth = outPoint.x;
 
         mapWidget = findViewById(R.id.map_widget);
         mapWidget.initAMap(new MapWidget.OnMapReadyListener() {
