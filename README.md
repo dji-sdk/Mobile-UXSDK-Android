@@ -3,6 +3,7 @@
 ## What is This?
 
 The UX SDK is a suite of product agnostic UI objects that fast tracks the development of Android applications using the [DJI Mobile SDK](http://developer.dji.com/mobile-sdk/).
+Also, check out the new open source version of [UX SDK Beta ](https://github.com/dji-sdk/Mobile-UXSDK-Beta-Android).
 
 ## Integration
 
