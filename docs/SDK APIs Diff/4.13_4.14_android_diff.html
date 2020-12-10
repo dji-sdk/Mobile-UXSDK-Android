@@ -1,0 +1,46 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI UX SDK 4.13 to 4.14 Differences</h1>
+
+<br>
+
+<h2>APIs added to 4.14</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.models.annotations.DJIPolygon.</span><span class="interface-name">getPoints</span></td><td width=15%><span class="source-code">    List&lt;DJILatLng&gt; getPoints()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.models.annotations.DJIPolyline.</span><span class="interface-name">getColor</span></td><td width=15%><span class="source-code">    int getColor()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.models.annotations.DJIPolyline.</span><span class="interface-name">getPoints</span></td><td width=15%><span class="source-code">    List&lt;DJILatLng&gt; getPoints()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.</span><span class="interface-name">DJIUiSettings</span></td><td width=15%><span class="source-code">interface DJIUiSettings </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setCompassEnabled</span></td><td width=15%><span class="source-code">    void setCompassEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setRotateGesturesEnabled</span></td><td width=15%><span class="source-code">    void setRotateGesturesEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setScrollGesturesEnabled</span></td><td width=15%><span class="source-code">    void setScrollGesturesEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setTiltGesturesEnabled</span></td><td width=15%><span class="source-code">    void setTiltGesturesEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setZoomControlsEnabled</span></td><td width=15%><span class="source-code">    void setZoomControlsEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIUiSettings.</span><span class="interface-name">setZoomGesturesEnabled</span></td><td width=15%><span class="source-code">    void setZoomGesturesEnabled(boolean enabled)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIMap.</span><span class="interface-name">getUiSettings</span></td><td width=15%><span class="source-code">    DJIUiSettings getUiSettings()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.callback.OnMapTypeLoadedListener.</span><span class="interface-name">onMapTypeLoaded</span></td><td width=15%><span class="source-code">    void onMapTypeLoaded()</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.callback.</span><span class="interface-name">OnMapTypeLoadedListener</span></td><td width=15%><span class="source-code">interface OnMapTypeLoadedListener </span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">com.dji.mapkit.core.maps.DJIMap.</span><span class="interface-name">setMapType</span></td><td width=15%><span class="source-code">    void setMapType(MapType type, OnMapTypeLoadedListener listener)</span></td></tr></table><p style="font-size:50%; color:white">1277907 1366158 924c56f 0bb5b3d </p></body>
+</html>
+
