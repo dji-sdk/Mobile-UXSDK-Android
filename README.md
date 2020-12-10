@@ -42,6 +42,27 @@ implementation ('com.dji:dji-uxsdk:4.14-trial1', {
      */
     // exclude group: 'com.amap.api'
 })
+/**
+ * Uncomment the following block if you are using an SDK version does not match the UX SDK
+ * version above. For example, this could be used if the SDK has a minor release version
+ * ahead of the UX SDK.
+ */
+// implementation ('com.dji:dji-sdk:4.14-trial1', {
+//    /**
+//     * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
+//     * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
+//     * is called.
+//     * Both will greatly reduce the size of the APK.
+//     */
+//     exclude module: 'library-anti-distortion'
+//     exclude module: 'fly-safe-database'
+//
+//    /**
+//     * Uncomment the following line to exclude amap from the app.
+//     * Note that Google Play Store does not allow APKs that include this library.
+//     */
+//    // exclude group: 'com.amap.api'
+// })
 compileOnly ('com.dji:dji-sdk-provided:4.14-trial1')
 ~~~
 
