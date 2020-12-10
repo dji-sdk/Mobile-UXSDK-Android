@@ -18,8 +18,10 @@ import androidx.annotation.NonNull;
 import com.dji.mapkit.core.maps.DJIMap;
 import com.dji.mapkit.core.models.DJILatLng;
 
+import dji.common.airlink.PhysicalSource;
 import dji.keysdk.CameraKey;
 import dji.keysdk.KeyManager;
+import dji.sdk.camera.VideoFeeder;
 import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
 import dji.ux.widget.controls.CameraControlsWidget;
@@ -69,6 +71,7 @@ public class CompleteWidgetActivity extends Activity {
                         onViewClick(mapWidget);
                     }
                 });
+                map.getUiSettings().setZoomControlsEnabled(false);
             }
         });
         mapWidget.onCreate(savedInstanceState);
@@ -91,7 +94,14 @@ public class CompleteWidgetActivity extends Activity {
                 swapVideoSource();
             }
         });
-        updateSecondaryVideoVisibility();
+        if (VideoFeeder.getInstance() != null) {
+            //If secondary video feed is already initialized, get video source
+            updateSecondaryVideoVisibility(VideoFeeder.getInstance().getSecondaryVideoFeed().getVideoSource() != PhysicalSource.UNKNOWN);
+            //If secondary video feed is not yet initialized, wait for active status
+            VideoFeeder.getInstance().getSecondaryVideoFeed()
+                    .addVideoActiveStatusListener(isActive ->
+                            runOnUiThread(() -> updateSecondaryVideoVisibility(isActive)));
+        }
     }
 
     private void onViewClick(View view) {
@@ -148,11 +158,11 @@ public class CompleteWidgetActivity extends Activity {
         }
     }
 
-    private void updateSecondaryVideoVisibility() {
-        if (secondaryFPVWidget.getVideoSource() == null) {
-            secondaryVideoView.setVisibility(View.GONE);
-        } else {
+    private void updateSecondaryVideoVisibility(boolean isActive) {
+        if (isActive) {
             secondaryVideoView.setVisibility(View.VISIBLE);
+        } else {
+            secondaryVideoView.setVisibility(View.GONE);
         }
     }
 
