@@ -82,7 +82,6 @@
 -keepclassmembers class * extends android.app.Activity {
     public void *(android.view.View);
 }
--keep class android.support.** { *; }
 -keep class androidx.** { *; }
 -keep class android.media.** { *; }
 -keep class okio.** { *; }
@@ -118,7 +117,6 @@
 -keepclassmembers class android.arch.** { *; }
 -keep class android.arch.** { *; }
 -dontwarn android.arch.**
-
 
 #<------------ utmiss config start------------>
 -keep class dji.sdk.utmiss.** { *; }
