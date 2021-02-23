@@ -76,7 +76,7 @@ android {
 }
 
 dependencies {
-    implementation ('com.dji:dji-uxsdk:4.14-trial1', {
+    implementation ('com.dji:dji-uxsdk:4.14', {
         /**
          * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
          * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
@@ -97,7 +97,7 @@ dependencies {
      * version above. For example, this could be used if the SDK has a minor release version
      * ahead of the UX SDK.
      */
-    // implementation ('com.dji:dji-sdk:4.14-trial1', {
+    // implementation ('com.dji:dji-sdk:4.14', {
     //    /**
     //     * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
     //     * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
@@ -113,7 +113,7 @@ dependencies {
     //     */
     //    // exclude group: 'com.amap.api'
     // })
-    compileOnly ('com.dji:dji-sdk-provided:4.14-trial1')
+    compileOnly ('com.dji:dji-sdk-provided:4.14')
 
     // AMAP: Do not include if publishing to Google Play Store
     implementation 'com.amap.api:3dmap:6.9.2'
@@ -127,7 +127,6 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'
     implementation 'androidx.core:core:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //HERE maps

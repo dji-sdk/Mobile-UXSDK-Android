@@ -64,8 +64,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Popu
             } else {
 
                 Toast.makeText(getApplicationContext(),
-                               "SDK registration failed, check network and retry!",
-                               Toast.LENGTH_LONG).show();
+                        "Registration failed: " + error.getDescription(),
+                        Toast.LENGTH_LONG).show();
             }
         }
         @Override
