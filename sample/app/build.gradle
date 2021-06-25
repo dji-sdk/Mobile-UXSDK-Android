@@ -3,21 +3,22 @@ apply plugin: 'kotlin-android'
 
 repositories {
     mavenLocal()
+    maven { url 'https://mapbox.bintray.com/mapbox' }
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.3'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
     defaultConfig {
         applicationId "com.dji.ux.sample"
-        minSdkVersion 19
-        targetSdkVersion 29
+        minSdkVersion 23
+        targetSdkVersion 30
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         ndk {
             // On x86 devices that run Android API 23 or above, if the application is targeted with API 23 or
             // above, FFmpeg lib might lead to runtime crashes or warnings.
-            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a'
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
     }
     buildTypes {
@@ -77,14 +78,7 @@ android {
 
 dependencies {
     implementation ('com.dji:dji-uxsdk:4.14', {
-        /**
-         * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
-         * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
-         * is called.
-         * Both will greatly reduce the size of the APK.
-         */
-        exclude module: 'library-anti-distortion'
-        exclude module: 'fly-safe-database'
+        exclude module: 'dji-sdk'
 
         /**
          * Uncomment the following line to exclude amap from the app.
@@ -92,41 +86,29 @@ dependencies {
          */
         // exclude group: 'com.amap.api'
     })
-    /**
-     * Uncomment the following block if you are using an SDK version does not match the UX SDK
-     * version above. For example, this could be used if the SDK has a minor release version
-     * ahead of the UX SDK.
-     */
-    // implementation ('com.dji:dji-sdk:4.14', {
-    //    /**
-    //     * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
-    //     * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
-    //     * is called.
-    //     * Both will greatly reduce the size of the APK.
-    //     */
-    //     exclude module: 'library-anti-distortion'
-    //     exclude module: 'fly-safe-database'
-    //
-    //    /**
-    //     * Uncomment the following line to exclude amap from the app.
-    //     * Note that Google Play Store does not allow APKs that include this library.
-    //     */
-    //    // exclude group: 'com.amap.api'
-    // })
-    compileOnly ('com.dji:dji-sdk-provided:4.14')
+    implementation ('com.dji:dji-sdk:4.15', {
+        /**
+         * Uncomment the "library-anti-distortion" if your app does not need Anti Distortion for Mavic 2 Pro and Mavic 2 Zoom.
+         * Uncomment the "fly-safe-database" if you need database for release, or we will download it when DJISDKManager.getInstance().registerApp
+         * is called.
+         * Both will greatly reduce the size of the APK.
+         */
+         exclude module: 'library-anti-distortion'
+         exclude module: 'fly-safe-database'
+     })
+    compileOnly ('com.dji:dji-sdk-provided:4.15')
 
     // AMAP: Do not include if publishing to Google Play Store
-    implementation 'com.amap.api:3dmap:6.9.2'
-    implementation 'com.amap.api:search:6.9.2'
-    implementation 'com.amap.api:location:4.7.0'
-
+    implementation 'com.amap.api:3dmap:7.3.0'
+    implementation 'com.amap.api:search:7.3.0'
+    implementation 'com.amap.api:location:4.9.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'
-    implementation 'androidx.core:core:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.core:core:1.3.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //HERE maps

@@ -3,6 +3,8 @@
           package="com.dji.ux.sample">
 
     <!-- DJI SDK need these permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -10,12 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:name=".MApplication"
         android:allowBackup="true"
@@ -24,6 +24,7 @@
         android:supportsRtl="true"
         tools:replace="android:label, android:theme"
         android:theme="@style/AppTheme"
+        android:extractNativeLibs="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <!-- DJI SDK -->
@@ -32,7 +33,7 @@
 
         <meta-data
             android:name="com.dji.sdk.API_KEY"
-            android:value="Enter your API key here" />
+            android:value="04ecb776e0f714747f3f61d2" />
 
         <!-- Here Maps -->
         <meta-data android:name="com.here.android.maps.appid"
