@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 repositories {
     mavenLocal()
-    maven { url 'https://mapbox.bintray.com/mapbox' }
+    jcenter()
 }
 
 android {
