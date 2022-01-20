@@ -7,8 +7,6 @@ import android.content.IntentFilter;
 
 import com.secneo.sdk.Helper;
 
-import static com.dji.ux.sample.DJIConnectionControlActivity.ACCESSORY_ATTACHED;
-
 public class MApplication extends Application {
 
     @Override
@@ -16,7 +14,7 @@ public class MApplication extends Application {
         super.onCreate();
         BroadcastReceiver br = new OnDJIUSBAttachedReceiver();
         IntentFilter filter = new IntentFilter();
-        filter.addAction(ACCESSORY_ATTACHED);
+        filter.addAction(DJIConnectionControlActivity.ACCESSORY_ATTACHED);
         registerReceiver(br, filter);
     }
 

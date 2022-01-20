@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DJI UX Sample</string>
+    <string name="app_name">DJI Sample App</string>
     <string name="select_all">Select All</string>
     <string name="select_none">Select None</string>
     <string name="search">Search</string>
@@ -8,12 +8,16 @@
     <string name="camera_name_secondary">Secondary Camera Name</string>
     <string name="camera_side_primary">Primary Camera Side</string>
     <string name="camera_side_secondary">Secondary Camera Side</string>
+    <string name="overexposure_warning_primary">Primary Overexposure Warning</string>
+    <string name="overexposure_warning_secondary">Secondary Overexposure Warning</string>
     <string name="focus_point">Focus Point</string>
     <string name="metering_point">Metering Point</string>
     <string name="gimbal_control">Gimbal Control</string>
     <string name="display_grid">Display Grid</string>
+    <string name="display_center_point">Display Center Point</string>
     <string name="txt_grid_overlay_selection">Change Grid Overlay Type: </string>
     <string name="txt_center_point_selection">Change Center Point Type: </string>
+    <string name="txt_center_point_color_selection">Change Center Point Color: </string>
     <string name="txt_video_feed_selection">Change Video Source: </string>
     <string name="txt_video_dynamic_size">Test FPV widget view in different size: </string>
     <string name="grid_type_none">None</string>
@@ -62,4 +66,5 @@
     </string-array>
 
     <string name="mapbox_id">Please enter the map box key here.</string>
+    <string name="facebook_app_id">Please enter the fack book key here.</string>
 </resources>

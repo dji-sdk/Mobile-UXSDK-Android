@@ -10,9 +10,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -54,6 +51,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import dji.common.flightcontroller.flyzone.FlyZoneCategory;
 import dji.ux.widget.MapWidget;
 
@@ -70,7 +70,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     private int[] iconIds = {R.id.icon_1, R.id.icon_2, R.id.icon_3, R.id.icon_4, R.id.icon_5};
 
     public static final String MAP_PROVIDER = "MapProvider";
-    private Spinner iconSpinner, lineSpinner;
+    private Button flyZoneButton;
+    private Spinner mapSpinner, iconSpinner, lineSpinner;
     private SeekBar lineWidthPicker;
     private int lineWidthValue;
     private TextView lineColor;
@@ -90,11 +91,11 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_widget);
-        mapWidget = findViewById(R.id.map_widget);
+        mapWidget = (MapWidget) findViewById(R.id.map_widget);
         markerList = new ArrayList<>();
         MapWidget.OnMapReadyListener onMapReadyListener = new MapWidget.OnMapReadyListener() {
             @Override
-            public void onMapReady(@NonNull final DJIMap map) {
+            public void onMapReady(@NonNull DJIMap map) {
                 map.setMapType(DJIMap.MapType.NORMAL);
 
                 map.setOnMarkerDragListener(new DJIMap.OnMarkerDragListener() {
@@ -145,7 +146,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         switch (mapProvider) {
             case 0:
                 boolean success = setIsolatedDiskCacheRootPath(
-                        getExternalFilesDir(null) + File.separator + ".here-maps-cache");
+                        getExternalFilesDir(null) + File.separator + ".here-maps");
                 if (success) {
                     mapWidget.initHereMap(onMapReadyListener);
                 }
@@ -156,9 +157,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             case 2:
                 mapWidget.initAMap(onMapReadyListener);
                 break;
-            default:
             case 3:
-                //TODO: Remove this key before putting on github
+            default:
                 mapWidget.initMapboxMap(onMapReadyListener, getResources().getString(R.string.mapbox_id));
                 break;
         }
@@ -175,22 +175,22 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         ((CheckBox) findViewById(R.id.flyzone_legend)).setOnCheckedChangeListener(this);
         ((CheckBox) findViewById(R.id.login_state_indicator)).setOnCheckedChangeListener(this);
         ((RadioGroup) findViewById(R.id.map_center_selector)).setOnCheckedChangeListener(this);
-        scrollView = findViewById(R.id.settings_scroll_view);
-        btnPanel = findViewById(R.id.btn_settings);
+        scrollView = (ScrollView) findViewById(R.id.settings_scroll_view);
+        btnPanel = (ImageButton) findViewById(R.id.btn_settings);
         btnPanel.setOnClickListener(this);
         findViewById(R.id.clear_flight_path).setOnClickListener(this);
-        iconSpinner = findViewById(R.id.icon_spinner);
+        iconSpinner = (Spinner) findViewById(R.id.icon_spinner);
         iconSpinner.setOnItemSelectedListener(this);
-        Spinner mapSpinner = findViewById(R.id.map_spinner);
+        mapSpinner = (Spinner) findViewById(R.id.map_spinner);
         mapSpinner.setSelection(0, false); // so the listener won't be called before the map is initialized
         mapSpinner.setOnItemSelectedListener(this);
         findViewById(R.id.replace).setOnClickListener(this);
-        selectedIcon = findViewById(R.id.icon_1);
+        selectedIcon = (ImageView) findViewById(R.id.icon_1);
         for (int id : iconIds) {
             findViewById(id).setOnClickListener(this);
         }
         findViewById(R.id.icon_1).setSelected(true);
-        Button flyZoneButton = findViewById(R.id.btn_fly_zone);
+        flyZoneButton = (Button) findViewById(R.id.btn_fly_zone);
         mapWidget.showAllFlyZones();
         flyZoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,11 +199,11 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             }
         });
 
-        lineSpinner = findViewById(R.id.line_spinner);
+        lineSpinner = (Spinner) findViewById(R.id.line_spinner);
         lineSpinner.setOnItemSelectedListener(this);
-        lineWidthPicker = findViewById(R.id.line_width_picker);
+        lineWidthPicker = (SeekBar) findViewById(R.id.line_width_picker);
         lineWidthPicker.setOnSeekBarChangeListener(this);
-        lineColor = findViewById(R.id.line_color);
+        lineColor = (TextView) findViewById(R.id.line_color);
         lineColor.setOnClickListener(this);
     }
 
@@ -296,8 +296,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
     }
 
     private void movePanel() {
-        int translationStart;
-        int translationEnd;
+        int translationStart = 0;
+        int translationEnd = 0;
         if (isPanelOpen) {
             translationStart = 0;
             translationEnd = -scrollView.getWidth();
@@ -308,7 +308,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             translationEnd = 0;
         }
         TranslateAnimation animate = new TranslateAnimation(
-            translationStart, translationEnd, 0, 0);
+                translationStart, translationEnd, 0, 0);
         animate.setDuration(300);
         animate.setFillAfter(true);
         animate.setAnimationListener(new Animation.AnimationListener() {
@@ -501,8 +501,8 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
                     aMap = (AMap) mapWidget.getMap().getMap();
                     com.amap.api.maps.model.LatLng[] latlngs = new com.amap.api.maps.model.LatLng[500];
                     for (int i = 0; i < 500; i++) {
-                        double x_;
-                        double y_;
+                        double x_ = 0;
+                        double y_ = 0;
                         x_ = Math.random() * 0.5 - 0.25;
                         y_ = Math.random() * 0.5 - 0.25;
                         latlngs[i] = new com.amap.api.maps.model.LatLng(testLat + x_, testLng + y_);
