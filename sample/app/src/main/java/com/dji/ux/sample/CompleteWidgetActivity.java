@@ -13,18 +13,26 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
-
 import com.dji.mapkit.core.maps.DJIMap;
-import com.dji.mapkit.core.models.DJILatLng;
 
-import dji.common.airlink.PhysicalSource;
 import dji.keysdk.CameraKey;
 import dji.keysdk.KeyManager;
-import dji.sdk.camera.VideoFeeder;
+import dji.ux.panel.CameraSettingAdvancedPanel;
+import dji.ux.panel.CameraSettingExposurePanel;
+import dji.ux.utils.DJIProductUtil;
+import dji.ux.widget.FPVOverlayWidget;
 import dji.ux.widget.FPVWidget;
 import dji.ux.widget.MapWidget;
+import dji.ux.widget.ThermalPaletteWidget;
+import dji.ux.widget.config.CameraConfigApertureWidget;
+import dji.ux.widget.config.CameraConfigEVWidget;
+import dji.ux.widget.config.CameraConfigISOAndEIWidget;
+import dji.ux.widget.config.CameraConfigSSDWidget;
+import dji.ux.widget.config.CameraConfigShutterWidget;
+import dji.ux.widget.config.CameraConfigStorageWidget;
+import dji.ux.widget.config.CameraConfigWBWidget;
 import dji.ux.widget.controls.CameraControlsWidget;
+import dji.ux.widget.controls.LensControlWidget;
 
 /**
  * Activity that shows all the UI elements together
@@ -35,9 +43,24 @@ public class CompleteWidgetActivity extends Activity {
     private ViewGroup parentView;
     private FPVWidget fpvWidget;
     private FPVWidget secondaryFPVWidget;
+    private FPVOverlayWidget fpvOverlayWidget;
     private RelativeLayout primaryVideoView;
     private FrameLayout secondaryVideoView;
     private boolean isMapMini = true;
+
+    private CameraSettingExposurePanel cameraSettingExposurePanel;
+    private CameraSettingAdvancedPanel cameraSettingAdvancedPanel;
+    private CameraConfigISOAndEIWidget cameraConfigISOAndEIWidget;
+    private CameraConfigShutterWidget cameraConfigShutterWidget;
+    private CameraConfigApertureWidget cameraConfigApertureWidget;
+    private CameraConfigEVWidget cameraConfigEVWidget;
+    private CameraConfigWBWidget cameraConfigWBWidget;
+    private CameraConfigStorageWidget cameraConfigStorageWidget;
+    private CameraConfigSSDWidget cameraConfigSSDWidget;
+    private CameraControlsWidget controlsWidget;
+    private LensControlWidget lensControlWidget;
+    private ThermalPaletteWidget thermalPaletteWidget;
+
 
     private int height;
     private int width;
@@ -61,47 +84,38 @@ public class CompleteWidgetActivity extends Activity {
         deviceHeight = outPoint.y;
         deviceWidth = outPoint.x;
 
-        mapWidget = findViewById(R.id.map_widget);
-        mapWidget.initAMap(new MapWidget.OnMapReadyListener() {
-            @Override
-            public void onMapReady(@NonNull DJIMap map) {
-                map.setOnMapClickListener(new DJIMap.OnMapClickListener() {
-                    @Override
-                    public void onMapClick(DJILatLng latLng) {
-                        onViewClick(mapWidget);
-                    }
-                });
-                map.getUiSettings().setZoomControlsEnabled(false);
-            }
-        });
+        mapWidget = (MapWidget) findViewById(R.id.map_widget);
+        mapWidget.initAMap(map -> map.setOnMapClickListener((DJIMap.OnMapClickListener) latLng -> onViewClick(mapWidget)));
         mapWidget.onCreate(savedInstanceState);
 
+        initCameraView();
         parentView = (ViewGroup) findViewById(R.id.root_view);
 
         fpvWidget = findViewById(R.id.fpv_widget);
-        fpvWidget.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onViewClick(fpvWidget);
-            }
-        });
-        primaryVideoView = (RelativeLayout) findViewById(R.id.fpv_container);
-        secondaryVideoView = (FrameLayout) findViewById(R.id.secondary_video_view);
+        fpvWidget.setOnClickListener(view -> onViewClick(fpvWidget));
+        fpvOverlayWidget = findViewById(R.id.fpv_overlay_widget);
+        primaryVideoView = findViewById(R.id.fpv_container);
+        secondaryVideoView = findViewById(R.id.secondary_video_view);
         secondaryFPVWidget = findViewById(R.id.secondary_fpv_widget);
-        secondaryFPVWidget.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                swapVideoSource();
-            }
-        });
-        if (VideoFeeder.getInstance() != null) {
-            //If secondary video feed is already initialized, get video source
-            updateSecondaryVideoVisibility(VideoFeeder.getInstance().getSecondaryVideoFeed().getVideoSource() != PhysicalSource.UNKNOWN);
-            //If secondary video feed is not yet initialized, wait for active status
-            VideoFeeder.getInstance().getSecondaryVideoFeed()
-                    .addVideoActiveStatusListener(isActive ->
-                            runOnUiThread(() -> updateSecondaryVideoVisibility(isActive)));
-        }
+        secondaryFPVWidget.setOnClickListener(view -> swapVideoSource());
+
+        fpvWidget.setCameraIndexListener((cameraIndex, lensIndex) -> cameraWidgetKeyIndexUpdated(fpvWidget.getCameraKeyIndex(), fpvWidget.getLensKeyIndex()));
+        updateSecondaryVideoVisibility();
+    }
+
+    private void initCameraView() {
+        cameraSettingExposurePanel = findViewById(R.id.camera_setting_exposure_panel);
+        cameraSettingAdvancedPanel = findViewById(R.id.camera_setting_advanced_panel);
+        cameraConfigISOAndEIWidget = findViewById(R.id.camera_config_iso_and_ei_widget);
+        cameraConfigShutterWidget = findViewById(R.id.camera_config_shutter_widget);
+        cameraConfigApertureWidget = findViewById(R.id.camera_config_aperture_widget);
+        cameraConfigEVWidget = findViewById(R.id.camera_config_ev_widget);
+        cameraConfigWBWidget = findViewById(R.id.camera_config_wb_widget);
+        cameraConfigStorageWidget = findViewById(R.id.camera_config_storage_widget);
+        cameraConfigSSDWidget = findViewById(R.id.camera_config_ssd_widget);
+        lensControlWidget = findViewById(R.id.camera_lens_control);
+        controlsWidget = findViewById(R.id.CameraCapturePanel);
+        thermalPaletteWidget = findViewById(R.id.thermal_pallette_widget);
     }
 
     private void onViewClick(View view) {
@@ -158,29 +172,47 @@ public class CompleteWidgetActivity extends Activity {
         }
     }
 
-    private void updateSecondaryVideoVisibility(boolean isActive) {
-        if (isActive) {
-            secondaryVideoView.setVisibility(View.VISIBLE);
-        } else {
+    private void cameraWidgetKeyIndexUpdated(int keyIndex, int subKeyIndex) {
+        controlsWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraSettingExposurePanel.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraSettingAdvancedPanel.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigISOAndEIWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigShutterWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigApertureWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigEVWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigWBWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigStorageWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        cameraConfigSSDWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        controlsWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        lensControlWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+        thermalPaletteWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+
+        fpvOverlayWidget.updateKeyOnIndex(keyIndex, subKeyIndex);
+    }
+
+    private void updateSecondaryVideoVisibility() {
+        if (secondaryFPVWidget.getVideoSource() == null || !DJIProductUtil.isSupportMultiCamera()) {
             secondaryVideoView.setVisibility(View.GONE);
+        } else {
+            secondaryVideoView.setVisibility(View.VISIBLE);
         }
     }
 
     private void hidePanels() {
         //These panels appear based on keys from the drone itself.
         if (KeyManager.getInstance() != null) {
-            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED), false, null);
-            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED), false, null);
+            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.HISTOGRAM_ENABLED, fpvWidget.getCameraKeyIndex()), false, null);
+            KeyManager.getInstance().setValue(CameraKey.create(CameraKey.COLOR_WAVEFORM_ENABLED, fpvWidget.getCameraKeyIndex()), false, null);
         }
 
         //These panels have buttons that toggle them, so call the methods to make sure the button state is correct.
-        CameraControlsWidget controlsWidget = findViewById(R.id.CameraCapturePanel);
         controlsWidget.setAdvancedPanelVisibility(false);
         controlsWidget.setExposurePanelVisibility(false);
 
         //These panels don't have a button state, so we can just hide them.
         findViewById(R.id.pre_flight_check_list).setVisibility(View.GONE);
         findViewById(R.id.rtk_panel).setVisibility(View.GONE);
+        //findViewById(R.id.simulator_panel).setVisibility(View.GONE);
         findViewById(R.id.spotlight_panel).setVisibility(View.GONE);
         findViewById(R.id.speaker_panel).setVisibility(View.GONE);
     }

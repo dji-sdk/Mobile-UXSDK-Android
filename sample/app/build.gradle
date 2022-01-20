@@ -77,14 +77,14 @@ android {
 }
 
 dependencies {
-    implementation ('com.dji:dji-uxsdk:4.15', {
+    implementation ('com.dji:dji-uxsdk:4.16', {
         /**
          * Uncomment the following line to exclude amap from the app.
          * Note that Google Play Store does not allow APKs that include this library.
          */
         // exclude group: 'com.amap.api'
     })
-    compileOnly ('com.dji:dji-sdk-provided:4.15.1')
+    compileOnly ('com.dji:dji-sdk-provided:4.16')
 
     // AMAP: Do not include if publishing to Google Play Store
     implementation 'com.amap.api:3dmap:7.3.0'

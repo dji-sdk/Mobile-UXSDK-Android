@@ -20,13 +20,23 @@ import dji.ux.widget.MapWidget;
 
 public class FlyZoneDialogView extends ScrollView {
 
-    private CheckBox all;
-    private CheckBox auth;
-    private CheckBox warning;
-    private CheckBox enhancedWarning;
-    private CheckBox restricted;
-    private Button btnCustomUnlockColor;
-    private Button btnCustomUnlockSync;
+    CheckBox all;
+    CheckBox auth;
+    CheckBox warning;
+    CheckBox enhancedWarning;
+    CheckBox restricted;
+
+    Switch switchCustomUnlock;
+
+    Button authColor;
+    Button warningColor;
+    Button enhancedWarningColor;
+    Button restrictedColor;
+    Button maxHeightColor;
+    Button selfUnlockColor;
+    Button btnCustomUnlockColor;
+    Button btnCustomUnlockSync;
+
 
     public FlyZoneDialogView(Context context) {
         super(context);
@@ -44,14 +54,15 @@ public class FlyZoneDialogView extends ScrollView {
     }
 
     public void initCheckboxes(final MapWidget mapWidget) {
-        all = findViewById(R.id.all);
-        auth = findViewById(R.id.auth);
-        warning = findViewById(R.id.warning);
-        enhancedWarning = findViewById(R.id.enhanced_warning);
-        restricted = findViewById(R.id.restricted);
-        Switch switchCustomUnlock = findViewById(R.id.custom_unlock_switch);
+        all = (CheckBox) findViewById(R.id.all);
+        auth = (CheckBox) findViewById(R.id.auth);
+        warning = (CheckBox) findViewById(R.id.warning);
+        enhancedWarning = (CheckBox) findViewById(R.id.enhanced_warning);
+        restricted = (CheckBox) findViewById(R.id.restricted);
+        switchCustomUnlock = (Switch) findViewById(R.id.custom_unlock_switch);
         switchCustomUnlock.setChecked(mapWidget.isCustomUnlockZonesVisible());
         CompoundButton.OnCheckedChangeListener listener = new CompoundButton.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 switch (compoundButton.getId()) {
@@ -99,14 +110,14 @@ public class FlyZoneDialogView extends ScrollView {
     }
 
     public void initColors(final MapWidget mapWidget) {
-        Button authColor = findViewById(R.id.auth_color);
-        Button warningColor = findViewById(R.id.warning_color);
-        Button enhancedWarningColor = findViewById(R.id.enhanced_warning_color);
-        Button restrictedColor = findViewById(R.id.restricted_color);
-        Button maxHeightColor = findViewById(R.id.max_height_color);
-        Button selfUnlockColor = findViewById(R.id.self_unlock_color);
-        btnCustomUnlockColor = findViewById(R.id.custom_unlock_color);
-        btnCustomUnlockSync = findViewById(R.id.custom_unlock_sync);
+        authColor = (Button) findViewById(R.id.auth_color);
+        warningColor = (Button) findViewById(R.id.warning_color);
+        enhancedWarningColor = (Button) findViewById(R.id.enhanced_warning_color);
+        restrictedColor = (Button) findViewById(R.id.restricted_color);
+        maxHeightColor = (Button) findViewById(R.id.max_height_color);
+        selfUnlockColor = (Button) findViewById(R.id.self_unlock_color);
+        btnCustomUnlockColor = (Button) findViewById(R.id.custom_unlock_color);
+        btnCustomUnlockSync = (Button) findViewById(R.id.custom_unlock_sync);
         btnCustomUnlockColor.setEnabled(mapWidget.isCustomUnlockZonesVisible());
         btnCustomUnlockSync.setEnabled(mapWidget.isCustomUnlockZonesVisible());
 

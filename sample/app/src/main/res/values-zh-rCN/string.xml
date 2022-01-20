@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UXSDK示例代码</string>
+    <string name="select_all">选择全部</string>
+    <string name="select_none">不选</string>
+    <string name="search">搜索</string>
+    <string name="run">运行</string>
+    <string name="camera_name_primary">主云台名称</string>
+    <string name="camera_name_secondary">副云台名称</string>
+    <string name="camera_side_primary">主云台位置</string>
+    <string name="camera_side_secondary">副云台位置</string>
+    <string name="overexposure_warning_primary">主云台过曝警告</string>
+    <string name="overexposure_warning_secondary">副云台过曝警告</string>
+    <string name="focus_point">对焦点</string>
+    <string name="metering_point">测光点</string>
+    <string name="gimbal_control">云台控制</string>
+    <string name="display_grid">显示网格线</string>
+    <string name="display_center_point">显示中心点</string>
+    <string name="txt_grid_overlay_selection">更改网格线种类：</string>
+    <string name="txt_center_point_selection">更改中心点种类：</string>
+    <string name="txt_center_point_color_selection">更改中心点颜色：</string>
+    <string name="txt_video_feed_selection">更改视频源：</string>
+    <string name="txt_video_dynamic_size">测试不同尺寸的FPV视图：</string>
+    <string name="grid_type_none">无</string>
+    <string name="grid_type_parallel">平行</string>
+    <string name="grid_type_parallel_diagonal">对角线平行</string>
+    <string name="set_auto_video_feed">自动</string>
+    <string name="set_primary_video_feed">主</string>
+    <string name="set_secondary_video_feed">副</string>
+    <string name="set_fpv_size">改变尺寸</string>
+    <string name="sdk_version">版本：%1$s</string>
+    <string name="wsbridge_ip">WSBridge IP</string>
+    <string name="provider_google_maps">Google Maps</string>
+    <string name="provider_here_maps">Here Maps</string>
+    <string name="provider_amaps">AMaps</string>
+    <string name="provider_mapbox">Mapbox</string>
+    <string name="error_map_not_initialized">地图尚未初始化</string>
+    <string name="home_direction">返航点方向</string>
+    <string name="auto_frame">自动帧</string>
+    <string name="unlock_flyzones">解禁飞行区</string>
+    <string name="show_flight_path">显示飞行轨迹</string>
+    <string name="show_home_point">显示返航点</string>
+    <string name="show_gimbal_yaw">显示云台偏航角</string>
+    <string name="clear_flight_path">清除飞行轨迹</string>
+    <string name="replace_icon">替换图标</string>
+    <string name="fly_zone">飞行区</string>
+    <string name="fly_zone_legend">飞行区图例</string>
+    <string name="dji_account_indicator">DJI账号登录器</string>
+    <string name="new_color">新颜色</string>
+    <string name="sync">同步</string>
+    <string-array name="iconArray">
+        <item>飞行器</item>
+        <item>返航点</item>
+        <item>云台偏航角</item>
+        <item>锁定的飞行区</item>
+        <item>解禁的飞行区</item>
+    </string-array>
+    <string-array name="mapTypeArray">
+        <item>标准</item>
+        <item>卫星</item>
+        <item>混合</item>
+    </string-array>
+    <string-array name="lineTypeArray">
+        <item>返航点方向</item>
+        <item>飞行轨迹</item>
+        <item>飞行区边界</item>
+    </string-array>
+</resources>

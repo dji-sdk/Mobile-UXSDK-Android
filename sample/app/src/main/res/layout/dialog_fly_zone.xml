@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -127,7 +127,9 @@
             android:background="@color/blue"
             android:layout_below="@id/self_unlocked"
             android:layout_width="match_parent"
-            android:layout_height="2dp"/>
+            android:layout_height="2dp">
+
+        </View>
         <Switch
             android:layout_margin="5dp"
             android:id="@+id/custom_unlock_switch"
@@ -162,7 +164,9 @@
             android:background="@color/blue"
             android:layout_below="@id/custom_unlock_color"
             android:layout_width="match_parent"
-            android:layout_height="2dp"/>
+            android:layout_height="2dp">
+
+        </View>
     </RelativeLayout>
 
 </merge>
