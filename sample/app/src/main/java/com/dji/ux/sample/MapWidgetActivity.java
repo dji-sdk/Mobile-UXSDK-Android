@@ -97,7 +97,7 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
             @Override
             public void onMapReady(@NonNull DJIMap map) {
                 map.setMapType(DJIMap.MapType.NORMAL);
-
+                addDefaultFlyZones();
                 map.setOnMarkerDragListener(new DJIMap.OnMarkerDragListener() {
                     @Override
                     public void onMarkerDragStart(DJIMarker djiMarker) {
@@ -552,5 +552,12 @@ public class MapWidgetActivity extends Activity implements CompoundButton.OnChec
         } else if ("Flight Path".equals(lineSpinner.getSelectedItem())) {
             mapWidget.setFlightPathColor(randomColor);
         }
+    }
+
+    private void addDefaultFlyZones(){
+        mapWidget.setFlyZoneVisible(FlyZoneCategory.AUTHORIZATION, true);
+        mapWidget.setFlyZoneVisible(FlyZoneCategory.WARNING, true);
+        mapWidget.setFlyZoneVisible(FlyZoneCategory.ENHANCED_WARNING, true);
+        mapWidget.setFlyZoneVisible(FlyZoneCategory.RESTRICTED, true);
     }
 }

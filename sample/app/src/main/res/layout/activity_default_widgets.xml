@@ -288,8 +288,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_above="@+id/dashboard_widget"
-        android:layout_marginRight="148dp"
-        android:layout_marginTop="60dp" />
+        android:layout_marginRight="175dp"
+        android:layout_marginTop="58dp" />
 
     <dji.ux.widget.FFCWidget
         android:id="@+id/ffcwidget"
